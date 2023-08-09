@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+html{
+    overflow: hidden;
+}
+
+
+#draggableMap{
+
+    top:0;
+    left:0;
+
+    position: absolute;
+    background-color: blueviolet;
+    background: url("./../imgs/map.jpg");
+    background-size: contain;
+    background-position: top left;
+    
+    width: 3000px;
+    height: 2250px;
+
+    padding: 10px;
+}
+
+#draggableMap > p {
+    position: relative;
+    z-index: 2;
+}
