@@ -1,8 +1,0 @@
-html {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-
-.content {
-    display: grid;
-    grid-template-columns: 50% 50%;
-}
