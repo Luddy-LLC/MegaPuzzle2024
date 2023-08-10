@@ -6,15 +6,24 @@
 
 html{
     overflow: hidden;
+    cursor: grab;
+
 }
 
+#mapContainer{
+    width: 100vw;
+    height: 100vh;
+
+    overflow: scroll;
+
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
 
 #draggableMap{
 
-    top:0;
-    left:0;
+    position: relative;
 
-    position: absolute;
     background-color: blueviolet;
     background: url("./../imgs/map.jpg");
     background-size: contain;
@@ -30,3 +39,11 @@ html{
     position: relative;
     z-index: 2;
 }
+
+
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+#mapContainer::-webkit-scrollbar {
+    display: none;
+}
+  
