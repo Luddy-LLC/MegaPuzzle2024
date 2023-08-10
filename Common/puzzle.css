@@ -1,0 +1,13 @@
+/* 
+    Styles Shared Between puzzle pages.
+*/
+
+#puzzle-description {
+    text-align: center;
+}
+
+#wrapper {
+    /* background-color: palegoldenrod; */
+    margin:auto;
+    width: 40rem;
+}
