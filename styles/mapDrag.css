@@ -4,10 +4,10 @@
 }
 
 
-html{
+body{
     overflow: hidden;
     cursor: grab;
-
+    background-color: #4175FF;
 }
 
 #mapContainer{
@@ -16,28 +16,20 @@ html{
 
     overflow: scroll;
 
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
 }
 
 #draggableMap{
-
     position: relative;
-
-    background-color: blueviolet;
-    background: url("./../imgs/map.jpg");
-    background-size: contain;
-    background-position: top left;
-    
-    width: 3000px;
-    height: 2250px;
-
-    padding: 10px;
 }
 
-#draggableMap > p {
-    position: relative;
-    z-index: 2;
+#mouseCoords{
+    position: fixed;
+    top:0;
+    left:0;
+    color: black;
+    z-index: 999;
 }
 
 

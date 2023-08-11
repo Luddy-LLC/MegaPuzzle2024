@@ -9,15 +9,20 @@
 <body>
     
     <div id="mapContainer">
-        <div id="draggableMap">
-            <p>This is a cool map games</p>
-            <p>Yeah dog!</p>
-        </div>
+        <img id="draggableMap" src="imgs/map.jpg" alt="LLC Mega Puzzle Fantasy Map" usemap="#mapmap" width="3000px" height="2250px">
+
+        <map name="mapmap">
+            <area shape="poly" coords="1909,284,971,326,1037,436,1153,338,1217,788,704,816,693,596,909,284" href="https://www.youtube.com" alt="JouToube" target="_blank">
+        </map>
+
     </div>
+
+    <p id="mouseCoords"></p>
 
 
 
     <script type="text/javascript" src="scripts/mapDrag.js"></script>
+    <script type="text/javascript" src="scripts/mapUtils.js"></script>
 
 </body>
 </html>
