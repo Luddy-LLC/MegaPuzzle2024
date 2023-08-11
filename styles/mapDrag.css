@@ -7,7 +7,7 @@
 html{
     overflow: hidden;
     cursor: grab;
-
+    background-color: #6D94BA;
 }
 
 #mapContainer{
@@ -24,10 +24,10 @@ html{
 
     position: relative;
 
-    background-color: blueviolet;
+    /* background-color: blueviolet;
     background: url("./../imgs/map.jpg");
     background-size: contain;
-    background-position: top left;
+    background-position: top left; */
     
     width: 3000px;
     height: 2250px;
