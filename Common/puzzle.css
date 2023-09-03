@@ -1,0 +1,30 @@
+/* 
+    Styles Shared Between puzzle pages.
+*/
+
+#puzzle-description {
+    text-align: center;
+}
+
+#wrapper {
+    /* background-color: palegoldenrod; */
+    margin:auto;
+    width: 70vw;
+}
+
+object {
+    margin: 0px;
+    width: 100%;
+    height: 13vh;
+}
+
+.wrapper {
+    padding: 2vw;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+
+    padding: 0px;
+    margin: 0px;
+}
