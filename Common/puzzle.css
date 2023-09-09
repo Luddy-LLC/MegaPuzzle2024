@@ -2,11 +2,11 @@
     Styles Shared Between puzzle pages.
 */
 
-#puzzle-description {
+.puzzle-description {
     text-align: center;
 }
 
-#wrapper {
+.wrapper {
     /* background-color: palegoldenrod; */
     margin:auto;
     width: 70vw;
