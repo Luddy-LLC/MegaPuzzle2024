@@ -4,8 +4,7 @@
     Description: A Program to Play Snake
 */
 
-// TODO: Hidden Message in the Fruits
-// TODO: Better Death Message and formatting
+// TODO: Better Death Message formatting
 // TODO: Snake assets and/or LERP?
 
 const canvas = document.getElementById("game-canvas");
