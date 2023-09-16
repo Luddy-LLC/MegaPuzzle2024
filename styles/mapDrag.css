@@ -111,7 +111,7 @@ map {
     -o-animation-delay: 2s;
     -ms-animation: fadeOut 4s forwards;
     -ms-animation-delay: 2s;
-    z-index: 3;
+    z-index: 101;
 }
 
 @keyframes fadeOut {
@@ -177,4 +177,8 @@ map {
 .map-hover-area:hover {
     fill: white;
     opacity: 0.5;
+}
+
+#move, #region-label {
+    z-index: 100;
 }
