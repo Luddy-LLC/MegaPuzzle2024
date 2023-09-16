@@ -33,7 +33,7 @@ onmousemove = (event) => {
 /* -------------------------------- */
 
 nw.onmouseover = function () {
-    rl.src = "imgs/labels/aavikk.png";
+    rl.src = "assets/labels/aavikk.png";
     rl.alt = "Region of Aavikk";
     rl.style.display = "block";
 };
@@ -47,7 +47,7 @@ nw.onmouseleave = function () {
 /* -------------------------------- */
 
 sw.onmouseover = function () {
-    rl.src = "imgs/labels/ithkiya.png";
+    rl.src = "assets/labels/ithkiya.png";
     rl.alt = "Region of Ithkiya";
     rl.style.display = "block";
 };
@@ -60,7 +60,7 @@ sw.onmouseleave = function () {
 /* -------------------------------- */
 
 cnr.onmouseover = function () {
-    rl.src = "imgs/labels/etwixt.png";
+    rl.src = "assets/labels/etwixt.png";
     rl.alt = "Region of Et'Wixt";
     rl.style.display = "block";
 };
@@ -73,7 +73,7 @@ cnr.onmouseleave = function () {
 /* -------------------------------- */
 
 ne.onmouseover = function () {
-    rl.src = "imgs/labels/zanyph.png";
+    rl.src = "assets/labels/zanyph.png";
     rl.alt = "Region of Zanyph";
     rl.style.display = "block";
 };
@@ -86,7 +86,7 @@ ne.onmouseleave = function () {
 /* -------------------------------- */
 
 se.onmouseover = function () {
-    rl.src = "imgs/labels/telius.png";
+    rl.src = "assets/labels/telius.png";
     rl.alt = "Region of Telius";
     rl.style.display = "block";
 };
