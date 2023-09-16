@@ -4,7 +4,7 @@ const sw = document.getElementById("southwest");
 const cnr = document.getElementById("central");
 const se = document.getElementById("southeast");
 const ne = document.getElementById("northeast");
-const rt = document.getElementById("region-text");
+var rl = document.getElementById("region-label");
 
 window.addEventListener("keydown", e=>{
     if((e.key == "I" && e.ctrlKey && e.shiftKey) || (e.key == "J" && e.ctrlKey && e.shiftKey) 
@@ -33,56 +33,66 @@ onmousemove = (event) => {
 /* -------------------------------- */
 
 nw.onmouseover = function () {
-    rt.innerText = "Northwest";
-    rt.style.display = "block";
+    rl.src = "imgs/labels/aavikk.png";
+    rl.alt = "Region of Aavikk";
+    rl.style.display = "block";
 };
 
 nw.onmouseleave = function () {
-    rt.style.display = "none";
+    rl.alt = "";
+    rl.style.display = "none";
 };
 
 
 /* -------------------------------- */
 
 sw.onmouseover = function () {
-    rt.innerText = "Southwest";
-    rt.style.display = "block";
+    rl.src = "imgs/labels/ithkiya.png";
+    rl.alt = "Region of Ithkiya";
+    rl.style.display = "block";
 };
 
 sw.onmouseleave = function () {
-    rt.style.display = "none";
+    rl.alt = "";
+    rl.style.display = "none";
 };
 
 /* -------------------------------- */
 
 cnr.onmouseover = function () {
-    rt.innerText = "Central";
-    rt.style.display = "block";
+    rl.src = "imgs/labels/etwixt.png";
+    rl.alt = "Region of Et'Wixt";
+    rl.style.display = "block";
 };
 
 cnr.onmouseleave = function () {
-    rt.style.display = "none";
+    rl.alt = "";
+    rl.style.display = "none";
 };
 
 /* -------------------------------- */
 
 ne.onmouseover = function () {
-    rt.innerText = "Northeast";
-    rt.style.display = "block";
+    rl.src = "imgs/labels/zanyph.png";
+    rl.alt = "Region of Zanyph";
+    rl.style.display = "block";
 };
 
 ne.onmouseleave = function () {
-    rt.style.display = "none";
+    rl.alt = "";
+    rl.style.display = "none";
 };
 
 /* -------------------------------- */
 
 se.onmouseover = function () {
-    rt.innerText = "Southeast";
-    rt.style.display = "block";
+    rl.src = "imgs/labels/telius.png";
+    rl.alt = "Region of Telius";
+    rl.style.display = "block";
 };
 
 se.onmouseleave = function () {
-    rt.style.display = "none";
+    rl.alt = "";
+    rl.style.display = "none";
 };
 
