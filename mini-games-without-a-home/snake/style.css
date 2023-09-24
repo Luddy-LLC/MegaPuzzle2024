@@ -1,0 +1,9 @@
+#game-canvas {
+    background: #444;
+    display: block;
+    margin: 0 auto;
+}
+
+#game-assets {
+    display: none;
+}
