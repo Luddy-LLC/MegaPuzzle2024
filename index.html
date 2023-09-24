@@ -6,8 +6,9 @@
     <title>Luddy LLC MP24</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="./map/style.css">
     </head>
-    <link rel="stylesheet" type="text/css" href="./styles/mapDrag.css">
+    
     
 </head>
 <body>
@@ -17,7 +18,7 @@
 
     <div id="mapContainer">
 
-        <img class="centered clouds" src="assets/clouds.webp" aria-hidden="true">
+        <img class="centered clouds" src="./map/assets/clouds_pixleated.webp" aria-hidden="true">
         <svg class="click-areas" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5615 3278">
             <defs>
                 <filter id="blurMe">
@@ -50,19 +51,15 @@
                 </g>
             </g>
         </svg>
-        <img class="map-fill" src="assets/maps/map.png" alt="Fantasy Map" usemap="#area-map" height="100%">
+        <img class="map-fill" src="./map/assets/map.png" alt="Fantasy Map" usemap="#area-map" height="100%">
         <div class="bottom-left">
-            <img class="scale" src="assets/labels/scale.svg" alt="Scale bar ranging from 0 to 600 kilomatéi">
+            <img class="scale" src="./map/assets/labels/scale.svg" alt="Scale bar ranging from 0 to 600 kilomatéi">
         </div>
-
     </div>
 
     <p id="mouseCoords"></p>
 
-
-
-    <script type="text/javascript" src="scripts/mapDrag.js"></script>
-    <script type="text/javascript" src="scripts/mapUtils.js"></script>
-
+    <script type="text/javascript" src="./map/scripts/mapDrag.js"></script>
+    <script type="text/javascript" src="./map/scripts/mapUtils.js"></script>
 </body>
 </html>

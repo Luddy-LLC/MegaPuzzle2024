@@ -1,4 +1,0 @@
-# Dragon Drop
-Credit: .
-
-
