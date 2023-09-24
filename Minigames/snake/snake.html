@@ -12,6 +12,10 @@
             display: block;
             margin: 0 auto;
         }
+
+        #game-assets {
+            display: none;
+        }
     </style>
 </head>
 
@@ -24,10 +28,16 @@
             <h2>SNAKE</h2>
         </div>
 
-
+        <!-- Loading in game assets -->
         <div class="puzzle-content">
-
             <canvas id="game-canvas" width="512" height="512"></canvas>
+            <div id="game-assets">
+                <img id="apple" src="assets/apple.png" width="32" height="32" />
+                <img id="snake-head" src="assets/head.png" width="32" height="32" />
+                <img id="snake-body" src="assets/body.png" width="32" height="32" />
+                <img id="snake-corner" src="assets/corner.png" width="32" height="32" />
+                <img id="snake-tail" src="assets/tail.png" width="32" height="32" />
+            </div>
         </div>
     </div>
     <!-- The Game Source File -->
