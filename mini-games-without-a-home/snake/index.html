@@ -4,8 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/common/puzzle.css">
+    <link rel="stylesheet" href="style.css">
     <title>Snake</title>
-    <link rel="stylesheet" href="../../Common/puzzle.css">
     <style>
         #game-canvas {
             background: #444;
@@ -18,29 +24,23 @@
         }
     </style>
 </head>
-
 <body>
-    <object data="../../Common/Header.html"></object>
+    <object data="/common/header.html"></object>
 
-    <div class="wrapper">
+    <div class="container">
 
-        <div class="puzzle-description">
-            <h2>SNAKE</h2>
-        </div>
+        <!-- CONTENT GOES HERE, WITHIN CONTAINER -->
 
-        <!-- Loading in game assets -->
-        <div class="puzzle-content">
-            <canvas id="game-canvas" width="512" height="512"></canvas>
-            <div id="game-assets">
+        <canvas id="game-canvas" width="512" height="512"></canvas>
+        <div id="game-assets">
                 <img id="apple" src="assets/apple.png" width="32" height="32" />
                 <img id="snake-head" src="assets/head.png" width="32" height="32" />
                 <img id="snake-body" src="assets/body.png" width="32" height="32" />
                 <img id="snake-corner" src="assets/corner.png" width="32" height="32" />
                 <img id="snake-tail" src="assets/tail.png" width="32" height="32" />
             </div>
-        </div>
     </div>
-    <!-- The Game Source File -->
+
     <script src="game.js"></script>
 </body>
 
