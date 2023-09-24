@@ -2,22 +2,12 @@
 # Want to use this script? Run this in the folder you wish to setup:
 # zsh ../../common/setup.sh
 # If that doesn't work, try typing "bash" in place of "zsh"
-# CAUTION! This script overrides existing data in your index.html file
 
 
 EXISTS='\U2705'
 CREATED='\U1F4DD'
 
 echo "\n"
-
-foreach FILE ( "README.md" "style.css" "script.js" "index.html" )
-    if [ -f "$FILE" ]; then
-        echo "${EXISTS} $FILE exists.\n"
-    else 
-        touch $FILE
-        echo "${CREATED} $FILE created.\n"
-    fi
-end
 
 if [ -d "assets" ]; then
     echo "${EXISTS} /assets exists.\n"
@@ -26,8 +16,14 @@ else
     echo "${CREATED} /assets created.\n"
 fi
 
-cat > index.html << EOF
-
+foreach FILE ( "README.md" "style.css" "script.js" "index.html" )
+    if [ -f "$FILE" ]; then
+        echo "${EXISTS} $FILE exists.\n"
+    else 
+        touch $FILE
+        echo "${CREATED} $FILE created.\n"
+        if [[ "$FILE" == "index.html" ]]; then
+            cat > index.html << EOF
 <!DOCTYPE html>
 <html lang="en">
 
@@ -91,3 +87,7 @@ cat > index.html << EOF
 </html>
 
 EOF
+        fi
+    fi
+end
+
