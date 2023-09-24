@@ -18,7 +18,7 @@ window.oncontextmenu = function () {
     return false;
 }
 
-window.addEventListener("mousemove", e=> document.getElementById("mouseCoords").innerHTML = "X: "+ (e.clientX + ele.scrollLeft) + ", Y: "+ (e.clientY + ele.scrollTop));
+// window.addEventListener("mousemove", e=> document.getElementById("mouseCoords").innerHTML = "X: "+ (e.clientX + ele.scrollLeft) + ", Y: "+ (e.clientY + ele.scrollTop));
 
 onmousemove = (event) => {
     const move = document.getElementById('move');
