@@ -1,0 +1,11 @@
+.poem {
+    text-align: left;
+    padding: 2em;
+    width: 18em;
+}
+
+.poem-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
