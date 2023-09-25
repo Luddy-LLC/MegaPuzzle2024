@@ -16,16 +16,21 @@
 
 <body>
     <object data="/common/header.html"></object>
+    
+    <div> <p> While out camping you feel like something is watching you... You cast a powerful spell that becomes more powerful with each hit to drive them away, but be careful! If the spell doubles back on itself it will backfire!</div>
 
     <div class="container">
         <!-- CONTENT GOES HERE, WITHIN CONTAINER -->
-        <canvas id="game-canvas" width="512" height="512"></canvas>
+        <canvas id="game-canvas" width="512" height="512"
+        style="image-rendering: pixelated; image-rendering: crisp-edges;
+"></canvas>
         <div id="game-assets">
             <img id="apple" src="assets/apple.png" width="32" height="32" />
             <img id="snake-head" src="assets/head.png" width="32" height="32" />
             <img id="snake-body" src="assets/body.png" width="32" height="32" />
             <img id="snake-corner" src="assets/corner.png" width="32" height="32" />
             <img id="snake-tail" src="assets/tail.png" width="32" height="32" />
+            <img id="background" src="assets/background.png" width="512" height="512" />
         </div>
     </div>
 

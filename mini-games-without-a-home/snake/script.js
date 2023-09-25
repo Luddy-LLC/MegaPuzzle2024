@@ -6,6 +6,8 @@
 
 // TODO: Better Death Message formatting
 // TODO: LERP?
+// TODO: Start screen so people can get their footing before starting?
+// TODO: On start screen show instructions? (or elsewhere in html file)
 
 const canvas = document.getElementById("game-canvas");
 const ctx = canvas.getContext("2d");
@@ -16,6 +18,7 @@ const snakeHead = document.getElementById("snake-head");
 const snakeBody = document.getElementById("snake-body");
 const snakeCorner = document.getElementById("snake-corner");
 const snakeTail = document.getElementById("snake-tail");
+const background = document.getElementById("background");
 
 // Constants
 const snakeDirections = {
@@ -181,7 +184,7 @@ function drawSnake() {
 
 function drawApple() {
     if (snake.length % clueInterval == 0 && cluedClues < clue.length) {
-        ctx.fillStyle = "#FF0000";
+        ctx.fillStyle = "#0F0"; //mallory wuz here hehe
         ctx.textAlign = "left";
         ctx.fillText(clue[cluedClues], apple[0] * cellSize, (apple[1] + 1) * cellSize);
     } else {
@@ -199,8 +202,7 @@ function draw() {
     ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
 
     ctx.beginPath();
-    ctx.fillStyle = "#000000";
-    ctx.fillRect(0, 0, boardSize * cellSize, boardSize * cellSize);
+    ctx.drawImage(background, 0, 0);
     ctx.closePath();
 
     drawApple();
