@@ -5,9 +5,11 @@
 */
 
 // TODO: Better Death Message formatting
-// TODO: LERP?
 // TODO: Start screen so people can get their footing before starting?
 // TODO: On start screen show instructions? (or elsewhere in html file)
+
+//Timing for interpol animation
+let timer = 0;
 
 const canvas = document.getElementById("game-canvas");
 const ctx = canvas.getContext("2d");
@@ -31,7 +33,7 @@ const boardSize = 16;
 const cellSize = 32;
 
 // Snake State
-let apple = [12, 7];
+let apple = [12, 7, true]; // x, y, apples first turn?
 let snake = [[3, 7], [2, 7], [1, 7]];
 let snakeDir = snakeDirections.right;
 let isDead = false;
@@ -42,12 +44,18 @@ let clueInterval = 5;
 let clue = ["Y", "R", "A", "N", "I", "D", "R", "O"];
 let cluedClues = 0;
 
+
+function increaseTime() {
+    timer += 1;
+    timer = timer % 10;
+}
+
 function arrayEquals(a, b) {
     return Array.isArray(a) && Array.isArray(b) && a.length === b.length && a.every((val, index) => val === b[index]);
 }
 
 function resetGame() {
-    apple = [12, 7];
+    apple = [12, 7, true];
     snake = [[3, 7], [2, 7], [1, 7]];
     snakeDir = snakeDirections.right;
     isDead = false;
@@ -93,11 +101,16 @@ function moveSnake() {
         if ((newHead[0] === apple[0] && newHead[1] == apple[1])) {
             if (snake.length % clueInterval == 0) { cluedClues++ }
             apple = getEmptyCoords();
+            apple[3] = true;
         } else {
             snake.pop();
         }
         snake.unshift(newHead);
     }
+}
+
+function progress() {
+    return timer;
 }
 
 function drawRotated(img, rads, x, y) {
@@ -111,35 +124,27 @@ function drawRotated(img, rads, x, y) {
     ctx.restore();
 }
 
+
 //TODO: This is very very repetetive!
-function drawSnake() {
+function drawSnake(progress) {
     ctx.beginPath();
     ctx.fillStyle = isDead ? "#99999" : "#FF0000";
     snake.forEach((p, i) => {
 
-        if (i == 0) {
-            // Head
-            if (snakeDir == snakeDirections.right)
-                drawRotated(snakeHead, 0, p[0] * cellSize + 1, p[1] * cellSize + 1);
-            else if (snakeDir === snakeDirections.left)
-                drawRotated(snakeHead, Math.PI, p[0] * cellSize + 1, p[1] * cellSize + 1);
-            else if (snakeDir === snakeDirections.up)
-                drawRotated(snakeHead, -Math.PI / 2, p[0] * cellSize + 1, p[1] * cellSize + 1);
-            else if (snakeDir === snakeDirections.down)
-                drawRotated(snakeHead, Math.PI / 2, p[0] * cellSize + 1, p[1] * cellSize + 1);
-        } else if (i == snake.length - 1) {
+        if (i == snake.length - 1) {
             // Tail
             let tailDir = [snake[i - 1][0] - p[0], snake[i - 1][1] - p[1]]
 
             if (arrayEquals(tailDir, snakeDirections.right))
-                drawRotated(snakeTail, 0, p[0] * cellSize + 1, p[1] * cellSize + 1);
+                drawRotated(snakeTail, 0, p[0] * cellSize + 1 + (timer * cellSize / 10), p[1] * cellSize + 1);
             else if (arrayEquals(tailDir, snakeDirections.left))
-                drawRotated(snakeTail, Math.PI, p[0] * cellSize + 1, p[1] * cellSize + 1);
+                drawRotated(snakeTail, Math.PI, p[0] * cellSize + 1 - (timer * cellSize / 10), p[1] * cellSize + 1);
             else if (arrayEquals(tailDir, snakeDirections.up))
-                drawRotated(snakeTail, -Math.PI / 2, p[0] * cellSize + 1, p[1] * cellSize + 1);
+                drawRotated(snakeTail, -Math.PI / 2, p[0] * cellSize + 1, p[1] * cellSize + 1 - (timer * cellSize / 10));
             else if (arrayEquals(tailDir, snakeDirections.down))
-                drawRotated(snakeTail, Math.PI / 2, p[0] * cellSize + 1, p[1] * cellSize + 1);
-        } else {
+                drawRotated(snakeTail, Math.PI / 2, p[0] * cellSize + 1, p[1] * cellSize + 1 + (timer * cellSize / 10));
+        } else if (i != 0) {
+
             //Body or Corner
             let segmentDir = [(snake[i - 1][0] - snake[i + 1][0]) / 2, (snake[i - 1][1] - snake[i + 1][1]) / 2];
 
@@ -179,7 +184,27 @@ function drawSnake() {
             }
         }
     });
+    var p = snake[0];
+    if (snakeDir == snakeDirections.right)
+        drawRotated(snakeHead, 0, p[0] * cellSize - (cellSize - (timer * cellSize / 10)), p[1] * cellSize + 1);
+    else if (snakeDir === snakeDirections.left)
+        drawRotated(snakeHead, Math.PI, p[0] * cellSize + (cellSize - (timer * cellSize / 10)), p[1] * cellSize + 1);
+    else if (snakeDir === snakeDirections.up)
+        drawRotated(snakeHead, -Math.PI / 2, p[0] * cellSize + 1, p[1] * cellSize + (cellSize -(timer * cellSize / 10)));
+    else if (snakeDir === snakeDirections.down)
+        drawRotated(snakeHead, Math.PI / 2, p[0] * cellSize + 1, p[1] * cellSize - (cellSize -(timer * cellSize / 10)));
+
     ctx.closePath();
+}
+
+
+//takes the time and turns it into which frame it should display
+function appleFrame(tick) {
+    if (tick == 0) return timer;
+    if (tick < 2) return 1;
+    if (tick < 5) return 2;
+    if (tick < 7) return 3;
+    return 4;
 }
 
 function drawApple() {
@@ -188,12 +213,19 @@ function drawApple() {
         ctx.textAlign = "left";
         ctx.fillText(clue[cluedClues], apple[0] * cellSize, (apple[1] + 1) * cellSize);
     } else {
-        ctx.drawImage(appleImg, apple[0] * cellSize, apple[1] * cellSize);
+        var tick = timer;
+        if (!apple[3]) tick = 9;
+        //ctx.drawImage(appleImg, apple[0] * cellSize, apple[1] * cellSize);
+        ctx.drawImage(appleImg, appleFrame(tick) * 32, 0, 32, 32, apple[0] * cellSize, apple[1] * cellSize, 32, 32);
+    }
+    if (apple[3] && timer == 9) {
+        apple[3] = false;
     }
 }
 
 function draw() {
-    if (!isDead) {
+
+    if (!isDead && timer === 0) {
         setSnakeDir();
         moveSnake();
     }
@@ -206,17 +238,20 @@ function draw() {
     ctx.closePath();
 
     drawApple();
-    drawSnake();
+    drawSnake(timer);
 
     if (isDead) {
+        timer = 9;
         ctx.font = "48px serif";
         ctx.fillStyle = "#0F0";
         ctx.textAlign = "center";
         ctx.fillText("niaga yrT", 256, 100);
+    } else {
+        increaseTime();
     }
 }
 
-setInterval(draw, 100);
+setInterval(draw, 10);
 
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
