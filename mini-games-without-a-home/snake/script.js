@@ -22,6 +22,8 @@ const snakeCorner = document.getElementById("snake-corner");
 const snakeTail = document.getElementById("snake-tail");
 const background = document.getElementById("background");
 
+const timeStep = 10;
+
 // Constants
 const snakeDirections = {
     "left": [-1, 0],
@@ -47,7 +49,7 @@ let cluedClues = 0;
 
 function increaseTime() {
     timer += 1;
-    timer = timer % 10;
+    timer = timer % timeStep;
 }
 
 function arrayEquals(a, b) {
@@ -127,8 +129,6 @@ function drawRotated(img, rads, x, y) {
 
 //TODO: This is very very repetetive!
 function drawSnake(progress) {
-    ctx.beginPath();
-    ctx.fillStyle = isDead ? "#99999" : "#FF0000";
     snake.forEach((p, i) => {
 
         if (i == snake.length - 1) {
@@ -136,13 +136,13 @@ function drawSnake(progress) {
             let tailDir = [snake[i - 1][0] - p[0], snake[i - 1][1] - p[1]]
 
             if (arrayEquals(tailDir, snakeDirections.right))
-                drawRotated(snakeTail, 0, p[0] * cellSize + 1 + (timer * cellSize / 10), p[1] * cellSize + 1);
+                drawRotated(snakeTail, 0, p[0] * cellSize + 1 + (timer * cellSize / timeStep), p[1] * cellSize + 1);
             else if (arrayEquals(tailDir, snakeDirections.left))
-                drawRotated(snakeTail, Math.PI, p[0] * cellSize + 1 - (timer * cellSize / 10), p[1] * cellSize + 1);
+                drawRotated(snakeTail, Math.PI, p[0] * cellSize + 1 - (timer * cellSize / timeStep), p[1] * cellSize + 1);
             else if (arrayEquals(tailDir, snakeDirections.up))
-                drawRotated(snakeTail, -Math.PI / 2, p[0] * cellSize + 1, p[1] * cellSize + 1 - (timer * cellSize / 10));
+                drawRotated(snakeTail, -Math.PI / 2, p[0] * cellSize + 1, p[1] * cellSize + 1 - (timer * cellSize / timeStep));
             else if (arrayEquals(tailDir, snakeDirections.down))
-                drawRotated(snakeTail, Math.PI / 2, p[0] * cellSize + 1, p[1] * cellSize + 1 + (timer * cellSize / 10));
+                drawRotated(snakeTail, Math.PI / 2, p[0] * cellSize + 1, p[1] * cellSize + 1 + (timer * cellSize / timeStep));
         } else if (i != 0) {
 
             //Body or Corner
@@ -185,18 +185,18 @@ function drawSnake(progress) {
         }
     });
     var p = snake[0];
-    if (snakeDir == snakeDirections.right)
-        drawRotated(snakeHead, 0, p[0] * cellSize - (cellSize - (timer * cellSize / 10)), p[1] * cellSize + 1);
-    else if (snakeDir === snakeDirections.left)
-        drawRotated(snakeHead, Math.PI, p[0] * cellSize + (cellSize - (timer * cellSize / 10)), p[1] * cellSize + 1);
-    else if (snakeDir === snakeDirections.up)
-        drawRotated(snakeHead, -Math.PI / 2, p[0] * cellSize + 1, p[1] * cellSize + (cellSize -(timer * cellSize / 10)));
-    else if (snakeDir === snakeDirections.down)
-        drawRotated(snakeHead, Math.PI / 2, p[0] * cellSize + 1, p[1] * cellSize - (cellSize -(timer * cellSize / 10)));
 
-    ctx.closePath();
+    let headDir = [snake[0][0] - snake[1][0], snake[0][1] - snake[1][1]]
+
+    if (arrayEquals(headDir, snakeDirections.right))
+        drawRotated(snakeHead, 0, p[0] * cellSize - (cellSize - (timer * cellSize / timeStep)), p[1] * cellSize + 1);
+    else if (arrayEquals(headDir,  snakeDirections.left))
+        drawRotated(snakeHead, Math.PI, p[0] * cellSize + (cellSize - (timer * cellSize / timeStep)), p[1] * cellSize + 1);
+    else if (arrayEquals(headDir,  snakeDirections.up))
+        drawRotated(snakeHead, -Math.PI / 2, p[0] * cellSize + 1, p[1] * cellSize + (cellSize -(timer * cellSize / timeStep)));
+    else if (arrayEquals(headDir,  snakeDirections.down))
+        drawRotated(snakeHead, Math.PI / 2, p[0] * cellSize + 1, p[1] * cellSize - (cellSize -(timer * cellSize / timeStep)));
 }
-
 
 //takes the time and turns it into which frame it should display
 function appleFrame(tick) {
@@ -241,7 +241,7 @@ function draw() {
     drawSnake(timer);
 
     if (isDead) {
-        timer = 9;
+        timer = timeStep - 1;
         ctx.font = "48px serif";
         ctx.fillStyle = "#0F0";
         ctx.textAlign = "center";
@@ -254,7 +254,6 @@ function draw() {
 setInterval(draw, 10);
 
 document.addEventListener("keydown", keyDownHandler, false);
-document.addEventListener("keyup", keyUpHandler, false);
 
 function keyDownHandler(e) {
     let last = null
