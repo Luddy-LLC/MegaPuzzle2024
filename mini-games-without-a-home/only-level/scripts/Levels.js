@@ -407,9 +407,9 @@ class SpecialSpikeLevel extends BaseLevel{
         super(colorScheme, stageNum, stageMsg);
 
         this.numSpikes = 0;
-        this.numTouched = 0;
+        this.numTouched = [0]; // pass by reference!!!
 
-        this.player = new TouchingPlayer(this.pStartX, this.pStartY, 37, 40);
+        this.player = new TouchingPlayer(this.pStartX, this.pStartY, 37, 40, this.numTouched);
 
         this.initMap();
     }
@@ -433,6 +433,7 @@ class SpecialSpikeLevel extends BaseLevel{
 
     renderGame(g, keyMap) {
         super.renderGame(g, keyMap);
+
         if(this.numTouched < this.numSpikes){
             this.door.y = this.door.startY;
             this.door.h = this.door.startH;
@@ -445,4 +446,24 @@ class SpecialSpikeLevel extends BaseLevel{
     }
 
 
+}
+
+class BlindLevel extends BaseLevel{
+    constructor(colorScheme, stageNum, stageMsg) {
+        super(["white", "white"], stageNum, stageMsg);
+    }
+
+    initMap() {
+        for (let i = 0; i < tileMapHeight; ++i) {
+            let row = [];
+            for (let j = 0; j < tileMapWidth; ++j) {
+                row.push(new BlindTile(j * tileWidth, i * tileWidth, tileWidth, tileWidth, types[i][j], this.colorScheme[1]));
+            }
+            this.tileMap.push(row);
+        }
+        // Ground
+        for (let i = 0; i < tileMapWidth; ++i) {
+            this.tileMap[tileMapHeight - 1][i].type = 0;
+        }
+    }
 }

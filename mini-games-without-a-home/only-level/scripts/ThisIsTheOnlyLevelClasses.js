@@ -526,7 +526,6 @@ class Door extends Rectangle{
     }
 }
 
-
 // For the reversed gravity level
 class GravityPlayer extends Player{
     constructor(x,y,w,h){
@@ -677,7 +676,7 @@ class TouchedTile extends Tile{
             g.lineTo(this.x+this.w, this.y+this.h);
             g.lineTo(this.x+this.w/2, this.y);
             g.lineTo(this.x, this.y+this.h);
-            g.fillStyle = this.touched ? "green" : "black";
+            g.fillStyle = this.touched ? "#35f727" : "black";
             g.closePath();
             g.fill();
         } else if (this.type === 2){ // SPIKE Facing Right
@@ -686,7 +685,7 @@ class TouchedTile extends Tile{
             g.lineTo(this.x, this.y+this.h);
             g.lineTo(this.x+this.w, this.y + this.h/2);
             g.lineTo(this.x, this.y);
-            g.fillStyle = this.touched ? "green" : "black";
+            g.fillStyle = this.touched ? "#35f727" : "black";
             g.closePath();
             g.fill();
         } else if (this.type === 3){ // SPIKE Facing Down
@@ -695,7 +694,7 @@ class TouchedTile extends Tile{
             g.lineTo(this.x+this.w/2, this.y+this.h);
             g.lineTo(this.x+this.w, this.y);
             g.lineTo(this.x, this.y);
-            g.fillStyle = this.touched ? "green" : "black";
+            g.fillStyle = this.touched ? "#35f727" : "black";
             g.closePath();
             g.fill();
         } else if (this.type === 4){ // SPIKE Facing Left
@@ -704,7 +703,7 @@ class TouchedTile extends Tile{
             g.lineTo(this.x, this.y+this.h/2);
             g.lineTo(this.x+this.w, this.y+this.h);
             g.lineTo(this.x+this.w, this.y);
-            g.fillStyle = this.touched ? "green" : "black";
+            g.fillStyle = this.touched ? "#35f727" : "black";
             g.closePath();
             g.fill();
         }
@@ -712,8 +711,9 @@ class TouchedTile extends Tile{
 }
 
 class TouchingPlayer extends Player{
-    constructor(x, y, w,h){
+    constructor(x, y, w,h, numTouched){
         super(x, y,w,h);
+        this.numTouched = numTouched;
     }
 
 
@@ -737,9 +737,10 @@ class TouchingPlayer extends Player{
                     collision = true;
                 if(tile.type >= 1 && tile.type <= 4 && tile.detectCollision(this)){
                     bodies.push(new TouchingDeadPlayer(this.x, this.y, this.w, this.h, 
-                        this.facingRight, this.xVel, this.yVel, this.canJump));
+                        this.facingRight, this.xVel, this.yVel, this.canJump, this.numTouched));
                     this.kill(pStartX, pStartY, button, door);
                     deaths++;
+                    if(!tile.touched) this.numTouched[0]++;
                     tile.touched = true;
                 }
             }
@@ -758,8 +759,9 @@ class TouchingPlayer extends Player{
 
 class TouchingDeadPlayer extends DeadPlayer{
 
-    constructor(x,y,w,h, facingRight, xVel, yVel, canJump){
+    constructor(x,y,w,h, facingRight, xVel, yVel, canJump, numTouched){
         super(x,y,w,h, facingRight, xVel, yVel, canJump);
+        this.numTouched = numTouched;
     }
 
     collided(tileMap){
@@ -779,6 +781,7 @@ class TouchingDeadPlayer extends DeadPlayer{
                 if(tile.type == 0 && tile.detectCollision(this))
                     return true;
                 if(tile.type >= 1 && tile.type <= 4 && this.specialSpikeCollision(tile)){
+                    if(!tile.touched) this.numTouched[0]++;
                     tile.touched = true;
                 }
             }
@@ -792,4 +795,93 @@ class TouchingDeadPlayer extends DeadPlayer{
         let yCollision = this.y < (spike.y+spike.h)-1 && spike.y < (this.y+this.h)-1;
         return xCollision && yCollision;
     }
+}
+
+class BlindTile extends Tile{   
+    constructor(x, y, w, h, type, colorBase){
+        super(x, y, w, h, type, colorBase);
+    }
+
+    draw(g){
+        if(this.type === 0){ // WALL
+            g.fillStyle = "white";
+            g.fillRect(this.x, this.y, this.w, this.h);
+        } else if (this.type === 1){ // SPIKE Facing Up
+            g.beginPath();
+            g.moveTo(this.x, this.y+this.h);
+            g.lineTo(this.x+this.w, this.y+this.h);
+            g.lineTo(this.x+this.w/2, this.y);
+            g.lineTo(this.x, this.y+this.h);
+            g.fillStyle = "white";
+            g.closePath();
+            g.fill();
+        } else if (this.type === 2){ // SPIKE Facing Right
+            g.beginPath();
+            g.moveTo(this.x, this.y);
+            g.lineTo(this.x, this.y+this.h);
+            g.lineTo(this.x+this.w, this.y + this.h/2);
+            g.lineTo(this.x, this.y);
+            g.fillStyle = "white";
+            g.closePath();
+            g.fill();
+        } else if (this.type === 3){ // SPIKE Facing Down
+            g.beginPath();
+            g.moveTo(this.x, this.y);
+            g.lineTo(this.x+this.w/2, this.y+this.h);
+            g.lineTo(this.x+this.w, this.y);
+            g.lineTo(this.x, this.y);
+            g.fillStyle = "white";
+            g.closePath();
+            g.fill();
+        } else if (this.type === 4){ // SPIKE Facing Left
+            g.beginPath();
+            g.moveTo(this.x+this.w, this.y);
+            g.lineTo(this.x, this.y+this.h/2);
+            g.lineTo(this.x+this.w, this.y+this.h);
+            g.lineTo(this.x+this.w, this.y);
+            g.fillStyle = "white";
+            g.closePath();
+            g.fill();
+        }
+    }
+}
+
+class CutScenePlayer extends Player{
+    constructor(x,y,w,h){
+        super(x,y,w,h);
+
+        this.img.src = "./assets/Untitled_Big.webp";
+    }
+
+
+    update(){
+
+        // Movement
+        const numSteps = 1.0;
+        let xVelStep = this.xVel / numSteps;
+
+        for(let i=0; i!=numSteps; ++i){
+            this.x += xVelStep;
+        }
+
+        // Friction
+        if(Math.abs(this.xVel) > .5)
+            this.xVel *= 0.8;
+        else
+            this.xVel = 0;
+
+        //Image rotation
+        this.handleImageRotation();
+    }
+
+    handleImageRotation(){
+        //Image rotation
+        if(this.imgRot >=  16)
+            this.cw = false;
+        else if(this.imgRot <= -16)
+            this.cw = true;
+
+        this.imgRot = this.cw ? this.imgRot + 2 : this.imgRot - 2;
+    }
+
 }
