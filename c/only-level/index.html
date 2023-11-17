@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mega Puzzle - This is the Only Level</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/common/puzzle.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <object data="/common/header.html"></object>
+
+    <div class="container">
+
+        <!-- CONTENT GOES HERE, WITHIN CONTAINER -->
+        <canvas id="gameCanvas" width="925px" height="720px"></canvas>
+        <p>Heavy inspiration for this game from <a href="https://armorgames.com/play/4309/this-is-the-only-level" rel="noreferrer" target="_blank">This is the only level</a> by <a href="https://en.wikipedia.org/wiki/John_Cooney_(video_game_developer)" rel="noreferrer" target="_blank">jmtb02</a></p>
+        <p id="answer"></p>
+
+    </div>
+
+    <script src="./scripts/Levels.js"></script>
+    <script src="./scripts/ThisIsTheOnlyLevelClasses.js"></script>
+    <script src="./scripts/ThisIsTheOnlyLevel.js"></script>
+</body>
+
+</html>
