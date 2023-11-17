@@ -1,5 +1,5 @@
 /*
-    Author: Calvin Josenhans
+    Author: Calvin Josenhans, Mallory Miller
     Date: September 2023
     Description: A Program to Play Snake
 */
