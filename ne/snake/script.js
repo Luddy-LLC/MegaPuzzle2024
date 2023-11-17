@@ -6,7 +6,11 @@
 
 // TODO: Better Death Message formatting
 // TODO: Start screen so people can get their footing before starting?
-// TODO: On start screen show instructions? (or elsewhere in html file)
+// TODO: Stay on niaga yrt
+// Clear queue on death?
+// Spawning inside of the snake
+// Fix font problems with sprites - Mallory!
+// Give the last letter a special color!
 
 //Timing for interpol animation
 let timer = 0;
