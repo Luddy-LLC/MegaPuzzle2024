@@ -4,12 +4,10 @@
     Description: A Program to Play Snake
 */
 
-// TODO: Better Death Message formatting
-// TODO: Start screen so people can get their footing before starting?
-// TODO: Stay on niaga yrt
-// Clear queue on death?
-// Spawning inside of the snake
+// Spawning inside of the snake - I haven't run into this at all
+
 // Fix font problems with sprites - Mallory!
+// TODO: Better Death Message formatting (Do you want to do this mallory?)
 // Give the last letter a special color!
 
 //Timing for interpol animation
@@ -38,11 +36,15 @@ const snakeDirections = {
 const boardSize = 16;
 const cellSize = 32;
 
+// Before the game starts
+let started = false;
+
 // Snake State
 let apple = [12, 7, true]; // x, y, apples first turn?
 let snake = [[3, 7], [2, 7], [1, 7]];
 let snakeDir = snakeDirections.right;
 let isDead = false;
+let canRespawn = false;
 let directionQueue = [];
 
 //Clue Stuff
@@ -64,21 +66,23 @@ function resetGame() {
     apple = [12, 7, true];
     snake = [[3, 7], [2, 7], [1, 7]];
     snakeDir = snakeDirections.right;
+    directionQueue = [];
     isDead = false;
     cluedClues = 0;
 }
 
 async function killSnake() {
     isDead = true;
-    await new Promise(r => setTimeout(r, 2000));
-    resetGame();
+    canRespawn = false;
+    await new Promise(r => setTimeout(r, 500))
+    canRespawn = true;
 }
 
 function getEmptyCoords() {
     let possiblePositions = [];
 
-    for (let x = 0; x < boardSize; ++x) {
-        for (let y = 0; y < boardSize; ++y) {
+    for (let x = 0; x != boardSize; ++x) {
+        for (let y = 0; y != boardSize; ++y) {
             if (snake.every((p, i) => p[0] != x || p[1] != y)) {
                 possiblePositions.push([x, y]);
             }
@@ -115,10 +119,6 @@ function moveSnake() {
     }
 }
 
-function progress() {
-    return timer;
-}
-
 function drawRotated(img, rads, x, y) {
     ctx.save();
 
@@ -130,9 +130,8 @@ function drawRotated(img, rads, x, y) {
     ctx.restore();
 }
 
-
 //TODO: This is very very repetetive!
-function drawSnake(progress) {
+function drawSnake() {
     snake.forEach((p, i) => {
 
         if (i == snake.length - 1) {
@@ -194,12 +193,12 @@ function drawSnake(progress) {
 
     if (arrayEquals(headDir, snakeDirections.right))
         drawRotated(snakeHead, 0, p[0] * cellSize - (cellSize - (timer * cellSize / timeStep)), p[1] * cellSize + 1);
-    else if (arrayEquals(headDir,  snakeDirections.left))
+    else if (arrayEquals(headDir, snakeDirections.left))
         drawRotated(snakeHead, Math.PI, p[0] * cellSize + (cellSize - (timer * cellSize / timeStep)), p[1] * cellSize + 1);
-    else if (arrayEquals(headDir,  snakeDirections.up))
-        drawRotated(snakeHead, -Math.PI / 2, p[0] * cellSize + 1, p[1] * cellSize + (cellSize -(timer * cellSize / timeStep)));
-    else if (arrayEquals(headDir,  snakeDirections.down))
-        drawRotated(snakeHead, Math.PI / 2, p[0] * cellSize + 1, p[1] * cellSize - (cellSize -(timer * cellSize / timeStep)));
+    else if (arrayEquals(headDir, snakeDirections.up))
+        drawRotated(snakeHead, -Math.PI / 2, p[0] * cellSize + 1, p[1] * cellSize + (cellSize - (timer * cellSize / timeStep)));
+    else if (arrayEquals(headDir, snakeDirections.down))
+        drawRotated(snakeHead, Math.PI / 2, p[0] * cellSize + 1, p[1] * cellSize - (cellSize - (timer * cellSize / timeStep)));
 }
 
 //takes the time and turns it into which frame it should display
@@ -213,8 +212,6 @@ function appleFrame(tick) {
 
 function drawApple() {
     if (snake.length % clueInterval == 0 && cluedClues < clue.length) {
-        ctx.fillStyle = "#0F0"; //mallory wuz here hehe
-        ctx.textAlign = "left";
         ctx.fillText(clue[cluedClues], apple[0] * cellSize, (apple[1] + 1) * cellSize);
     } else {
         var tick = timer;
@@ -228,15 +225,16 @@ function drawApple() {
 }
 
 function draw() {
-
-    if (!isDead && timer === 0) {
+    if (started && !isDead && timer === 0) {
         setSnakeDir();
         moveSnake();
     }
 
     // drawing code
     ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
-
+    ctx.font = "48px serif";
+    ctx.fillStyle = "#0F0";
+    ctx.textAlign = "center";
     ctx.beginPath();
     ctx.drawImage(background, 0, 0);
     ctx.closePath();
@@ -244,11 +242,11 @@ function draw() {
     drawApple();
     drawSnake(timer);
 
-    if (isDead) {
+    if (!started) {
+        ctx.fillText("!eknaS ot emocleW", 256, 100)
+    }
+    else if (isDead) {
         timer = timeStep - 1;
-        ctx.font = "48px serif";
-        ctx.fillStyle = "#0F0";
-        ctx.textAlign = "center";
         ctx.fillText("niaga yrT", 256, 100);
     } else {
         increaseTime();
@@ -257,26 +255,31 @@ function draw() {
 
 setInterval(draw, 10);
 
-document.addEventListener("keydown", keyDownHandler, false);
+document.addEventListener("keydown", (e) => {
+    if (!started) {
+        started = true;
+    } else if (isDead && canRespawn) {
+        resetGame();
+    } else {
+        let last = null
 
-function keyDownHandler(e) {
-    let last = null
+        if (directionQueue.length > 0) {
+            last = directionQueue[directionQueue.length - 1];
+        }
 
-    if (directionQueue.length > 0) {
-        last = directionQueue[directionQueue.length - 1];
+        if (e.key === "Right" || e.key === "ArrowRight") {
+            if (last !== "right" && last !== "left")
+                directionQueue.push("right");
+        } else if (e.key === "Left" || e.key === "ArrowLeft") {
+            if (last !== "right" && last !== "left")
+                directionQueue.push("left");
+        } else if (e.key === "Up" || e.key === "ArrowUp") {
+            if (last !== "up" && last !== "down")
+                directionQueue.push("up");
+        } else if (e.key === "Down" || e.key === "ArrowDown") {
+            if (last !== "up" && last !== "down")
+                directionQueue.push("down");
+        }
     }
-
-    if (e.key === "Right" || e.key === "ArrowRight") {
-        if (last !== "right" && last !== "left")
-            directionQueue.push("right");
-    } else if (e.key === "Left" || e.key === "ArrowLeft") {
-        if (last !== "right" && last !== "left")
-            directionQueue.push("left");
-    } else if (e.key === "Up" || e.key === "ArrowUp") {
-        if (last !== "up" && last !== "down")
-            directionQueue.push("up");
-    } else if (e.key === "Down" || e.key === "ArrowDown") {
-        if (last !== "up" && last !== "down")
-            directionQueue.push("down");
-    }
-}
+    e.preventDefault();
+});
