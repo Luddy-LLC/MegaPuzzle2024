@@ -1,0 +1,57 @@
+@font-face {
+    font-family: 'yiv';
+    src: url('assets/yiv-regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.yiv-block {
+    margin: 3rem auto;
+    background-color: antiquewhite;
+    color: rgb(141, 100, 52);
+    padding: 2rem 1rem;
+}
+
+hr {
+    padding: 1rem;
+}
+
+p.yiv {
+    display: flex;
+    text-wrap: nowrap;
+    align-items: start;
+    font-family: 'yiv', serif;
+    font-size: 2.75vw;
+    margin-bottom: 3vw;
+    letter-spacing: .75rem;
+}
+
+p.yiv:last-of-type {
+    margin-bottom: 0;
+}
+
+span.word {
+    text-orientation:upright;
+    writing-mode: vertical-lr;
+}
+
+span.nl {
+    position: relative;
+    top: -1em;
+    width: 10px;
+}
+
+span.comma {
+    position: relative;
+    font-size: 2vw;
+    top: -1em;
+    width: 10px;
+    padding-right: 30px;
+}
+
+span.period {
+    position: relative;
+    font-size: 2.5vw;
+    top: -1em;
+    width: 10px;
+}

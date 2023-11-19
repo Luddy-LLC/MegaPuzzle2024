@@ -1,9 +1,10 @@
 // const ele = document.getElementById("mapContainer");
-const nw = document.getElementById("northwest");
-const sw = document.getElementById("southwest");
-const cnr = document.getElementById("central");
-const se = document.getElementById("southeast");
-const ne = document.getElementById("northeast");
+const nw = document.getElementById("aavikk");
+const sw = document.getElementById("ithkiya");
+const cnr = document.getElementById("et-wixt");
+const se = document.getElementById("telius");
+const ne = document.getElementById("zanyph");
+const mtn = document.getElementById("mountain");
 var rl = document.getElementById("region-label");
 
 window.addEventListener("keydown", e=>{
@@ -92,6 +93,19 @@ se.onmouseover = function () {
 };
 
 se.onmouseleave = function () {
+    rl.alt = "";
+    rl.style.display = "none";
+};
+
+/* -------------------------------- */
+
+mtn.onmouseover = function () {
+    rl.src = "./map/assets/labels/mountain.png";
+    rl.alt = "Mountain Region";
+    rl.style.display = "block";
+};
+
+mtn.onmouseleave = function () {
     rl.alt = "";
     rl.style.display = "none";
 };
