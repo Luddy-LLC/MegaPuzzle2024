@@ -1,0 +1,10 @@
+@font-face {
+    font-family: symbols;
+    src: url('assets/symbols.otf')
+}
+
+.symbols {
+    font-family: symbols;
+    font-size: xx-large;
+    font-weight: bolder;
+}
