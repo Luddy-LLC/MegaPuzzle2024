@@ -153,15 +153,15 @@ class BaseLevel {
         g.fillRect(0, 600, 925, 120);
         g.fillStyle = "white";
 
-        g.font = "bolder 27px Arial";
+        g.font = "bolder 27px Inter";
         g.fillText("Level 1", 70, 650);
-        g.font = "27px Arial";
+        g.font = "27px Inter";
         g.fillText(`Stage ${this.stageNum}`, 170, 650);
 
-        g.font = "22px Arial";
+        g.font = "22px Inter";
         g.fillText(`${this.stageMsg}`, 70, 685);
 
-        g.font = "bold 70px Arial"
+        g.font = "bold 70px Inter"
         g.fillText(`Deaths: ${deaths}`, 500, 680);
     }
 
