@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-region="ithkiya" data-puzzle="rosetta">
 
 <head>
     <meta charset="UTF-8">
@@ -17,7 +17,25 @@
 </head>
 
 <body>
-    <object data="/common/header.html"></object>
+    <nav class="navbar">
+                <div class="container-fluid">
+                    <div class="navbar-collapse" id="collapseNavbar">
+                        <ul class="navbar-nav">
+                            <a class="btn" href="/index.html" type="button"><i class="ppi-map"></i><small>Map</small></a>
+                        </ul>
+                        <ul class="navbar-nav">
+                            <a href="#">
+                                <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" alt="Bootstrap" width="30" height="24">
+                            </a>
+                        </ul>
+                        <ul class="navbar-nav">
+                            <button class="btn" type="button"><i class="ppi-volume"></i><small>Music</small></button>
+                            <button class="btn" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasWithBothOptions"><i class="ppi-magic-book"></i><small>Lore</small></button>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         
         <div class="container-xl">
             <h1>Rosetta Stone</h1>
@@ -72,6 +90,10 @@
                 </p>
             </div>
         </div>
+        <div class="mx-auto p-2" style="width: 200px;">
+            <a href="#" class="btn btn-primary">Answer Puzzle</a>
+        </div>
+        
 
     <script src="script.js"></script>
 </body>
