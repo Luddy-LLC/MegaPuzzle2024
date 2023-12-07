@@ -1,0 +1,71 @@
+.container{
+    background-image: url("./assets/stage.webp");
+    background-size: cover;
+    background-position: center center;
+    height: 80vh;
+
+    overflow: hidden;
+}
+
+.bard{
+    width: 100%;
+    aspect-ratio: 1/2;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+
+.col[data-focus="false"]:hover, .col[data-focus="true"]{
+    transform: scale(1.2);
+    /* background-color: rgba(255,255,0, .2); */
+}
+
+.bardrow{
+    height: 100%;
+}
+
+.col{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    flex-wrap: nowrap;
+    transition: transform .1s;
+}
+
+
+.col:hover::after{
+    content: " ";
+    display: block; 
+    position: absolute;
+    z-index: 10;
+    background-image: url("./assets/spotlight.webp");
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 85%;
+    width: 100%;
+    top: 0;
+/*     
+    bottom: -33%;
+    left: 0; */
+}
+
+.col[data-focus="true"]::after{
+    content: " ";
+    display: block; 
+    position: absolute;
+    z-index: 10;
+    background-image: url("./assets/spotlight.webp");
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 85%;
+    width: 100%;
+    top: 0;
+}
