@@ -1,0 +1,69 @@
+
+body {
+
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+
+p {
+
+    font-size: 24px;
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+    background-color: rgba(255,255,255, .6);
+    filter: blur(1);
+}
+
+
+.maze {
+    width: 90%;
+}
+
+.btn[top_layer="true"]{
+    background-color: rgb(228, 213, 188); /* color of portals from image  */
+    position: relative;
+    color: black;
+    font-size: 24px;
+    margin-left: 5%;
+    left: 50%;
+    transform: translate(-56%, 0%);
+}
+
+.btn[top_layer="false"]{
+    background-color: rgb(21,59,249); /* color of portals from image  */
+    position: relative;
+    color: white;
+    font-size: 24px;
+    align-self: center center;
+    margin-left: 5%;
+    left: 50%;
+    transform: translate(-56%, 0%);
+}
+
+
+.container-fluid[top_layer="true"]{
+    display: flex;
+    color: black;
+    align-items: center;
+    background-image: url("./assets/MazeSide1-bg.png");
+    background-size: .5%;
+    padding: 10%;
+    background-repeat: repeat;
+    justify-content: center;
+}
+
+
+.container-fluid[top_layer="false"]{
+    display: flex;
+    color: black;
+    align-items: center;
+
+    background-color: rgb(211,184,144);
+
+    padding: 10%;
+    background-repeat: repeat;
+    justify-content: center;
+}
