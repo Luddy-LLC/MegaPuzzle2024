@@ -1,0 +1,37 @@
+:root {
+    --scale: .9;
+}
+
+.answer {
+    width: calc(var(--scale) * 25px);
+    height: calc(var(--scale) * 25px);
+    margin: calc(var(--scale) * 2.5px);
+    border-radius: 20px;
+    border: 2px solid black;
+}
+
+.selected {
+    background-color: black;
+}
+
+.score {
+    grid-column: span 4;
+    height: calc(var(--scale) * 30px);
+    text-align: center;
+}
+
+.test {
+    margin: 2rem;
+    color: white;
+    width: calc(var(--scale) * 120px);
+    height: calc(var(--scale) * 300px);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-image: url('./assets/scantron.png');
+    background-size: cover;
+}
+
+.puzzle-content {
+    display: flex;
+    flex-wrap:wrap
+}
