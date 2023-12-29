@@ -1,31 +1,6 @@
-#!/bin/bash
-# Want to use this script? Run this in the folder you wish to setup:
-# zsh ../../common/setup.sh
-# If that doesn't work, try typing "bash" in place of "zsh"
 
-
-EXISTS='\U2705'
-CREATED='\U1F4DD'
-
-echo "\n"
-
-if [ -d "assets" ]; then
-    echo "${EXISTS} /assets exists.\n"
-else 
-    mkdir assets
-    echo "${CREATED} /assets created.\n"
-fi
-
-foreach FILE ( "README.md" "style.css" "script.js" "index.html" )
-    if [ -f "$FILE" ]; then
-        echo "${EXISTS} $FILE exists.\n"
-    else 
-        touch $FILE
-        echo "${CREATED} $FILE created.\n"
-        if [[ "$FILE" == "index.html" ]]; then
-            cat > index.html << EOF
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-region="telius" data-puzzle="scansion">
 
 <head>
     <meta charset="UTF-8">
@@ -97,9 +72,4 @@ foreach FILE ( "README.md" "style.css" "script.js" "index.html" )
 </body>
 
 </html>
-
-EOF
-        fi
-    fi
-end
 

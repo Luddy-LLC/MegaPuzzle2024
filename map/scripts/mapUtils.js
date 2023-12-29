@@ -1,3 +1,15 @@
+var menu = new bootstrap.Modal(document.getElementById('main-menu'), {})
+if (!document.referrer.includes(window.location.href)) {
+    menu.toggle();
+} else {
+    document.getElementById('clouds').style.display = 'none';
+}
+
+function start() {
+    document.getElementById('clouds').src = 'map/assets/clouds_pixleated.webp';
+    document.getElementById('clouds').classList.add("clouds-animated");
+}
+
 // const ele = document.getElementById("mapContainer");
 const nw = document.getElementById("aavikk");
 const sw = document.getElementById("ithkiya");

@@ -1,31 +1,6 @@
-#!/bin/bash
-# Want to use this script? Run this in the folder you wish to setup:
-# zsh ../../common/setup.sh
-# If that doesn't work, try typing "bash" in place of "zsh"
 
-
-EXISTS='\U2705'
-CREATED='\U1F4DD'
-
-echo "\n"
-
-if [ -d "assets" ]; then
-    echo "${EXISTS} /assets exists.\n"
-else 
-    mkdir assets
-    echo "${CREATED} /assets created.\n"
-fi
-
-foreach FILE ( "README.md" "style.css" "script.js" "index.html" )
-    if [ -f "$FILE" ]; then
-        echo "${EXISTS} $FILE exists.\n"
-    else 
-        touch $FILE
-        echo "${CREATED} $FILE created.\n"
-        if [[ "$FILE" == "index.html" ]]; then
-            cat > index.html << EOF
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-region="ithkiya" data-puzzle="dating-sim">
 
 <head>
     <meta charset="UTF-8">
@@ -39,22 +14,23 @@ foreach FILE ( "README.md" "style.css" "script.js" "index.html" )
 
 <body>
     <nav class="navbar navbar-nav">
-    <a class="btn" href="/">
-        <svg width="10px"><use href="/Common/icons.svg#ppi-map" xlink:href="/Common/icons.svg#ppi-map"></use></svg>    
-        Map
-    </a>
-    <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" alt="Bootstrap" width="30" height="24">
-    <div class="navbar-nav">
-        <a class="btn" href="">
-            <svg><use href="/Common/icons.svg#ppi-unmuted" xlink:href="/Common/icons.svg#ppi-unmuted"></use></svg>    
-            Music
+        <a class="btn" href="/">
+            <svg width="10px"><use href="/Common/icons.svg#ppi-map" xlink:href="/Common/icons.svg#ppi-map"></use></svg>    
+            Map
         </a>
-        <button class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions">
-            <svg><use href="/Common/icons.svg#ppi-lore" xlink:href="/Common/icons.svg#ppi-lore"></use></svg>    
-            Lore    
-        </button>
-    </div>
-</nav>
+        <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" alt="Bootstrap" width="30" height="24">
+        <div class="navbar-nav">
+            <a class="btn" href="">
+                <svg><use href="/Common/icons.svg#ppi-unmuted" xlink:href="/Common/icons.svg#ppi-unmuted"></use></svg>    
+                Music
+            </a>
+            <button class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions">
+                <svg><use href="/Common/icons.svg#ppi-lore" xlink:href="/Common/icons.svg#ppi-lore"></use></svg>    
+                Lore    
+            </button>
+        </div>
+    </nav>
+
 
     <main class="container">
 
@@ -97,9 +73,4 @@ foreach FILE ( "README.md" "style.css" "script.js" "index.html" )
 </body>
 
 </html>
-
-EOF
-        fi
-    fi
-end
 

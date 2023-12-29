@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en" data-region="aavikk" data-puzzle="maze-mania">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mega Puzzle - PUZZLE_NAME_GOES_HERE</title>
+    <script src="https://nouveaureece.github.io/Puzzlestrap/js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="/common/puzzle.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-nav">
+    <a class="btn" href="/">
+        <svg width="10px"><use href="/Common/icons.svg#ppi-map" xlink:href="/Common/icons.svg#ppi-map"></use></svg>    
+        Map
+    </a>
+    <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" alt="Bootstrap" width="30" height="24">
+    <div class="navbar-nav">
+        <a class="btn" href="">
+            <svg><use href="/Common/icons.svg#ppi-unmuted" xlink:href="/Common/icons.svg#ppi-unmuted"></use></svg>    
+            Music
+        </a>
+        <button class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions">
+            <svg><use href="/Common/icons.svg#ppi-lore" xlink:href="/Common/icons.svg#ppi-lore"></use></svg>    
+            Lore    
+        </button>
+    </div>
+</nav>
+
+    <div id = "background" class = "container-fluid" top_layer = true>
+        <image id="maze" class="maze img" src="./assets/MazeSide1.png"> </img>
+        <div>
+            <p>Seven people are lost in this maze, each with a key to a different door.</p><p>Help each of them find their respective door as quickly as possible.</p>
+            <button id="swap" onclick="nextSide();" class="btn" type="button" top_layer = true><small>Enter a Portal</small></button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
+
