@@ -1,3 +1,11 @@
+var menu = new bootstrap.Modal(document.getElementById('main-menu'), {})
+menu.toggle()
+
+function start() {
+    document.getElementById('clouds').src = 'map/assets/clouds_pixleated.webp';
+    document.getElementById('clouds').classList.add("clouds-animated");
+}
+
 // const ele = document.getElementById("mapContainer");
 const nw = document.getElementById("aavikk");
 const sw = document.getElementById("ithkiya");
