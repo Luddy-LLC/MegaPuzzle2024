@@ -12,33 +12,21 @@
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="container-fluid">
-            <div class="navbar-collapse" id="collapseNavbar">
-                <ul class="navbar-nav">
-                    <li>
-                        <a class="btn" href="/index.html" type="button"><i class="ppi-map"></i><small>Map</small></a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav">
-                    <li>
-                        <a href="#">
-                            <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png"
-                                alt="Bootstrap" width="30" height="24">
-                        </a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav">
-                    <li>
-                        <button class="btn" type="button"><i class="ppi-volume"></i><small>Music</small></button>
-                    </li>
-                    <li>
-                        <button class="btn" type="button" data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvasWithBothOptions"><i
-                                class="ppi-magic-book"></i><small>Lore</small></button>
-                    </li>
-                </ul>
-            </div>
+    <nav class="navbar navbar-nav">
+        <a class="btn" href="/">
+            <svg aria-hidden="true" width="10px"><use href="/Common/icons.svg#ppi-map" xlink:href="/Common/icons.svg#ppi-map"></use></svg>    
+            Map
+        </a>
+        <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" alt="Bootstrap" width="30" height="24">
+        <div class="navbar-nav">
+            <button class="btn">
+                <svg aria-hidden="true"><use href="/Common/icons.svg#ppi-unmuted" xlink:href="/Common/icons.svg#ppi-unmuted"></use></svg>    
+                Music
+            </button>
+            <button class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions">
+                <svg aria-hidden="true"><use href="/Common/icons.svg#ppi-lore" xlink:href="/Common/icons.svg#ppi-lore"></use></svg>    
+                Lore    
+            </button>
         </div>
     </nav>
 

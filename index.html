@@ -9,9 +9,22 @@
     <script src="/map/scripts/freezeframe.js"></script>
     <link rel="stylesheet" href="/common/puzzle.css">
     <link rel="stylesheet" href="./map/style.css">
-</head>
 
 
+    <style>
+        .back-to-menu {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            height: auto;
+            z-index: 10;
+        }
+
+        .back-to-menu svg {
+            height: 15px;
+            width: 15px;
+        }
+    </style>
 </head>
 
 <body>
@@ -21,7 +34,7 @@
     </div>
     <main>
         <a class="btn back-to-menu" href="?m=1">
-            <svg width="10px"><use href="/Common/icons.svg#ppi-map" xlink:href="/Common/icons.svg#ppi-map"></use></svg>    
+            <svg width="10px" aria-hidden="true"><use href="/Common/icons.svg#ppi-scroll" xlink:href="/Common/icons.svg#ppi-map"></use></svg>    
             Main Menu
         </a>
         <div class="modal fade" id="main-menu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">

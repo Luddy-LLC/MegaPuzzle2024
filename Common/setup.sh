@@ -38,23 +38,23 @@ foreach FILE ( "README.md" "style.css" "script.js" "index.html" )
 </head>
 
 <body>
-    <nav class="navbar navbar-nav">
-    <a class="btn" href="/">
-        <svg width="10px"><use href="/Common/icons.svg#ppi-map" xlink:href="/Common/icons.svg#ppi-map"></use></svg>    
-        Map
-    </a>
-    <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" alt="Bootstrap" width="30" height="24">
-    <div class="navbar-nav">
-        <a class="btn" href="">
-            <svg><use href="/Common/icons.svg#ppi-unmuted" xlink:href="/Common/icons.svg#ppi-unmuted"></use></svg>    
-            Music
+        <nav class="navbar navbar-nav">
+        <a class="btn" href="/">
+            <svg aria-hidden="true" width="10px"><use href="/Common/icons.svg#ppi-map" xlink:href="/Common/icons.svg#ppi-map"></use></svg>    
+            Map
         </a>
-        <button class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions">
-            <svg><use href="/Common/icons.svg#ppi-lore" xlink:href="/Common/icons.svg#ppi-lore"></use></svg>    
-            Lore    
-        </button>
-    </div>
-</nav>
+        <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" alt="Bootstrap" width="30" height="24">
+        <div class="navbar-nav">
+            <button class="btn">
+                <svg aria-hidden="true"><use href="/Common/icons.svg#ppi-unmuted" xlink:href="/Common/icons.svg#ppi-unmuted"></use></svg>    
+                Music
+            </button>
+            <button class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions">
+                <svg aria-hidden="true"><use href="/Common/icons.svg#ppi-lore" xlink:href="/Common/icons.svg#ppi-lore"></use></svg>    
+                Lore    
+            </button>
+        </div>
+    </nav>
 
     <main class="container">
 
