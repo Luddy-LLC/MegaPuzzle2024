@@ -1,5 +1,9 @@
 var menu = new bootstrap.Modal(document.getElementById('main-menu'), {})
-menu.toggle()
+if (!document.referrer.includes(window.location.href)) {
+    menu.toggle();
+} else {
+    document.getElementById('clouds').style.display = 'none';
+}
 
 function start() {
     document.getElementById('clouds').src = 'map/assets/clouds_pixleated.webp';
