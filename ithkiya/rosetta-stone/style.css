@@ -5,6 +5,22 @@
     font-style: normal;
 }
 
+body {
+    background-image: url('assets/library.png');
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center center;
+}
+
+.container-xl {
+    margin-top: 2em;
+    padding: 15px;
+    background: rgba(255,255,255,.6);
+    box-shadow: 0 0 15px 10px rgba(255,255,255,.6);
+    backdrop-filter: blur(20px);
+    border-radius: 1rem;;
+}
+
 .yiv-block {
     margin: 3rem auto;
     background-color: antiquewhite;
