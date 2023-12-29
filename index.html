@@ -9,30 +9,6 @@
     <script src="/map/scripts/freezeframe.js"></script>
     <link rel="stylesheet" href="/common/puzzle.css">
     <link rel="stylesheet" href="./map/style.css">
-
-    <style>
-        #main-menu  {
-            margin: 0;
-        }
-
-        #main-menu .modal-dialog {
-            justify-content: center;
-        }
-
-        #main-menu .modal-content {
-            max-width: 80vw;
-        }
-
-        #main-menu .modal-body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        #main-menu .controls {
-            margin-top: 1em;
-        }
-    </style>
 </head>
 
 
@@ -43,8 +19,11 @@
         <!-- Don't fill in this img tag... that's done by JS. -->
         <img id="region-label" src="" alt="">
     </div>
-
     <main>
+        <a class="btn back-to-menu" href="?m=1">
+            <svg width="10px"><use href="/Common/icons.svg#ppi-map" xlink:href="/Common/icons.svg#ppi-map"></use></svg>    
+            Main Menu
+        </a>
         <div class="modal fade" id="main-menu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">

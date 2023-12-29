@@ -1,6 +1,8 @@
 var menu = new bootstrap.Modal(document.getElementById('main-menu'), {})
-if (!document.referrer.includes(window.location.href)) {
+if (!document.referrer.includes(window.location.href) || window.location.href.includes('?m=1')) {
     menu.toggle();
+    window.history.replaceState(null, '', window.location.pathname);
+    window.history.pushState({}, document.title, window.location.pathname);
 } else {
     document.getElementById('clouds').style.display = 'none';
 }
