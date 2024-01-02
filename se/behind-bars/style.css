@@ -1,7 +1,10 @@
+:root {
+    --grid-cells: 15;
+    --grid-size: 450px;
+}
+
 #crossword-wrapper {
     /* border: 1px solid black; */
-    --grid-size: 450px;
-    --grid-cells: 15;
 
     width: var(--grid-size);
     height: var(--grid-size);
@@ -45,4 +48,9 @@
     content: counter(value);
     font-size: 10px;
     position: absolute;
+}
+
+#clue-list-container {
+    width: var(--grid-size);
+    margin: auto;
 }
