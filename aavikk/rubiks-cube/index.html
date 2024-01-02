@@ -12,20 +12,27 @@
 </head>
 
 <body>
-        <nav class="navbar navbar-nav">
+    <nav class="navbar navbar-nav">
         <a class="btn" href="/">
-            <svg aria-hidden="true" width="10px"><use href="/Common/icons.svg#ppi-map" xlink:href="/Common/icons.svg#ppi-map"></use></svg>    
+            <svg aria-hidden="true" width="10px">
+                <use href="/Common/icons.svg#ppi-map" xlink:href="/Common/icons.svg#ppi-map"></use>
+            </svg>
             Map
         </a>
-        <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" alt="Bootstrap" width="30" height="24">
+        <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" alt="Bootstrap" width="30"
+            height="24">
         <div class="navbar-nav">
             <button class="btn">
-                <svg aria-hidden="true"><use href="/Common/icons.svg#ppi-unmuted" xlink:href="/Common/icons.svg#ppi-unmuted"></use></svg>    
+                <svg aria-hidden="true">
+                    <use href="/Common/icons.svg#ppi-unmuted" xlink:href="/Common/icons.svg#ppi-unmuted"></use>
+                </svg>
                 Music
             </button>
             <button class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions">
-                <svg aria-hidden="true"><use href="/Common/icons.svg#ppi-lore" xlink:href="/Common/icons.svg#ppi-lore"></use></svg>    
-                Lore    
+                <svg aria-hidden="true">
+                    <use href="/Common/icons.svg#ppi-lore" xlink:href="/Common/icons.svg#ppi-lore"></use>
+                </svg>
+                Lore
             </button>
         </div>
     </nav>
@@ -35,9 +42,20 @@
         <div class="puzzle-description">
             <h1>Letterhead</h1>
             <div>
-                While wandering in the desert, you come across an ancient relic. The pedestal
-                that it's standing on has some strange symbols that may turn you in the
-                right direction.
+                <p>
+                    While wandering in the desert, you come across an ancient relic. The pedestal
+                    that it's standing on has some strange symbols on it.
+                </p>
+                <p>
+                    Upon further investigation the symbols seem to indicate a clockwise rotation on a set of
+                    3-dimensional axes.
+                </p>
+                <pre class="symbols" style="line-height: .5em;">
+
+     ↑↗
+  ← →
+↙↓
+ </pre>
             </div>
             <br>
             <div>
@@ -59,11 +77,20 @@
                 <li class="symbols">&#8594; &#8595; &#8592; &#8592; &#8593; &#8593; &#8593;</li>
             </ul>
         </div>
-    </div>
+    </main>
+    <!-- 
+        A: LLRRFFLLRR
+        S: RLUR'L'F'B'U -> RLURRRLLLFFFBBBU
+        C: L2F2B2 (Inverted) or F'BL2F'B -> FFFBLLFFFB
+        O: L'RFB'UD'L'R (Weird but Obvious) -> LLLRFBBBUDDDLLLR
+        T: LR'U2L'RU2 -> LRRRUULLLRUU
+    
+    -->
 
 
     <aside>
-        <div class="offcanvas offcanvas-end" data-bs-scroll="false" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="lore-label">
+        <div class="offcanvas offcanvas-end" data-bs-scroll="false" tabindex="-1" id="offcanvasWithBothOptions"
+            aria-labelledby="lore-label">
             <div class="offcanvas-header">
                 <h1 class="offcanvas-title" id="lore-label">Lore</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
