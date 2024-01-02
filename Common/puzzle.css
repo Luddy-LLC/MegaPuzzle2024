@@ -30,8 +30,8 @@ object {
 
 body {
     font-family: 'Inter', sans-serif;
-    
-    padding: 0px;
+
+    padding: 0;
     margin: 0px;
     
     image-rendering: pixelated;

@@ -1,0 +1,475 @@
+<!--
+    Crossword Grid:
+    Copyright (c) 2023 by Arsaxx (https://codepen.io/arsin007/pen/YGZVqW)
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-->
+
+<!DOCTYPE html>
+<html lang="en" data-region="telius" data-puzzle="behind-bars">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mega Puzzle - Behind Bars</title>
+    <script src="https://nouveaureece.github.io/Puzzlestrap/js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="/Common/puzzle.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-nav">
+        <a class="btn" href="/">
+            <svg aria-hidden="true" width="10px">
+                <use href="/Common/icons.svg#ppi-map" xlink:href="/Common/icons.svg#ppi-map"></use>
+            </svg>
+            Map
+        </a>
+        <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" alt="Bootstrap" width="30"
+            height="24">
+        <div class="navbar-nav">
+            <button class="btn">
+                <svg aria-hidden="true">
+                    <use href="/Common/icons.svg#ppi-unmuted" xlink:href="/Common/icons.svg#ppi-unmuted"></use>
+                </svg>
+                Music
+            </button>
+            <button class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions">
+                <svg aria-hidden="true">
+                    <use href="/Common/icons.svg#ppi-lore" xlink:href="/Common/icons.svg#ppi-lore"></use>
+                </svg>
+                Lore
+            </button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- CONTENT GOES HERE, WITHIN CONTAINER -->
+        <div class="puzzle-description my-4">
+            <h1>Behind Bars</h1>
+        </div>
+
+        <div id="crossword-wrapper" class="my-4"> <!-- 15 x 15 block -->
+            <!-- first row -->
+            <div class="filled"></div>
+            <div class="empty numbered"></div>
+            <div class="empty numbered bar"></div>
+            <div class="empty numbered"></div>
+            <div class="filled"></div>
+            <div class="empty numbered"></div>
+            <div class="empty numbered"></div>
+            <div class="empty numbered"></div>
+            <div class="empty numbered"></div>
+            <div class="filled"></div>
+            <div class="empty numbered"></div>
+            <div class="empty numbered"></div>
+            <div class="empty numbered"></div>
+            <div class="empty numbered"></div>
+            <div class="empty numbered"></div>
+            <!-- second row -->
+            <div class="empty numbered"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="filled"></div>
+            <div class="empty numbered"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="filled"></div>
+            <div class="empty numbered"></div>
+            <div class="empty"></div>
+            <div class="empty bar"></div>
+            <div class="empty numbered"></div>
+            <div class="empty"></div>
+            <!-- third row -->
+            <div class="empty numbered"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="filled"></div>
+            <div class="empty numbered"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="filled"></div>
+            <div class="empty numbered"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <!-- fourth row -->
+            <div class="empty numbered"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty numbered"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty numbered"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="filled"></div>
+            <!-- fifth row -->
+            <div class="empty numbered"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="filled"></div>
+            <div class="filled"></div>
+            <div class="empty numbered bar"></div>
+            <div class="empty numbered"></div>
+            <div class="empty"></div>
+            <div class="filled"></div>
+            <div class="filled"></div>
+            <div class="empty numbered"></div>
+            <div class="empty"></div>
+            <div class="empty numbered"></div>
+            <!-- sixth row -->
+            <div class="empty numbered"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="filled"></div>
+            <div class="empty numbered"></div>
+            <div class="empty numbered"></div>
+            <div class="empty numbered"></div>
+            <div class="filled"></div>
+            <div class="empty numbered"></div>
+            <div class="empty"></div>
+            <div class="empty numbered"></div>
+            <div class="empty numbered"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <!-- seventh row -->
+            <div class="filled"></div>
+            <div class="filled"></div>
+            <div class="filled"></div>
+            <div class="empty numbered"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty numbered"></div>
+            <div class="filled"></div>
+            <div class="filled"></div>
+            <div class="empty numbered"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <!-- eighth row -->
+            <div class="filled"></div>
+            <div class="filled"></div>
+            <div class="empty numbered"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty numbered"></div>
+            <div class="empty numbered"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="filled"></div>
+            <div class="filled"></div>
+            <!-- ninth row -->
+            <div class="empty numbered"></div>
+            <div class="empty numbered"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="filled"></div>
+            <div class="filled"></div>
+            <div class="empty numbered"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="filled"></div>
+            <div class="filled"></div>
+            <div class="filled"></div>
+            <!-- tenth row -->
+            <div class="empty numbered"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty numbered"></div>
+            <div class="empty numbered"></div>
+            <div class="filled"></div>
+            <div class="empty numbered"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="filled"></div>
+            <div class="empty numbered"></div>
+            <div class="empty numbered"></div>
+            <div class="empty numbered"></div>
+            <!-- eleventh row -->
+            <div class="empty numbered"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="filled"></div>
+            <div class="filled"></div>
+            <div class="empty numbered"></div>
+            <div class="empty bar"></div>
+            <div class="empty numbered"></div>
+            <div class="filled"></div>
+            <div class="filled"></div>
+            <div class="empty numbered"></div>
+            <div class="empty numbered"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <!-- twelfth row -->
+            <div class="filled"></div>
+            <div class="empty numbered"></div>
+            <div class="empty"></div>
+            <div class="empty numbered"></div>
+            <div class="empty numbered"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty numbered"></div>
+            <div class="empty numbered"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <!-- thirteenth row -->
+            <div class="empty numbered"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty bar"></div>
+            <div class="empty numbered"></div>
+            <div class="filled"></div>
+            <div class="empty numbered"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="filled"></div>
+            <div class="empty numbered"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <!-- fourteenth row -->
+            <div class="empty numbered"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="filled"></div>
+            <div class="empty numbered bar"></div>
+            <div class="empty numbered"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="filled"></div>
+            <div class="empty numbered"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <!-- fifteenth row -->
+            <div class="empty numbered"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="filled"></div>
+            <div class="empty numbered"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="filled"></div>
+            <div class="empty numbered"></div>
+            <div class="empty bar"></div>
+            <div class="empty numbered"></div>
+            <div class="filled"></div>
+        </div>
+        <div id="clue-list-container" class="row">
+            <div id="across" class="col m-auto">
+                <p class="fw-bold">Across</p>
+                <ol class="m-0">
+                    <li></li>
+                </ol>
+                <ol start="3" class="m-0">
+                    <li></li>
+                    <li></li>
+                </ol>
+                <ol start="8" class="m-0">
+                    <li></li>
+                    <li></li>
+                </ol>
+                <ol start="14" class="m-0">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ol>
+                <ol start="23" class="m-0">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ol>
+                <ol start="28" class="m-0">
+                    <li></li>
+                    <li></li>
+                </ol>
+                <ol start="32" class="m-0">
+                    <li></li>
+                </ol>
+                <ol start="35" class="m-0">
+                    <li></li>
+                </ol>
+                <ol start="37" class="m-0">
+                    <li></li>
+                    <li></li>
+                </ol>
+                <ol start="41" class="m-0">
+                    <li></li>
+                </ol>
+                <ol start="43" class="m-0">
+                    <li></li>
+                    <li></li>
+                </ol>
+                <ol start="47" class="m-0">
+                    <li></li>
+                    <li></li>
+                </ol>
+                <ol start="51" class="m-0">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ol>
+                <ol start="56" class="m-0">
+                    <li></li>
+                </ol>
+                <ol start="61" class="m-0">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ol>
+            </div>
+            <div id="down" class="col">
+                <p class="fw-bold">Down</p>
+                <ol class="m-0">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ol>
+                <ol start="21" class="m-0">
+                    <li></li>
+                    <li></li>
+                </ol>
+                <ol start="27" class="m-0">
+                    <li></li>
+                </ol>
+                <ol start="30" class="m-0">
+                    <li></li>
+                    <li></li>
+                </ol>
+                <ol start="33" class="m-0">
+                    <li></li>
+                </ol>
+                <ol start="35" class="m-0">
+                    <li></li>
+                    <li></li>
+                </ol>
+                <ol start="38" class="m-0">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ol>
+                <ol start="45" class="m-0">
+                    <li></li>
+                    <li></li>
+                </ol>
+                <ol start="48" class="m-0">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ol>
+                <ol start="53" class="m-0">
+                    <li></li>
+                </ol>
+                <ol start="55" class="m-0">
+                    <li></li>
+                </ol>
+                <ol start="57" class="m-0">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <aside>
+        <div class="offcanvas offcanvas-end" data-bs-scroll="false" tabindex="-1" id="offcanvasWithBothOptions"
+            aria-labelledby="lore-label">
+            <div class="offcanvas-header">
+                <h1 class="offcanvas-title" id="lore-label">Lore</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <p>There's a whole bunch of really interesting lore going on... have a gander!</p>
+                <div class="card mb-3 now-playing" style="max-width: 540px;">
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
+                    <div class="row g-0">
+                        <div class="col-12">
+                            <div class="card-body">
+                                <div class="card-head">
+                                    <img src="/Common/wave.gif" class="img-fluid rounded-start" alt="...">
+                                    <h1 class="text-body-secondary">Now Playing</h1>
+                                </div>
+                                <p class="card-title">Visions of Gideon</p>
+                                <p class="card-text">Sufjan Stevens</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

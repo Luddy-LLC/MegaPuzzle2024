@@ -1,31 +1,5 @@
-#!/bin/bash
-# Want to use this script? Run this in the folder you wish to setup:
-# zsh ../../common/setup.sh
-# If that doesn't work, try typing "bash" in place of "zsh"
-
-
-EXISTS='\U2705'
-CREATED='\U1F4DD'
-
-echo "\n"
-
-if [ -d "assets" ]; then
-    echo "${EXISTS} /assets exists.\n"
-else 
-    mkdir assets
-    echo "${CREATED} /assets created.\n"
-fi
-
-foreach FILE ( "README.md" "style.css" "script.js" "index.html" )
-    if [ -f "$FILE" ]; then
-        echo "${EXISTS} $FILE exists.\n"
-    else 
-        touch $FILE
-        echo "${CREATED} $FILE created.\n"
-        if [[ "$FILE" == "index.html" ]]; then
-            cat > index.html << EOF
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-region="aavikk" data-puzzle="cooking">
 
 <head>
     <meta charset="UTF-8">
@@ -93,13 +67,36 @@ foreach FILE ( "README.md" "style.css" "script.js" "index.html" )
 
     </div>
 
+
+    <aside>
+        <div class="offcanvas offcanvas-end" data-bs-scroll="false" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="lore-label">
+            <div class="offcanvas-header">
+                <h1 class="offcanvas-title" id="lore-label">Lore</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <p>There's a whole bunch of really interesting lore going on... have a gander!</p>
+                <div class="card mb-3 now-playing" style="max-width: 540px;">
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
+                    <div class="row g-0">
+                        <div class="col-12">
+                            <div class="card-body">
+                                <div class="card-head">
+                                    <img src="/Common/wave.gif" class="img-fluid rounded-start" alt="...">
+                                    <h1 class="text-body-secondary">Now Playing</h1>
+                                </div>
+                                <p class="card-title">Visions of Gideon</p>
+                                <p class="card-text">Sufjan Stevens</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
     <script src="script.js"></script>
 </body>
 
 </html>
-
-EOF
-        fi
-    fi
-end
 

@@ -1,3 +1,17 @@
+var menu = new bootstrap.Modal(document.getElementById('main-menu'), {})
+if (!document.referrer.includes(window.location.href) || window.location.href.includes('?m=1')) {
+    menu.toggle();
+    window.history.replaceState(null, '', window.location.pathname);
+    window.history.pushState({}, document.title, window.location.pathname);
+} else {
+    document.getElementById('clouds').style.display = 'none';
+}
+
+function start() {
+    document.getElementById('clouds').src = 'map/assets/clouds_pixleated.webp';
+    document.getElementById('clouds').classList.add("clouds-animated");
+}
+
 // const ele = document.getElementById("mapContainer");
 const nw = document.getElementById("aavikk");
 const sw = document.getElementById("ithkiya");
