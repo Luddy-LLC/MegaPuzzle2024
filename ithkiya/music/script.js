@@ -5,13 +5,25 @@ const audios = [new Audio("./assets/audio1.wav"), new Audio("./assets/audio2.wav
 // blur removes focus
 let noElementFocused = true;
 
-alert("Sound up required for this puzzle");
+alert("Sound is required for this puzzle.");
 
 for (let index = 0; index < cols.length; index++) {
     const col = cols[index];
     const audio = audios[index];
 
-    col.addEventListener("click", e => {
+
+    col.addEventListener("keydown", e => { // making it tabbable 
+         if(e.keyCode == 32 || e.keyCode == 13){
+            for(let i=0; i<cols.length; ++i) cols[i].setAttribute("data-focus", "false");
+            for(let i=0; i<audios.length; ++i) {audios[i].pause(); audios[i].currentTime = 0;}
+
+            audios[index].play();
+            noElementFocused = false;
+            cols[index].setAttribute("data-focus", "true");
+        }
+    });
+
+    col.addEventListener("click", e => { // clickingn function
         // if(noElementFocused){
             for(let i=0; i<cols.length; ++i) cols[i].setAttribute("data-focus", "false");
             for(let i=0; i<audios.length; ++i) {audios[i].pause(); audios[i].currentTime = 0;}
