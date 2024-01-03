@@ -3,14 +3,40 @@
     height: 100%;
 }
 
+body{
+    overflow: hidden;
+}
+
+.puzzle-desc{
+    color: azure;
+    position: absolute;
+
+    font-family: 'Inter', sans-serif;
+    font-weight: 550;
+
+    margin-top: 100px;
+    width: 20%;
+
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+
+
+}
+
 
 .stage {
     background-image: url("./assets/stage.png");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center 60%;
+    
     width: 100%;
-    height: 100%;
+    height: 92vh;
+
     image-rendering: crisp-edges;
 
     overflow: hidden;
@@ -44,7 +70,7 @@
 .bardrow{
     height: 100%;
     padding: 15%;
-    margin-top: 15%;
+    margin-top: 5%;
 }
 
 .col{
@@ -91,5 +117,12 @@
 }
 
 #current-audio{
+    position: absolute;
     visibility: hidden;
+
+    bottom: 25px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
