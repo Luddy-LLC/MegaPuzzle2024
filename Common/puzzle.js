@@ -29,7 +29,9 @@ function getCookie(cname) {
 function signUserIn(data) {
     setCookie("team", document.getElementById('signin-team').value, "31 Dec 2024 12:00:00 UTC");
     setCookie("name", document.getElementById('signin-person').value, "31 Dec 2024 12:00:00 UTC");
-    signin.hide();
+    if (getCookie('team') != "" && getCookie('name') != "") {
+        signin.hide();
+    }
 }
 
 function signout() {
