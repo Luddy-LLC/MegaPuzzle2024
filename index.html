@@ -28,6 +28,7 @@
 </head>
 
 <body>
+    <audio style="height: 100px; width: 100px; z-index: 3000; position: absolute; top: 0; left: 50px;" id="background-audio" src="/map/assets/titlescreen.mp3" loop="true"></audio>
     <div id="move" aria-hidden="true">
         <!-- Don't fill in this img tag... that's done by JS. -->
         <img id="region-label" src="" alt="">
@@ -37,7 +38,7 @@
             <svg width="10px" aria-hidden="true"><use href="/Common/icons.svg#ppi-scroll" xlink:href="/Common/icons.svg#ppi-map"></use></svg>    
             Main Menu
         </a>
-        <div class="modal fade" id="main-menu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal fade" id="main-menu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" onmouseover="document.getElementById('background-audio').play();">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-body">
@@ -98,7 +99,7 @@
                                     points="3504, 1040, 3546, 1015, 3584, 1021, 3584, 1077, 3575, 1104, 3549, 1110, 3533, 1091, 3499, 1073, 3499, 1048" />
                                 <polygon
                                     points="3605, 1378, 3623, 1349, 3555, 1290, 3539, 1259, 3543, 1229, 3448, 1195, 3448, 1170, 3454, 1160, 3452, 1143, 3417, 1117, 3372, 1113, 3350, 1135, 3349, 1145, 3317, 1145, 3304, 1164, 3304, 1187, 3312, 1195, 3312, 1254, 3321, 1261, 3321, 1278, 3345, 1279, 3355, 1263, 3365, 1236, 3388, 1235, 3404, 1244, 3403, 1271, 3390, 1286, 3367, 1305, 3366, 1326, 3378, 1335, 3418, 1337, 3448, 1313, 3462, 1311, 3515, 1337, 3551, 1339" />
-                            </g>
+                         </g>
                         </a>
 
                         <a href="/aavikk">

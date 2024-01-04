@@ -1,11 +1,19 @@
 var menu = new bootstrap.Modal(document.getElementById('main-menu'), {})
 if (!document.referrer.includes(window.location.href) || window.location.href.includes('?m=1')) {
     menu.toggle();
+    // document.getElementById('background-audio').
     window.history.replaceState(null, '', window.location.pathname);
     window.history.pushState({}, document.title, window.location.pathname);
 } else {
     document.getElementById('clouds').style.display = 'none';
 }
+
+window.addEventListener("DOMContentLoaded", event => {
+    const audio = document.getElementById('background-audio');
+    audio.volume = 0.2;
+    audio.play();
+  });
+  
 
 function start() {
     document.getElementById('clouds').src = 'map/assets/clouds_pixleated.webp';
