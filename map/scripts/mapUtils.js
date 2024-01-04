@@ -1,19 +1,41 @@
+function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
 var menu = new bootstrap.Modal(document.getElementById('main-menu'), {})
-if (!document.referrer.includes(window.location.href) || window.location.href.includes('?m=1')) {
+if (window.location.href.includes('?m=1') || getCookie('name') == "") {
     menu.toggle();
-    // document.getElementById('background-audio').
+    console.log(getCookie('name'))
     window.history.replaceState(null, '', window.location.pathname);
     window.history.pushState({}, document.title, window.location.pathname);
 } else {
     document.getElementById('clouds').style.display = 'none';
 }
 
-window.addEventListener("DOMContentLoaded", event => {
-    const audio = document.getElementById('background-audio');
-    audio.volume = 0.2;
-    audio.play();
-  });
+if (getCookie('name') == "") {
+    document.getElementById('continue').classList.toggle('btn-secondary');
+    document.getElementById('new').classList.toggle('btn-secondary');
+    document.getElementById('new').style.order = "-1";
+}
   
+function moveToPlayButton() {
+    document.getElementById('background-audio').play();
+    document.getElementById('sound').classList.toggle('fade');
+    document.getElementById('go-to-play-button').classList.toggle('fade');
+    document.getElementById('play-buttons').classList.toggle('fade');
+}
 
 function start() {
     document.getElementById('clouds').src = 'map/assets/clouds_pixleated.webp';

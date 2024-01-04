@@ -19,6 +19,47 @@ body{
     z-index: 10;
 }
 
+.center-mp-logo {
+    margin-top: 15px;
+}
+#sound {
+    margin-top: 40px;
+}
+#go-to-play-button {
+    margin-bottom: -20px;
+    z-index: 1;
+}
+#sound, #go-to-play-button {
+    opacity: 1;
+}
+#sound.fade, #go-to-play-button.fade {
+    opacity: 0;
+}
+#play-buttons {
+    display: flex;
+    flex-direction: row;
+    z-index: 2;
+    opacity: 0;
+}
+#play-buttons.fade {
+    opacity: 1;
+    margin-top: -120px;
+    margin-bottom: 20px;
+}
+
+#sound, #go-to-play-button, #play-buttons {
+    transition: all;
+    transition-duration: 1s;
+}
+
+#new, #continue, #about {
+    margin: 5px;
+}
+
+#new {
+    order: 0;
+}
+
 #mapContainer{
     position: relative;
     width: 100vw;

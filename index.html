@@ -6,10 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Mega Puzzle 2024</title>
     <script src="https://nouveaureece.github.io/Puzzlestrap/js/bootstrap.bundle.js"></script>
-    <script src="/map/scripts/freezeframe.js"></script>
+    <script src="Common/puzzle.js"></script>
     <link rel="stylesheet" href="/Common/puzzle.css">
     <link rel="stylesheet" href="./map/style.css">
-
 
     <style>
         .back-to-menu {
@@ -43,7 +42,7 @@
                 <div class="modal-content">
                     <div class="modal-body">
                         <h1 class="sr-only" style="display:none;" id="exampleModalLabel">Main Menu</h1>
-                        <svg aria-label="Mega Puzzle written in fantasy handwriting" role="img" width="170px" height="115px" viewBox="0 0 169 109.72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <svg class="center-mp-logo" aria-label="Mega Puzzle written in fantasy handwriting" role="img" width="170px" height="115px" viewBox="0 0 169 109.72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                 <g id="Group-Copy" fill="#000000" fill-rule="nonzero" stroke="#000000" stroke-width="2">
                                     <g id="Mega">
@@ -63,12 +62,17 @@
                                 </g>
                             </g>
                         </svg>
-                        <div class="controls">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="start();">Continue</button>
-                            <a type="button" class="btn btn-primary">New Game</a>
-                            <a type="button" class="btn btn-primary">About</a>
+                        <div id="sound">
+                            <p class="text-center">Mega Puzzle uses automatically playing audio for cut scenes, background ambiance, and some minor sound effects. You can mute these at any time by selecting the <svg width="30px" height="30px" aria-label="mute" style="margin-top:-3.5px">
+                                <use aria-hidden="true" href="Common/icons.svg#ppi-muted" xlink:href="Common/icons.svg#ppi-muted">
+                            </svg> button.</p>
                         </div>
-                        
+                        <button id="go-to-play-button" type="button" class="btn btn-secondary" onclick="moveToPlayButton();">Begin</button>
+                        <div id="play-buttons" class="controls">
+                            <button id="continue" type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="start();">Continue Game</button>
+                            <a id="new" type="button" class="btn btn-primary">New Game</a>
+                            <a id="about" type="button" class="btn btn-primary">About</a>
+                        </div>
                     </div> 
                 </div>
             </div>
