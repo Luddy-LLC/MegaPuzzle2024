@@ -73,6 +73,36 @@ body{
     margin-top: 5%;
 }
 
+@media screen and (max-width: 1100px) {
+    .bardrow {
+        height: 100%;
+        padding: 10%;
+        margin-top: 5%;
+    }
+}
+
+@media screen and (max-width: 945px) {
+    .bardrow {
+        height: 100%;
+        padding: 0;
+        margin-top: 5%;
+    }
+}
+
+@media screen and (max-height: 635px) {
+    .bardrow {
+        padding-top: 5%;
+    }
+ }
+
+ @media screen and (max-height: 512px) {
+    .bardrow {
+        padding-top: 0;
+        height: 75%;
+    }
+ }
+
+
 .col{
     display: flex;
     height: 100%;
@@ -119,7 +149,7 @@ body{
 #current-audio{
     position: absolute;
     visibility: hidden;
-
+    z-index: 3000;
     bottom: 25px;
     left: 0;
     right: 0;
