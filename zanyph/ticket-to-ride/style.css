@@ -43,8 +43,6 @@ body{
 
 .bottle{
 
-  outline: none !important;
-
   margin: 0;
   position: absolute;
   top: 65%;
@@ -64,6 +62,10 @@ body{
   aspect-ratio: 330/130;
   width: 15%;
 
+}
+
+.bottle:active {
+  outline: none !important;
 }
 
 .bottle:hover{
