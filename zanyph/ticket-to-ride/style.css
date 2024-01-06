@@ -1,0 +1,132 @@
+
+body{
+    overflow: hidden;
+
+    background-image: url("./assets/rocky\ beach.png");
+    background-size: cover;
+
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+.container{
+    height: 100vh;
+}
+
+
+
+.puzzle-desc{
+  color: black;
+  background-color: rgba(102, 204, 204, .5);
+  
+  position: absolute;
+
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  border-radius: 20px;
+
+  margin-top: 100px;
+  width: 20%;
+
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+
+
+}
+
+
+.bottle{
+
+  outline: none !important;
+
+  margin: 0;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+  transition: transform 100ms;
+
+  border: none;
+  background-color: transparent;
+
+  background-image: url("./assets/bottle.png");
+  background-position: center center;
+  background-size: cover;
+
+  aspect-ratio: 330/130;
+  width: 15%;
+
+}
+
+.bottle:hover{
+  -ms-transform: translate(-50%, -50%) scale(1.1);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+
+.letter{
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s, visibility 1s;
+
+  margin: auto;
+
+  aspect-ratio: 1/1;
+
+  max-height: 80vh;
+  padding: 20px;
+
+  background-image: url("./assets/letter.png");
+  background-position: center center;
+  background-size: cover;
+}
+
+.letter-content{
+
+  margin: auto;
+
+  width: 90%;
+  max-height: 60%;
+  max-width: 70%;
+
+  margin-top: 15%;
+  padding-right: 10px;
+  padding-left: 20px;
+
+  /* background-color:#deb887; */
+
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #deb887;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #cf9e5e;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #bf8f50;
+}

@@ -13,6 +13,7 @@ body{
 
     font-family: 'Inter', sans-serif;
     font-weight: 550;
+    font-size: 20px;
 
     margin-top: 100px;
     width: 20%;
@@ -48,6 +49,9 @@ body{
 }
 
 .bard{
+
+    outline: none !important;
+
     width: 100%;
     aspect-ratio: 1/2;
     z-index: 50;
@@ -68,12 +72,18 @@ body{
 }
 
 .bardrow{
+
+    outline: none !important;
+
     height: 100%;
     padding: 15%;
     margin-top: 5%;
 }
 
 .col{
+
+    outline: none !important;
+
     display: flex;
     height: 100%;
     align-items: center;
@@ -83,6 +93,9 @@ body{
 
 
 .col:hover::after{
+
+    outline: none !important;
+
     content: " ";
     opacity: .5;
     display: block; 
@@ -101,6 +114,9 @@ body{
 }
 
 .col[data-focus="true"]::after{
+
+    outline: none !important;
+
     transform: scale(1.2, 1);
     content: " ";
     display: block; 
