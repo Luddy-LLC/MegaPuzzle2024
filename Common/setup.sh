@@ -39,15 +39,21 @@ foreach FILE ( "README.md" "style.css" "script.js" "index.html" )
 
 <body>
         <nav class="navbar navbar-nav">
-        <a class="btn" href="/">
-            <svg aria-hidden="true" width="10px"><use href="/Common/icons.svg#ppi-map" xlink:href="/Common/icons.svg#ppi-map"></use></svg>    
-            Map
-        </a>
-        <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" alt="Bootstrap" width="30" height="24">
         <div class="navbar-nav">
+            <a class="btn" href="/">
+                <svg aria-hidden="true" width="10px"><use href="/Common/icons.svg#ppi-map" xlink:href="/Common/icons.svg#ppi-map"></use></svg>    
+                Map
+            </a>
             <button class="btn">
                 <svg aria-hidden="true"><use href="/Common/icons.svg#ppi-unmuted" xlink:href="/Common/icons.svg#ppi-unmuted"></use></svg>    
                 Music
+            </button>
+        </div>
+        <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" alt="Bootstrap" width="30" height="24">
+        <div class="navbar-nav">
+            <button class="btn" data-bs-toggle="modal" data-bs-target="#answer-modal">
+                <svg aria-hidden="true"><use href="/Common/icons.svg#ppi-check" xlink:href="/Common/icons.svg#ppi-check"></use></svg>    
+                Solve
             </button>
             <button class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions">
                 <svg aria-hidden="true"><use href="/Common/icons.svg#ppi-lore" xlink:href="/Common/icons.svg#ppi-lore"></use></svg>    
@@ -93,6 +99,7 @@ foreach FILE ( "README.md" "style.css" "script.js" "index.html" )
 
     </div>
 
+    <script src="/Common/puzzle.js"></script>
     <script src="script.js"></script>
 </body>
 

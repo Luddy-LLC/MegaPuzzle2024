@@ -12,15 +12,21 @@
 
 <body>
         <nav class="navbar navbar-nav">
-        <a class="btn" href="/">
-            <svg aria-hidden="true" width="10px"><use href="/Common/icons.svg#ppi-map" xlink:href="/Common/icons.svg#ppi-map"></use></svg>    
-            Map
-        </a>
-        <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" alt="Bootstrap" width="30" height="24">
         <div class="navbar-nav">
+            <a class="btn" href="/">
+                <svg aria-hidden="true" width="10px"><use href="/Common/icons.svg#ppi-map" xlink:href="/Common/icons.svg#ppi-map"></use></svg>    
+                Map
+            </a>
             <button class="btn">
                 <svg aria-hidden="true"><use href="/Common/icons.svg#ppi-unmuted" xlink:href="/Common/icons.svg#ppi-unmuted"></use></svg>    
                 Music
+            </button>
+        </div>
+        <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" alt="Bootstrap" width="30" height="24">
+        <div class="navbar-nav">
+            <button class="btn" data-bs-toggle="modal" data-bs-target="#answer-modal">
+                <svg aria-hidden="true"><use href="/Common/icons.svg#ppi-check" xlink:href="/Common/icons.svg#ppi-check"></use></svg>    
+                Solve
             </button>
             <button class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions">
                 <svg aria-hidden="true"><use href="/Common/icons.svg#ppi-lore" xlink:href="/Common/icons.svg#ppi-lore"></use></svg>    
@@ -35,6 +41,7 @@
         <canvas id="gameCanvas" width="925px" height="720px"></canvas>
         <p style="font-size: .6rem; margin-top: 2px">Heavy inspiration for this game from <a href="https://armorgames.com/play/4309/this-is-the-only-level" rel="noreferrer" target="_blank">This is the only level</a> by <a href="https://en.wikipedia.org/wiki/John_Cooney_(video_game_developer)" rel="noreferrer" target="_blank">jmtb02</a></p>
         <p id="answer"></p>
+
 
     </main>
 
