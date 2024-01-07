@@ -6,6 +6,8 @@ const audioSrcs = ["./assets/audio1.wav", "./assets/audio2.wav", "./assets/audio
 
 const audioElement = document.getElementById("current-audio");
 
+
+
 // blur removes focus
 
 let soundCD = 0;
