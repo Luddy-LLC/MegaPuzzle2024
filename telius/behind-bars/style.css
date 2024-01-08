@@ -51,6 +51,9 @@
 }
 
 #clue-list-container {
-    width: var(--grid-size);
     margin: auto;
+}
+#across, #down {
+    height: var(--grid-size);
+    overflow-y: scroll;
 }
