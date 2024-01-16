@@ -10,6 +10,7 @@
 // TODO: Better Death Message formatting (Do you want to do this mallory?)
 // Give the last letter a special color!
 
+
 //Timing for interpol animation
 let timer = 0;
 
@@ -256,12 +257,18 @@ function draw() {
 setInterval(draw, 10);
 
 document.addEventListener("keydown", (e) => {
-    if (!started) {
+    if (document.getElementById('answer-modal').classList.contains('show')) {
+
+        resetGame();
+        started = false;
+        console.log('hi');
+    } else if (!started) {
         started = true;
     } else if (isDead && canRespawn) {
         resetGame();
     } else {
         let last = null
+        e.preventDefault();
 
         if (directionQueue.length > 0) {
             last = directionQueue[directionQueue.length - 1];
@@ -281,5 +288,12 @@ document.addEventListener("keydown", (e) => {
                 directionQueue.push("down");
         }
     }
-    e.preventDefault();
 });
+
+function hideMiniGame() {
+    document.getElementById('game-canvas').style.display = 'none';
+}
+
+function showMiniGame() {
+    document.getElementById('game-canvas').style.display = 'block';
+}

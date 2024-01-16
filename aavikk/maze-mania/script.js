@@ -14,7 +14,7 @@ function init() {
 
     maze = document.getElementById("maze");
     button = document.getElementById("swap");
-    background = document.getElementById("background");
+    background = document.getElementsByTagName('main')[0];
 
 }
 
