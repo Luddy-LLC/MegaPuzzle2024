@@ -1425,11 +1425,9 @@ function renderGame(){
 
 }
 
-onkeydown = onkeyup = function(e){
-    keyMap[e.key.toLowerCase()] = e.type == 'keydown';
-
-    if(e.key == "p" && e.type == 'keydown')
-         printTileMap();
+document.onkeydown = document.onkeyup = function(e){
+    keyMap[e.key.toLowerCase()] = e.type == 'keydown'; 
+    if(!document.getElementById("answer-modal") || !document.getElementById("answer-modal").classList.contains("show")) e.preventDefault()
 }
 
 setInterval(renderGame, 10);
