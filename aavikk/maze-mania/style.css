@@ -33,9 +33,10 @@ p {
 }
 
 .btn[top_layer="false"]{
-    background-color: rgb(21,59,249); /* color of portals from image  */
+    
+    filter: invert(1) contrast(1.25);
+    background-color: rgb(235,196,6); /* inverted color of portals from image  */
     position: relative;
-    color: white;
     font-size: 24px;
     align-self: center center;
     margin-left: 5%;

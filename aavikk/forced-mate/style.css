@@ -16,3 +16,23 @@
     font-family: monospace;
     font-weight: bold;
 }
+
+
+.header {
+    background: url("assets/old\ man.png");
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size:cover;
+    height:100ch;
+    padding-top: 77vh;
+
+}
+
+body {
+    background:url("assets/woood\ texture\ tst.png");
+
+    background-position: top center;
+    background-size:cover;
+    height:100vh;
+
+}
