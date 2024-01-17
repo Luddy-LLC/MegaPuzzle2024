@@ -1,3 +1,8 @@
+const canvas = document.getElementById("gameCanvas");
+
+const canvasW = canvas.clientWidth;
+const canvasH = canvas.clientHeight;
+
 const tileMapWidth = 37;
 const tileMapHeight = 24;
 const tileWidth = 25;
@@ -1357,7 +1362,6 @@ class CutScenePlayer extends Player{
 
 }
 
-const canvas = document.getElementById("gameCanvas");
 const g = canvas.getContext("2d");
 
 const transitionMessages = ["Alright, that's enough of that", "Wait what???", "Ok this is scaring me", "Is this a time loop?", "Please let me out!",
@@ -1372,9 +1376,6 @@ let introFrameNo = 0;
 
 const speechCenter = 615;
 const speechDelay = 350;
-
-const canvasW = canvas.clientWidth;
-const canvasH = canvas.clientHeight;
 
 let keyMap = {};
 let levelNum = 0;
@@ -1399,7 +1400,7 @@ function renderGame(){
 
     let level = levelNum < levels.length ? levels[levelNum] : extraLevel;
     
-    if(drawIntro(g) != 1) return;
+    // if(drawIntro(g) != 1) return;
 
     if(level == extraLevel){
         drawOutro(g);
@@ -1427,7 +1428,7 @@ function renderGame(){
 
 document.onkeydown = document.onkeyup = function(e){
     keyMap[e.key.toLowerCase()] = e.type == 'keydown'; 
-    if(!document.getElementById("answer-modal") || !document.getElementById("answer-modal").classList.contains("show")) e.preventDefault()
+    // if(!document.getElementById("answer-modal") || !document.getElementById("answer-modal").classList.contains("show")) e.preventDefault()
 }
 
 setInterval(renderGame, 10);
