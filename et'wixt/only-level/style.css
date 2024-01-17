@@ -26,6 +26,30 @@ body{
     width: 60%;
 }
 
+.arrow-buttons{
+    display: none;
+}
+
+.mobile-button{
+    aspect-ratio: 1;
+    width: 75px;
+
+    text-align: center;
+    line-height: 75px;
+
+    background-color: aquamarine;
+
+    margin: 5px;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
 
 @media screen and (max-width: 820px) { /* Less Wide Screen */
     #gameCanvas{
@@ -36,5 +60,10 @@ body{
 @media screen and (max-width: 520px) { /* Mobile portrait */
     #gameCanvas{
         width: 90%;
+    }
+
+    .arrow-buttons{
+        display: flex;
+        justify-content: center;
     }
 }

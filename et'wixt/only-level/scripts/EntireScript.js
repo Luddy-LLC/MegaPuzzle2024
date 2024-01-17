@@ -1,7 +1,20 @@
 const canvas = document.getElementById("gameCanvas");
 
-const canvasW = canvas.clientWidth;
-const canvasH = canvas.clientHeight;
+let canvasW = canvas.clientWidth;
+let canvasH = canvas.clientHeight;
+
+window.onresize = e => {
+    canvasW = canvas.clientWidth;
+    canvasH = canvas.clientHeight;
+}
+
+
+const upButton = document.getElementById("up");
+const downButton = document.getElementById("down");
+const leftButton = document.getElementById("left");
+const rightButton = document.getElementById("right");
+
+
 
 const tileMapWidth = 37;
 const tileMapHeight = 24;
@@ -1428,8 +1441,13 @@ function renderGame(){
 
 document.onkeydown = document.onkeyup = function(e){
     keyMap[e.key.toLowerCase()] = e.type == 'keydown'; 
-    // if(!document.getElementById("answer-modal") || !document.getElementById("answer-modal").classList.contains("show")) e.preventDefault()
+    if(!document.getElementById("answer-modal") || !document.getElementById("answer-modal").classList.contains("show")) e.preventDefault()
 }
+
+upButton.ontouchstart = upButton.ontouchend = e => keyMap['w'] = e.type == 'touchstart'; 
+downButton.ontouchstart = downButton.ontouchend = e => keyMap['s'] = e.type == 'touchstart'; 
+leftButton.ontouchstart = leftButton.ontouchend = e => keyMap['a'] = e.type == 'touchstart'; 
+rightButton.ontouchstart = rightButton.ontouchend = e => keyMap['d'] = e.type == 'touchstart'; 
 
 setInterval(renderGame, 10);
 
@@ -1484,12 +1502,10 @@ function renderTransition(g, level){
 
     g.fillStyle = "black";
     g.font = "bold 55px Inter";
-    // g.fillText("You beat the level!!", transitionX + 160, transitionY + 170);
-    writeCenteredText(g, transitionMessages[levelNum], transitionX + canvasW/2, transitionY + 170);
+    writeCenteredText(g, transitionMessages[levelNum], transitionX + 925/2, transitionY + 170);
     g.font = "45px Inter";
     if(levelNum == 6) g.font = "30px Inter";
-    writeCenteredText(g, transitionSubMessages[levelNum], transitionX + canvasW/2, transitionY + 270);
-    // g.fillText("But did you really?...", transitionX + 210, transitionY + 270);
+    writeCenteredText(g, transitionSubMessages[levelNum], transitionX + 925/2, transitionY + 270);
 }
 
 onmousemove = function(e){
