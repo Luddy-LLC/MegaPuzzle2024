@@ -1,5 +1,10 @@
 .puzzle {
-    width:50vw;
+    width:80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    position: center;
+    padding: 30px;
 }
 
 .key {
