@@ -3,8 +3,46 @@
     display: block;
     margin: 0 auto;
     image-rendering: pixelated; 
+
+    max-width: 512px;
+    width: 90%;
+
+    margin-bottom: 10px;
 }
 
 #game-assets {
     display: none;
+}
+
+.text-container{
+    margin-bottom: 20px;
+}
+
+.arrow-buttons{
+    display: none;
+}
+
+.mobile-button{
+    aspect-ratio: 1;
+    width: 75px;
+
+    text-align: center;
+    line-height: 75px;
+
+    background-color: aquamarine;
+
+    margin: 5px;
+}
+
+
+@media screen and (max-width: 520px) { /* Mobile portrait */
+
+    .arrow-buttons{
+        display: flex;
+        justify-content: center;
+    }
+
+    .bottom-row{
+        margin-bottom: 50px;
+    }
 }

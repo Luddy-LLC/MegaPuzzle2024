@@ -38,12 +38,15 @@
 
     <main class="container">
         <!-- CONTENT GOES HERE, WITHIN CONTAINER -->
-        <div>
-            <p>
-                While out camping you feel like something is watching you... You cast a powerful spell that becomes more
-                powerful with each hit to drive them away, but be careful! If the spell doubles back on itself it will
-                backfire!
-            </p>
+
+        <div class="text-container" id="puzzle-desc">
+            <h1 class="sr-only">Puzzle Prompt</h1>
+            <div aria-label="Introduction">
+                <p>
+                    While out camping you feel like something is watching you... You cast a powerful spell that becomes more
+                    powerful with each hit to drive them away, but be careful! If the spell doubles back on itself it will
+                    backfire!                </p>
+            </div>
         </div>
 
         <canvas id="game-canvas" width="512" height="512"></canvas>
@@ -54,6 +57,15 @@
             <img alt="game-asset" id="snake-corner" src="assets/corner.png" width="32" height="32" />
             <img alt="game-asset" id="snake-tail" src="assets/tail.png" width="32" height="32" />
             <img alt="game-asset" id="background" src="assets/background.png" width="512" height="512" />
+        </div>
+
+        <div class="arrow-buttons">
+            <p class="mobile-button" id="up">W</p>
+        </div>
+        <div class="arrow-buttons bottom-row">
+            <p class="mobile-button" id="left">A</p>
+            <p class="mobile-button" id="down">S</p>
+            <p class="mobile-button" id="right">D</p>
         </div>
 
     </main>

@@ -17,6 +17,9 @@ let timer = 0;
 const canvas = document.getElementById("game-canvas");
 const ctx = canvas.getContext("2d");
 
+// Mobile buttons
+const mobileButtons = [document.getElementById("up"), document.getElementById("down"), document.getElementById("left"), document.getElementById("right")];
+
 // Images
 const appleImg = document.getElementById("apple");
 const snakeHead = document.getElementById("snake-head");
@@ -284,6 +287,35 @@ document.addEventListener("keydown", (e) => {
             if (last !== "up" && last !== "down")
                 directionQueue.push("up");
         } else if (e.key === "Down" || e.key === "ArrowDown") {
+            if (last !== "up" && last !== "down")
+                directionQueue.push("down");
+        }
+    }
+});
+
+
+mobileButtons.forEach(e => e.ontouchstart = evt => {
+    if (!started) {
+        started = true;
+    } else if (isDead && canRespawn) {
+        resetGame();
+    } else {
+        let last = null
+
+        if (directionQueue.length > 0) {
+            last = directionQueue[directionQueue.length - 1];
+        }
+
+        if (e.id === "right") {
+            if (last !== "right" && last !== "left")
+                directionQueue.push("right");
+        } else if (e.id === "left") {
+            if (last !== "right" && last !== "left")
+                directionQueue.push("left");
+        } else if (e.id === "up") {
+            if (last !== "up" && last !== "down")
+                directionQueue.push("up");
+        } else if (e.id === "down") {
             if (last !== "up" && last !== "down")
                 directionQueue.push("down");
         }
