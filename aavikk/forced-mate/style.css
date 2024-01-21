@@ -15,8 +15,8 @@
     text-align: center;
     font-family: monospace;
     font-weight: bold;
+    font-size: calc(10px + 0.5vw);
 }
-
 
 .header {
     background: url("assets/old\ man.png");
