@@ -36,14 +36,66 @@
     width: calc(var(--grid-size) / var(--grid-cells));
     height: calc(var(--grid-size) / var(--grid-cells));
     border: 1px solid black;
-    border-right: 4px solid purple;
+    border-right: 3px solid black;
+    border-image: url('assets/guy2.png');
+    border-image-slice: 1 10;
+    border-image-width: auto;
     padding: 0;
     margin: 0;
-    float: left;
+}
+
+.bar-l {
+    width: calc(var(--grid-size) / var(--grid-cells));
+    height: calc(var(--grid-size) / var(--grid-cells));
+    border: 1px solid black;
+    border-left: 3px solid black;
+    padding: 0;
+    margin: 0;
+    border-image: url('assets/guy.png');
+    border-image-slice: 1 10;
+    border-image-width: auto;
+}
+
+
+.bar2 {
+    width: calc(var(--grid-size) / var(--grid-cells));
+    height: calc(var(--grid-size) / var(--grid-cells));
+    border: 1px solid black;
+    border-left: 3px solid black;
+    padding: 0;
+    margin: 0;
+    border-image: url('assets/guy21.png');
+    border-image-slice: 1 10;
+    border-image-width: auto;
+}
+
+.bar2l {
+    width: calc(var(--grid-size) / var(--grid-cells));
+    height: calc(var(--grid-size) / var(--grid-cells));
+    border: 1px solid black;
+    border-right: 3px solid black;
+    border-image: url('assets/guy22.png');
+    border-image-slice: 1 10;
+    border-image-width: auto;
+    padding: 0;
+    margin: 0;
 }
 
 .numbered {
     counter-increment: value;
+}
+
+.numbered.bar2l:nth-of-type(n)::before {
+    margin-left: 4px;
+    content: counter(value);
+    font-size: 10px;
+    position: absolute;
+}
+.numbered.bar-l:nth-of-type(n)::before {
+    margin-left: 3px;;
+    content: counter(value);
+    font-size: 10px;
+    position: absolute;
 }
 
 .numbered:nth-of-type(n)::before {
@@ -51,6 +103,8 @@
     font-size: 10px;
     position: absolute;
 }
+
+
 
 #clue-list-container {
     margin: auto;
