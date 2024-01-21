@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en" data-region="ithkiya" data-puzzle="escape">
+<html lang="en" data-region="zanyph" data-puzzle="castaway">
 
 <head>
     <meta charset="UTF-8">
@@ -13,7 +13,7 @@
 </head>
 
 <body>
-        <nav class="navbar navbar-nav">
+    <nav class="navbar navbar-nav">
         <div class="navbar-nav">
             <a class="btn" href="/">
                 <svg aria-hidden="true" width="10px"><use href="/Common/icons.svg#ppi-map" xlink:href="/Common/icons.svg#ppi-map"></use></svg>    
@@ -39,32 +39,31 @@
 
     <main class="container">
 
-        <!-- CONTENT GOES HERE, WITHIN CONTAINER -->
 
-        <div class="help">
-            <!-- You can remove this help div when you're ready to code! -->
-            <h1>My Puzzle</h1>
-            <p>This is my fun little puzzle &#x1F642;</p>
-            <p>Please be aware of the following:</p>
-            <ol>
-                <li>All puzzle-specific ____ should be kept in this puzzle's...
-                    <ul>
-                        <li>Assets: <code>assets</code> folder.</li>
-                        <li>Styling: <code>style.css</code> file</li>
-                        <li>JS: <code>script.js</code> file</li>
-                    </ul>
-                <li>Common assets can be accessed using the <code>/common</code> path.</li>
-                <li>Do not use the <code>&#x3C;style&#x3E;</code> tag.</li>
-                <li>Please use the <a href="https://getbootstrap.com/docs/5.3/layout/grid/" target="_blank"
-                        rel="noopener">Bootstrap Grid System</a> for more advanced layouts. (Already imported!)</li>
-
-                <li>Please <a href="https://mothereff.in/html-entities" target="_blank" rel="noopener">HTML encode
-                        special characters</a> for better cross-device support.</li>
-                <li>This puzzle is going to be epiccc</li>
-                <li><a href="https://teams.microsoft.com/l/chat/0/0?users=reeneedh@iu.edu" target="_blank"
-                        rel="noopener">Contact Reece</a> if you have any questions!</li>
-            </ol>
+        <div class="text-container" id="puzzle-desc">
+        <h1 class="sr-only">Puzzle Prompt</h1>
+        <div aria-label="Introduction">
+            <p>
+                A bottle from a distant shore opens to reveal a message not meant for you.
+            </p>
         </div>
+        </div>
+
+        <button class="bottle" id="bottle"></button>
+
+        <div class="letter" id="letter">
+            <p class="letter-content" id="letter-content">
+                My Dearest Fionn, <br><br>
+                Pray, let this message <span style="background-color:rgb(130, 130, 130)">find</span> thee in good health. Alas, I find myself in a most distressing situation, for I am ensnared in a peculiar realm <span style="background-color:red">amongst</span> even more peculiar folk. I had a <span class="letter-hint" style="font-size:16.2px">ticket to ride</span> an expedition that I had hoped <span style="background-color:rgb(255, 174, 0)">might</span> illuminate the recesses of my soul, but, alas, my conjecture proved incorrect. With the fervent hope that this missive may serve as a beacon for thee to locate me, my love, I shall narrate the chronicle of my harrowing adventure to the utmost extent of my recollection.<br><br>
+                I <span style="background-color:rgb(0, 174, 255)">embarked</span> in this extraordinary land within the bounds of a resplendent coastal city called Lisboa. Subsequently, I encountered a troupe of buffoonish jesters who escorted me henceforth to Cadiz, thence to Madrid, and thereafter to Barcelona.<br><br>
+                From that juncture, the wind led me southward to a <span style="background-color:rgb(250, 133, 153)">curious</span> town called Pamplona, wherein I encountered a lady who spirited me <span style="background-color:rgb(255, 238, 0)">away</span> to the enchanting city of Marseille. Regrettably, it is at this juncture that the trajectory of my journey took a lamentable turn. I reunited with the aforementioned jesters, and they conveyed me hence to Zurich, thence culminating in our arrival at Venizia.<br><br>
+                My present predicament is grievous, for the jesters have forsaken me, <span style="background-color:green">leaving</span> me adrift in this obscure urban enclave. Zanyph's absence rends my heart, and a profound yearning for home envelops me.<br><br>
+                Ever thine,<br><br>
+                Moyna<br>
+                
+            </p>
+        </div>
+
     </main>
 
 

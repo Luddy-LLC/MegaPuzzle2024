@@ -1,0 +1,57 @@
+
+body{
+    overflow: hidden;
+}
+
+.container{
+    min-height: 100vh;
+    height: 100%;
+}
+
+
+.lines{
+
+  margin-top: 50px;
+}
+
+.puzzle-line{
+    font-family: 'Inter' sans-serif;
+    font-size: 15px;
+    
+    line-height: 5px;
+    text-align: center;
+}
+
+.puzzle-line-emph{
+    font-weight: 1000;
+    font-size: 17px;
+}
+
+
+
+.text-container {
+    margin-top: 2.5%;  
+    padding: 30px 75px 15px 75px; 
+  }
+
+  
+  
+  @media screen and (max-height: 640px) { /* Mobile landscape */
+  
+    body{
+      overflow: initial;
+    }
+
+  }
+  
+  
+  
+  @media screen and (max-width: 520px) and (orientation: portrait) { /* Mobile portrait */
+    .text-container{
+      padding: 25px 10px 5px 20px;
+    }
+  
+    body{
+        overflow: initial;
+    }
+  }

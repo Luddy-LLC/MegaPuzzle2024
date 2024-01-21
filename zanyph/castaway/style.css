@@ -1,0 +1,201 @@
+
+body{
+
+  background-color: black;
+
+  overflow: hidden;
+
+  background-image: url("./assets/rocky\ beach.png");
+  background-position: bottom right;
+  background-size: cover;
+
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+.container{
+  min-height: 100vh;
+  height: 100%;
+}
+
+
+
+.puzzle-desc{
+  color: black;
+  background-color: rgba(102, 204, 204, .5);
+  
+  position: absolute;
+
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  border-radius: 20px;
+
+  margin-top: 100px;
+  width: 20%;
+
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+
+.bottle{
+
+  margin: 0;
+  position: absolute;
+  bottom: 30%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+  transition: transform 100ms;
+
+  border: none;
+  background-color: transparent;
+
+  background-image: url("./assets/bottle.png");
+  background-position: center center;
+  background-size: cover;
+
+  aspect-ratio: 330/130;
+  width: 15%;
+
+}
+
+.bottle:active {
+  outline: none !important;
+}
+
+.bottle:hover{
+  -ms-transform: translate(-50%, -50%) scale(1.1);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+
+.letter{
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s, visibility 1s;
+
+  margin: auto;
+
+  aspect-ratio: 1/1;
+
+  max-height: 80vh;
+  padding: 20px;
+
+  background-image: url("./assets/letter.png");
+  background-position: center center;
+  background-size: cover;
+}
+
+.letter-content{
+
+  margin: auto;
+
+  width: 90%;
+  max-height: 60%;
+  max-width: 70%;
+
+  margin-top: 15%;
+  padding-right: 10px;
+  padding-left: 20px;
+
+  /* background-color:#deb887; */
+
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #deb887;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #cf9e5e;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #bf8f50;
+}
+
+
+.text-container {
+
+  position: absolute;
+  left: 50%;
+  -ms-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
+  margin-top: 5%;
+
+  padding: 30px 75px 15px 75px;
+}
+
+
+
+@media screen and (max-height: 640px) { /* Mobile landscape */
+
+  body{
+    overflow: initial;
+  }
+
+  .bottle{
+    bottom: 10%;
+  }
+
+  .letter-content{
+    font-size: 12px;
+    max-height: 55%;
+  }
+
+  .letter-hint{
+    font-size: 13px !important;
+  }
+  
+}
+
+
+
+@media screen and (max-width: 520px) and (orientation: portrait) { /* Mobile portrait */
+  .text-container{
+    padding: 25px 10px 5px 20px;
+  }
+
+  .bottle{
+    width: 40%;
+  }
+
+  body{
+      overflow: initial;
+  }
+
+  .letter{
+    margin-top: 40px;
+  }
+
+  .letter-content{
+    font-size: 12px;
+    max-height: 55%;
+  }
+
+  .letter-hint{
+    font-size: 13px !important;
+  }
+}
