@@ -1,0 +1,63 @@
+#graphics {
+    display: flex;
+    justify-content: right;
+    align-items: end;
+    position: relative;
+    background-image: url('assets/ocean.jpg');
+    background-size: cover;
+    height: 400px;
+}
+
+#dude {
+    position:absolute;
+    left: 0px;
+    bottom: 0px;
+}
+
+#charibdis {
+    right: 0px;
+}
+
+#ui {
+    background-color: lightblue;
+    border: 2px solid blue;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#options button {
+    width: 80rem;
+}
+
+button {
+    width: 20rem;
+    border: 2px solid black;
+    background-color: lightblue;
+    border-radius: 4px;
+    transition-duration: 0.5s;
+}
+
+button:hover {
+    background-color: darkcyan;
+}
+
+#options {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+#text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+#result {
+    display: none;
+    flex-direction: column;
+    align-items: center;    
+    gap: 2rem;
+}

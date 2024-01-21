@@ -6,6 +6,7 @@ const POSITIVE = 1
 const NEGATIVE = -2
 const NEUTRAL = 0
 
+let distance = 100;
 
 class Action {
     constructor(text, outcome) {
@@ -67,30 +68,85 @@ const data = [
     new Action("I wouldn't mind getting struck down by Zeus if you were there to share it with me.", NEGATIVE),
 ]
 
+const titles = [
+    "Are you ___?",
+    "You feel like giving Charybdis a gift.",
+    "You make a promise to Charybdis.",
+    "You're starting to scrape the bottom of the barrel.",
+    "I must be ___",
+    "If you were a ___",
+    "Personally my love language is telling people to leave me alone.",
+    "You're like, totally running out of ideas, aren't you.",
+    "I was wondering how much longer this agony will last.",
+    "I do though, actually."
+]
 
+/*
+    -1   : Introduction
+    0 - 9: Questions
+    10+  : Ending Screen 
+*/
+let gamePhase = -1
+
+// Getting all of the things
+const title = document.getElementById("ttl")
+const desc = document.getElementById("text")
+const opts = document.getElementById("options")
+const result = document.getElementById("result")
 
 const btn1 = document.getElementById("opt1")
+btn1.addEventListener("click", () => advanceGame(0))
+
 const btn2 = document.getElementById("opt2")
+btn2.addEventListener("click", () => advanceGame(1))
+
 const btn3 = document.getElementById("opt3")
+btn3.addEventListener("click", () => advanceGame(2))
+
 const btn4 = document.getElementById("opt4")
+btn4.addEventListener("click", () => advanceGame(3))
+
+const start = document.getElementById("start")
+start.addEventListener("click", () => advanceGame(false))
+
+const reset = document.getElementById("reset")
+reset.addEventListener("click", ()=>resetGame());
 
 
 
-class Question {
+
+function advanceGame(opt) {
+    gamePhase++;
+    
+    desc.style.display = "none";
+
+    if (Number.isInteger(opt)) {
+        // Update the score!
+    }
+
+
+    if (gamePhase < 10) {
+        opts.style.display = "flex";
+        let answers = data.filter((e, i) => Math.floor(i / 4) == gamePhase).sort(() => Math.random() - 0.5);
+        btn1.innerText = answers[1].text;
+        btn2.innerText = answers[2].text;
+        btn3.innerText = answers[3].text;
+        btn4.innerText = answers[0].text;
+
+        title.innerText = titles[gamePhase]
+    }
+    else{
+        // Figure out whether we won or not
+        opts.style.display = "none";
+        result.style.display="flex"
+    }
 
 }
 
 
-const introText = `The Pirate Captain Limberakis Fedallah of the ship Etna sailed the seas for many years, 
-renowned for the ability to talk out of any situation and return from any venture.
-At a port in Ithkiya one fateful night, a passing stranger raised a challenge that the Captain could not turn down...
-"You claim to be able to charm anyone across the sea, yet you cower from the center of the Ithkiyan Bay just as any other sailor. 
-Surely, then, someone as skilled as you would have no issue sailing over the Great Beast Charibdis?"
-Fedallah fumed at this, scoffing that such a feat should be mere child's play. 
-With the exchange ended, the captain gathered Etna's crew and set out to prove a most dangerous point.
-The crew somberly sang songs of the beast in the water, 
-a beautiful daughter of the earth and waves chained to the sea's floor by a vindictive god, 
-cursed to take the form of a hideous sea monster...
-They hush as the ship approaches her.`;
-
-
+function resetGame() {
+    opts.style.display = "none"
+    desc.style.display = "flex"
+    gamePhase = -1;
+    distance = 100;
+}
