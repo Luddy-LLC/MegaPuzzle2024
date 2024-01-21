@@ -1,2 +1,2 @@
 # Rubik's Cube
-Credit: ?
+Credit: Calvin

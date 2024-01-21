@@ -1,2 +1,2 @@
 # Snake
-Credit: Calvin
+Credit: Calvin, Mallory

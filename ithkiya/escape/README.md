@@ -1,2 +1,2 @@
 # Escape Room
-Credit: Reese? Matei?
+Credit: Reece? Matei?

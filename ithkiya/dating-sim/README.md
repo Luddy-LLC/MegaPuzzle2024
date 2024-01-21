@@ -1,2 +1,2 @@
 # Dating Sim
-Credit: ?
+Credit: Mallory, Sam
