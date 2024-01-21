@@ -1413,7 +1413,7 @@ function renderGame(){
 
     let level = levelNum < levels.length ? levels[levelNum] : extraLevel;
     
-    // if(drawIntro(g) != 1) return;
+    if(drawIntro(g) != 1) return;
 
     if(level == extraLevel){
         drawOutro(g);
