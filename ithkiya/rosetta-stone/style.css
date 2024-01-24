@@ -7,10 +7,9 @@
 
 body {
     background-image: url('assets/library.png');
-    /* background: black; */
     background-repeat: no-repeat;
-    background-size: auto;
-    background-position: center center;
+    background-size: cover;
+    background-position: top center;
 }
 
 .container-xl {
@@ -19,9 +18,19 @@ body {
 
 .yiv-block {
     margin: 3rem auto;
-    background-color: antiquewhite;
-    color: rgb(141, 100, 52);
     padding: 2rem 1rem;
+}
+
+.yiv-block svg {
+    height: 30vh;
+    display: block;
+    margin: 0 auto;
+    fill: currentColor;
+}
+
+.decodeme {
+    max-width: 30%;
+    min-width: 20%;
 }
 
 hr {

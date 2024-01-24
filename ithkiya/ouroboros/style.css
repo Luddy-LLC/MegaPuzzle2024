@@ -1,0 +1,18 @@
+body {
+    /* This is a temp background */
+    background-image: url('assets/tempbackground.png');
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+.container {
+    text-align: center;
+}
+
+.text-container {
+    margin-top: 20%;
+}
+
+.container .btn {
+    width: 225px;
+}
