@@ -85,6 +85,9 @@ class BaseLevel {
         this.stageNum = stageNum;
         this.stageMsg = stageMsg;
 
+        this.tileBG = new Image();
+        this.tileBG.src = "./assets/background.webp";
+
         this.completed = false;
 
         if (pStartX === tileWidth * 3.5 && pStartY === tileWidth * 8) {
@@ -112,6 +115,8 @@ class BaseLevel {
     renderGame(g, keyMap) {
         g.fillStyle = this.colorScheme[0];
         g.fillRect(0, 0, 10000, 10000);
+
+        g.drawImage(this.tileBG, 0, 0, 925, 710);
 
 
         this.handleKeyInputs(keyMap);
@@ -149,7 +154,7 @@ class BaseLevel {
         this.player.draw(g);
 
         // Draw end tube
-        g.fillStyle = "#ff9b05";
+        g.fillStyle = "#ff4b05";
         g.fillRect(33.4 * tileWidth, 21.4 * tileWidth, 2.6 * tileWidth, 1.6 * tileWidth);
         g.fillRect(33.4 * tileWidth, 21.1 * tileWidth, 0.5 * tileWidth, 2.2 * tileWidth);
 
@@ -220,6 +225,8 @@ class MultiButtonLevel extends BaseLevel {
     renderGame(g, keyMap) {
         g.fillStyle = this.colorScheme[0];
         g.fillRect(0, 0, 10000, 10000);
+
+        g.drawImage(this.tileBG, 0, 0, 925, 710);
 
         this.handleKeyInputs(keyMap);
 
@@ -484,6 +491,62 @@ class BlindLevel extends BaseLevel{
             this.tileMap[tileMapHeight - 1][i].type = 0;
         }
     }
+
+    renderGame(g, keyMap) {
+        g.fillStyle = this.colorScheme[0];
+        g.fillRect(0, 0, 10000, 10000);
+
+
+        this.handleKeyInputs(keyMap);
+
+        // Update player, button, and door
+        this.player.update(this.tileMap, this.bodies, this.gravity, this.pStartX, this.pStartY, this.button, this.door, g);
+        this.button.update(this.player);
+        this.door.update();
+
+        // Connect button to door
+        if (this.button.wasPressed)
+            this.door.opening = true;
+
+        // Draw tile map and door
+        this.door.draw(g);
+        for (let i = 0; i < tileMapHeight; ++i) {
+            for (let j = 0; j < tileMapWidth; ++j) {
+                this.tileMap[i][j].draw(g);
+            }
+        }
+
+        // Draw dead bodies
+        for (let i = 0; i < this.bodies.length; ++i) {
+            this.bodies[i].update(this.tileMap, this.gravity);
+            this.bodies[i].draw(g)
+
+            if (this.bodies[i].opacity <= 0) {
+                this.bodies.splice(i--, 1);
+            }
+        }
+
+
+        // Draw player, button
+        this.button.draw(g);
+        this.player.draw(g);
+
+        // Draw end tube
+        g.fillStyle = "#ff4b05";
+        g.fillRect(33.4 * tileWidth, 21.4 * tileWidth, 2.6 * tileWidth, 1.6 * tileWidth);
+        g.fillRect(33.4 * tileWidth, 21.1 * tileWidth, 0.5 * tileWidth, 2.2 * tileWidth);
+
+        // Draw start tube
+        g.fillRect(3.5 * tileWidth, 8 * tileWidth, 1.6 * tileWidth, 1.7 * tileWidth);
+        g.fillRect(3.2 * tileWidth, 9.2 * tileWidth, 2.2 * tileWidth, 0.5 * tileWidth);
+
+        if (this.pEndRect.detectCollision(this.player))
+            this.completed = true;
+
+        // Draw Bottom Black Bar
+        this.drawBottomBar(g);
+
+    }
 }
 
 
@@ -551,12 +614,14 @@ class Tile extends Rectangle{
     constructor(x, y, w, h, type, colorBase){
         super(x,y,w,h, type);
         this.colorBase = colorBase;
+        this.img = new Image();
+        this.img.src = "./assets/tile.webp";
     }
 
     draw(g){
         if(this.type === 0){ // WALL
             g.fillStyle = this.colorBase;
-            g.fillRect(this.x, this.y, this.w, this.h);
+            g.fillRect( this.x, this.y, this.w, this.h);
         } else if (this.type === 1){ // SPIKE Facing Up
             g.beginPath();
             g.moveTo(this.x, this.y+this.h);
@@ -1010,7 +1075,7 @@ class Door extends Rectangle{
     }
 
     draw(g){
-        g.fillStyle = "#337722";
+        g.fillStyle = "#46A32F";
         g.fillRect(this.x, this.y, this.w, this.h);
     }
 }
@@ -1406,6 +1471,7 @@ let extraLevel = new BaseLevel(colorScheme = getRandColors(), stageNum = levels.
 let changeStage = false;
 
 let keepPlaying = false;
+let setBorder = false;
 
 function renderGame(){
 
@@ -1414,10 +1480,15 @@ function renderGame(){
     let level = levelNum < levels.length ? levels[levelNum] : extraLevel;
     
     if(drawIntro(g) != 1) return;
+    
 
     if(level == extraLevel){
         drawOutro(g);
         return;
+    } else if(!setBorder){
+        canvas.style.border = "calc(3vw + 15px) solid pink";
+        canvas.style.borderImage = "url(\"./assets/frame.png\") 7";
+        setBorder = true;
     }
 
     outroFrameNo = 0;
@@ -1444,16 +1515,21 @@ document.onkeydown = document.onkeyup = function(e){
     if(!document.getElementById("answer-modal") || !document.getElementById("answer-modal").classList.contains("show")) e.preventDefault()
 }
 
-upButton.ontouchstart = upButton.ontouchend = e => keyMap['w'] = e.type == 'touchstart'; 
-downButton.ontouchstart = downButton.ontouchend = e => keyMap['s'] = e.type == 'touchstart'; 
-leftButton.ontouchstart = leftButton.ontouchend = e => keyMap['a'] = e.type == 'touchstart'; 
-rightButton.ontouchstart = rightButton.ontouchend = e => keyMap['d'] = e.type == 'touchstart'; 
+function buttonPress(e, key, ele){
+    keyMap[key] = e.type == 'touchstart'; 
+}   
+
+upButton.ontouchstart = upButton.ontouchend = e => buttonPress(e, 'w', upButton); 
+downButton.ontouchstart = downButton.ontouchend = e => buttonPress(e, 's', downButton); 
+leftButton.ontouchstart = leftButton.ontouchend = e => buttonPress(e, 'a', leftButton); 
+rightButton.ontouchstart = rightButton.ontouchend = e => buttonPress(e, 'd', rightButton); 
 
 setInterval(renderGame, 10);
 
 function getRandColors(){
-    let hue = ~~(Math.random() * 70) + 170; // covert to int I hate js so much holy christ wtf
-    return [`hsl(${hue}, ${70}%, ${85}%)`, `hsl(${hue}, ${70}%, ${30}%)`];
+    let hue = ~~(Math.random() * 25) + 25; // covert to int I hate js so much holy christ wtf
+    return ["#452B21", "#452B21"];
+    // return [`hsl(${hue}, ${100}%, ${75}%)`, `hsl(${40}, ${100}%, ${43}%)`];
 }
 
 function printTileMap(){
@@ -1500,7 +1576,7 @@ function renderTransition(g, level){
     g.fillStyle = level.colorScheme[0];
     g.fillRect(transitionX+20, transitionY+20, 885, 360);
 
-    g.fillStyle = "black";
+    g.fillStyle = "white";
     g.font = "bold 55px Inter";
     writeCenteredText(g, transitionMessages[levelNum], transitionX + 925/2, transitionY + 170);
     g.font = "45px Inter";
@@ -1521,7 +1597,7 @@ let snowglobe = new Image();
 shatteredGlass.src = "./assets/glass.png";
 trophy.src = "./assets/trophy.webp";
 speechBubble.src = "./assets/bubble.webp";
-snowglobe.src = "./assets/Untitled_Globe.webp";
+snowglobe.src = "./assets/painting.webp";
 
 let globeSize; let globeX; let globeY;
 
@@ -1623,54 +1699,57 @@ function drawOutro(g){
 
 function drawIntro(g){
 
+    g.clearRect(0,0,1000000,1000000);
+    let baseY = 350;
+
     if(introFrameNo === 0) {
         cutScenePlayer = new CutScenePlayer(0,500, 310,350);
         globeSize = 75;
-        globeX = 480; globeY = 380;
+        globeX = 480; globeY = baseY + 280;
     }
 
     introFrameNo++;
     // introFrameNo = 100;
 
     // Draw BG
-    g.fillStyle = "white";
-    g.fillRect(0,0,1000000,1000000);
+    // g.fillStyle = "white";
+    // g.fillRect(0,0,1000000,1000000);
 
     if(introFrameNo < speechDelay * 5){
         cutScenePlayer.w = 310;
         cutScenePlayer.h = 350;
         cutScenePlayer.x = 0;
-        cutScenePlayer.y = 100;
+        cutScenePlayer.y = baseY;
 
         cutScenePlayer.draw(g);
 
         g.fillStyle = "black";
         g.font = "bold 40px Inter"
-        g.drawImage(speechBubble, 360, 100, 450, 250);
+        g.drawImage(speechBubble, 360, baseY, 450, 250);
 
 
         if(introFrameNo < speechDelay * 1){
-            writeCenteredText(g, "Oh!", speechCenter, 190);
-            writeCenteredText(g, "Hello there", speechCenter, 240);
-            writeCenteredText(g, "traveler", speechCenter, 290);
+            writeCenteredText(g, "Oh!", speechCenter, baseY+90);
+            writeCenteredText(g, "Hello there", speechCenter, baseY+140);
+            writeCenteredText(g, "traveler", speechCenter, baseY+190);
         } else if(introFrameNo < speechDelay * 2){
-            writeCenteredText(g, "Wanna", speechCenter, 190);
-            writeCenteredText(g, "see a magic", speechCenter, 240);
-            writeCenteredText(g, "trick :)", speechCenter, 290);
+            writeCenteredText(g, "Wanna", speechCenter, baseY+90);
+            writeCenteredText(g, "see a magic", speechCenter, baseY+140);
+            writeCenteredText(g, "trick :)", speechCenter, baseY+190);
         } else if(introFrameNo < speechDelay * 3){
-            writeCenteredText(g, "I'm going to", speechCenter, 190);
-            writeCenteredText(g, "shrink down into", speechCenter, 240);
-            writeCenteredText(g, "that snowglobe", speechCenter, 290);
+            writeCenteredText(g, "I'm going to", speechCenter, baseY+90);
+            writeCenteredText(g, "shrink down into", speechCenter, baseY+140);
+            writeCenteredText(g, "that painting", speechCenter, baseY+190);
         } else if(introFrameNo < speechDelay * 3.5){
-            writeCenteredText(g, "Ready?", speechCenter, 240);
+            writeCenteredText(g, "Ready?", speechCenter, baseY+140);
         }else if(introFrameNo < speechDelay * 3.8){
-            writeCenteredText(g, "3...", speechCenter, 240);
+            writeCenteredText(g, "3...", speechCenter, baseY+140);
         }else if(introFrameNo < speechDelay * 4.1){
-            writeCenteredText(g, "2...", speechCenter, 240);
+            writeCenteredText(g, "2...", speechCenter, baseY+140);
         } else if(introFrameNo < speechDelay * 4.4){
-            writeCenteredText(g, "1...", speechCenter, 240);
+            writeCenteredText(g, "1...", speechCenter, baseY+140);
         } else {
-            writeCenteredText(g, "Now!", speechCenter, 240);
+            writeCenteredText(g, "Now!", speechCenter, baseY+140);
         }
 
         g.drawImage(snowglobe, globeX, globeY, globeSize, globeSize);
@@ -1710,7 +1789,7 @@ function drawIntro(g){
         g.drawImage(snowglobe, globeX, globeY, globeSize, globeSize);
 
         globeX-=1.1;
-        globeY-= 1.2;
+        globeY-= 1.4;
         globeSize+=2;
 
         return;
