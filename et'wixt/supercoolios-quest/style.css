@@ -53,8 +53,13 @@ body{
 .inspiration{
     font-size: .6rem; 
     margin-top: 2px;
-    background-color: antiquewhite;
+    background-color: rgb(109, 62, 39);
+    color: white;
     padding: 2px 5px;
+}
+
+.inspiration>a{
+    color: rgb(255, 220, 125);
 }
 
 .arrow-buttons{

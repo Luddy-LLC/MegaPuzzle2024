@@ -1444,7 +1444,7 @@ const g = canvas.getContext("2d");
 
 const transitionMessages = ["Alright, that's enough of that", "Wait what???", "Ok this is scaring me", "Is this a time loop?", "Please let me out!",
                             "Did I say my spell wrong?", "This is crazy!", "LET ME OUT LET ME OUT", "Is it over yet???"];
-const transitionSubMessages = ["Time to leave the snowglobe", "Why am I still in here?", "I just want to leave :(", "Am I stuck in here???", "I just want to go home!!",
+const transitionSubMessages = ["Time to leave the paiting", "Why am I still in here?", "I just want to leave :(", "Am I stuck in here???", "I just want to go home!!",
                                 "This might have been a mistake...", "I didn't even know there was a time loop spell...", "LET ME OUT LET ME OUT", "Please please please"];
 
 let mx, my = 0;
@@ -1452,8 +1452,8 @@ let mx, my = 0;
 let outroFrameNo = 0;
 let introFrameNo = 0;
 
-const speechCenter = 615;
-const speechDelay = 350;
+const speechCenter = 672;
+const speechDelay = 300;
 
 let keyMap = {};
 let levelNum = 0;
@@ -1479,6 +1479,7 @@ function renderGame(){
 
     let level = levelNum < levels.length ? levels[levelNum] : extraLevel;
     
+    // level = extraLevel;
     if(drawIntro(g) != 1) return;
     
 
@@ -1576,7 +1577,7 @@ function renderTransition(g, level){
     g.fillStyle = level.colorScheme[0];
     g.fillRect(transitionX+20, transitionY+20, 885, 360);
 
-    g.fillStyle = "white";
+    g.fillStyle = level.stageNum != 9 ? "white" : "black";
     g.font = "bold 55px Inter";
     writeCenteredText(g, transitionMessages[levelNum], transitionX + 925/2, transitionY + 170);
     g.font = "45px Inter";
@@ -1621,52 +1622,53 @@ function drawOutro(g){
         if(outroFrameNo > 1000){
             cutScenePlayer.w = 310;
             cutScenePlayer.h = 350;
-            cutScenePlayer.x = 0;
+            cutScenePlayer.x = 50;
+            cutScenePlayer.y = 200;
 
             cutScenePlayer.draw(g);
 
             g.fillStyle = "black";
             g.font = "bold 40px Inter"
 
-            g.drawImage(speechBubble, 360, 100, 450, 250);
+            g.drawImage(speechBubble, 360, 100, 550, 300);
             if(outroFrameNo < 1000 + speechDelay * 1){
-                writeCenteredText(g, "Ta daaaa", speechCenter, 190);
-                writeCenteredText(g, "How'd you like", speechCenter, 240);
-                writeCenteredText(g, "my magic trick?", speechCenter, 290);
+                writeCenteredText(g, "Ta daaaa", speechCenter, 220);
+                writeCenteredText(g, "How'd you like", speechCenter, 270);
+                writeCenteredText(g, "my magic trick?", speechCenter, 320);
             } else if(outroFrameNo < 1000 + speechDelay * 2){
-                writeCenteredText(g, "Everything was", speechCenter, 190);
-                writeCenteredText(g, "completely", speechCenter, 240);
-                writeCenteredText(g, "intentional...", speechCenter, 290);
+                writeCenteredText(g, "Everything was", speechCenter, 220);
+                writeCenteredText(g, "completely", speechCenter, 270);
+                writeCenteredText(g, "intentional...", speechCenter, 320);
             } else if(outroFrameNo < 1000 + speechDelay * 3) {
-                writeCenteredText(g, "...", speechCenter, 240);
+                writeCenteredText(g, "...", speechCenter, 270);
             } else if(outroFrameNo < 1000 + speechDelay * 4) {
-                writeCenteredText(g, "Ok fine I", speechCenter, 190);
-                writeCenteredText(g, "guess you were", speechCenter, 240);
-                writeCenteredText(g, "kinda helpful", speechCenter, 290);
+                writeCenteredText(g, "Ok fine I", speechCenter, 220);
+                writeCenteredText(g, "guess you were", speechCenter, 270);
+                writeCenteredText(g, "kinda helpful", speechCenter, 320);
             } else if(outroFrameNo < 1000 + speechDelay * 5) {
-                writeCenteredText(g, "...", speechCenter, 240);
+                writeCenteredText(g, "...", speechCenter, 270);
             } else if(outroFrameNo < 1000 + speechDelay * 6) {
-                writeCenteredText(g, "What are", speechCenter, 190);
-                writeCenteredText(g, "you still", speechCenter, 240);
-                writeCenteredText(g, "doing here?", speechCenter, 290);
+                writeCenteredText(g, "What are", speechCenter, 220);
+                writeCenteredText(g, "you still", speechCenter, 270);
+                writeCenteredText(g, "doing here?", speechCenter, 320);
             } else if(outroFrameNo < 1000 + speechDelay * 7){
-                writeCenteredText(g, "...", speechCenter, 240);
+                writeCenteredText(g, "...", speechCenter, 270);
             } else if(outroFrameNo < 1000 + speechDelay * 8) {
-                writeCenteredText(g, "Oh!", speechCenter, 190);
-                writeCenteredText(g, "you want some", speechCenter, 240);
-                writeCenteredText(g, "sort of reward?", speechCenter, 290);
+                writeCenteredText(g, "Oh!", speechCenter, 220);
+                writeCenteredText(g, "you want some", speechCenter, 270);
+                writeCenteredText(g, "sort of reward?", speechCenter, 320);
             } else if(outroFrameNo < 1000 + speechDelay * 9) {
-                writeCenteredText(g, "Hmmm...", speechCenter, 190);
-                writeCenteredText(g, "I guess I could", speechCenter, 240);
-                writeCenteredText(g, "give you this", speechCenter, 290);
+                writeCenteredText(g, "Hmmm...", speechCenter, 220);
+                writeCenteredText(g, "I guess I could", speechCenter, 270);
+                writeCenteredText(g, "give you this", speechCenter, 320);
             } else {
                 cutScenePlayer.img.src = "./assets/Hatless_Untitled.webp";
-                g.fillText("It's my hat,", 515, 190);
+                g.fillText("It's my hat,", 565, 220);
                 g.fillStyle = "#4b10ac";
-                g.fillText("SuperCoolio", 448, 240);
+                g.fillText("SuperCoolio", 498, 270);
                 g.fillStyle = "black";
-                g.fillText(", take", 685, 240);
-                g.fillText("good care of it", 475, 290);
+                g.fillText(", take", 735, 270);
+                g.fillText("good care of it", 525, 320);
             }
         }
 
@@ -1683,7 +1685,7 @@ function drawOutro(g){
     }
     // Crack suddenly shows up
     if(outroFrameNo > 550){
-        g.drawImage(shatteredGlass, 0, 0, canvasW, canvasH);
+        g.drawImage(shatteredGlass, 0, 0, 925, 720);
     }
     //Draw Postgres growing
     if(outroFrameNo > 600){
@@ -1697,6 +1699,7 @@ function drawOutro(g){
     g.lineWidth = 1;
 }
 
+
 function drawIntro(g){
 
     g.clearRect(0,0,1000000,1000000);
@@ -1705,7 +1708,7 @@ function drawIntro(g){
     if(introFrameNo === 0) {
         cutScenePlayer = new CutScenePlayer(0,500, 310,350);
         globeSize = 75;
-        globeX = 480; globeY = baseY + 280;
+        globeX = 480; globeY = baseY + 285;
     }
 
     introFrameNo++;
@@ -1729,37 +1732,37 @@ function drawIntro(g){
 
 
         if(introFrameNo < speechDelay * 1){
-            writeCenteredText(g, "Oh!", speechCenter, baseY+90);
-            writeCenteredText(g, "Hello there", speechCenter, baseY+140);
-            writeCenteredText(g, "traveler", speechCenter, baseY+190);
+            writeCenteredText(g, "Oh!", speechCenter - 55, baseY+90);
+            writeCenteredText(g, "Hello there", speechCenter - 55, baseY+140);
+            writeCenteredText(g, "traveler", speechCenter - 55, baseY+190);
         } else if(introFrameNo < speechDelay * 2){
-            writeCenteredText(g, "Wanna", speechCenter, baseY+90);
-            writeCenteredText(g, "see a magic", speechCenter, baseY+140);
-            writeCenteredText(g, "trick :)", speechCenter, baseY+190);
+            writeCenteredText(g, "Wanna", speechCenter - 55, baseY+90);
+            writeCenteredText(g, "see a magic", speechCenter - 55, baseY+140);
+            writeCenteredText(g, "trick :)", speechCenter - 55, baseY+190);
         } else if(introFrameNo < speechDelay * 3){
-            writeCenteredText(g, "I'm going to", speechCenter, baseY+90);
-            writeCenteredText(g, "shrink down into", speechCenter, baseY+140);
-            writeCenteredText(g, "that painting", speechCenter, baseY+190);
+            writeCenteredText(g, "I'm going to", speechCenter - 55, baseY+90);
+            writeCenteredText(g, "shrink down into", speechCenter - 55, baseY+140);
+            writeCenteredText(g, "that painting", speechCenter - 55, baseY+190);
         } else if(introFrameNo < speechDelay * 3.5){
-            writeCenteredText(g, "Ready?", speechCenter, baseY+140);
+            writeCenteredText(g, "Ready?", speechCenter - 55, baseY+140);
         }else if(introFrameNo < speechDelay * 3.8){
-            writeCenteredText(g, "3...", speechCenter, baseY+140);
+            writeCenteredText(g, "3...", speechCenter - 55, baseY+140);
         }else if(introFrameNo < speechDelay * 4.1){
-            writeCenteredText(g, "2...", speechCenter, baseY+140);
+            writeCenteredText(g, "2...", speechCenter - 55, baseY+140);
         } else if(introFrameNo < speechDelay * 4.4){
-            writeCenteredText(g, "1...", speechCenter, baseY+140);
+            writeCenteredText(g, "1...", speechCenter - 55, baseY+140);
         } else {
-            writeCenteredText(g, "Now!", speechCenter, baseY+140);
+            writeCenteredText(g, "Now!", speechCenter - 55, baseY+140);
         }
 
         g.drawImage(snowglobe, globeX, globeY, globeSize, globeSize);
 
         return;
     } else if(introFrameNo < speechDelay * 5.475) { // Shrink
-        cutScenePlayer.x++;
-        cutScenePlayer.y+=2;
-        cutScenePlayer.w -= 2 * 310 / 350;
-        cutScenePlayer.h -= 2;
+        cutScenePlayer.x += 1 * (350 / speechDelay);
+        cutScenePlayer.y+=2 * (350 / speechDelay);
+        cutScenePlayer.w -= 2 * (350 / speechDelay) * 310 / 350;
+        cutScenePlayer.h -= 2* (350 / speechDelay);
 
         cutScenePlayer.draw(g);
 
@@ -1772,25 +1775,25 @@ function drawIntro(g){
 
         return;
     } else if(introFrameNo < speechDelay * 6.475) { // Move
-        cutScenePlayer.xVel = 1;
+        cutScenePlayer.xVel = 1 * (350 / speechDelay);
         cutScenePlayer.update();
         cutScenePlayer.draw(g);
         g.drawImage(snowglobe, globeX, globeY, globeSize, globeSize);
 
         return;    
-    } else if(introFrameNo < speechDelay * 7) { // Pause
+    } else if(introFrameNo < speechDelay * 6.8) { // Pause
         cutScenePlayer.imgRot = 0;
         cutScenePlayer.draw(g);
         g.drawImage(snowglobe, globeX, globeY, globeSize, globeSize);
 
         return;
-    } else if(introFrameNo < speechDelay * 9) { // Zoom into snowglobe
-        cutScenePlayer.draw(g);
+    } else if(introFrameNo < speechDelay * 7.7) { // Zoom into snowglobe
+        // cutScenePlayer.draw(g);
         g.drawImage(snowglobe, globeX, globeY, globeSize, globeSize);
 
-        globeX-=1.1;
-        globeY-= 1.4;
-        globeSize+=2;
+        globeX-= 1.8;
+        globeY-= 2.7;
+        globeSize+=3;
 
         return;
     } else {
