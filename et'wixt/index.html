@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mega Puzzle - Et'wixt</title>
+    <link rel="preload" as="image" href="../map/assets/fast_clouds_pixleated.webp">
     <script src="https://nouveaureece.github.io/Puzzlestrap/js/bootstrap.bundle.js"></script>
     <link rel="stylesheet" href="/Common/puzzle.css">
     <link rel="stylesheet" href="style.css">
@@ -12,7 +13,8 @@
 </head>
 
 <body>
-        <nav class="navbar navbar-nav">
+    <img id="clouds" class="centered clouds freezeframe" src="../map/assets/fast_clouds_pixleated.webp" aria-hidden="true">  
+    <nav class="navbar navbar-nav">
         <div class="navbar-nav">
             <a class="btn" href="/">
                 <svg aria-hidden="true" width="10px"><use href="/Common/icons.svg#ppi-map" xlink:href="/Common/icons.svg#ppi-map"></use></svg>    
@@ -38,6 +40,7 @@
 
     <main>
         <img class="region-map" src="../map/assets/etwixt.png" alt="A map of the region of et'wixt">
+        <img class="cloud-background" src="../map/assets/clouds_static.png" aria-hidden="true">
     </main>
 
 
