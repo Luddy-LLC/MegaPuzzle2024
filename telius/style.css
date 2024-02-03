@@ -5,8 +5,9 @@
 }
 
 main{
-    /* background-image: url("/map/assets/clouds/foggy-clouds.webp"); */
-    /* background-color: aqua; */
+    background-image: url("/map/assets/clouds_static.png");
+    backdrop-filter: opacity;
+    background-color: aqua;
     background-size: cover;
 }
 
@@ -15,6 +16,7 @@ main{
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    transform: scale(1.8);
 
     aspect-ratio: 654/486;
     height: 100%;
