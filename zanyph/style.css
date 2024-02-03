@@ -74,7 +74,7 @@
 }
 
 .pin#castaway{
-    top: calc(18% - var(--pin-size) / 2);
+    top: calc(18.5% - var(--pin-size) / 2);
     left: calc(55% - var(--pin-size) / 2);
 }
 

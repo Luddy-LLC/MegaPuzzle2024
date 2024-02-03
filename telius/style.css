@@ -1,8 +1,14 @@
 
 :root{
     --pin-size: 7vh;
+    --cloud-size: 120vh;
 }
 
+main{
+    /* background-image: url("/map/assets/clouds/foggy-clouds.webp"); */
+    /* background-color: aqua; */
+    background-size: cover;
+}
 
 .region-map{
     background-image: url("/map/assets/telius.png");
@@ -12,6 +18,29 @@
 
     aspect-ratio: 654/486;
     height: 100%;
+
+    overflow:visible;
+
+    max-width: 1000px
+}
+
+.cloud{
+    display: block;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    position: absolute;
+
+    aspect-ratio: 1;
+    width: var(--cloud-size);
+
+    opacity: .7;
+
+    pointer-events: none;
+
+    /* overscroll-behavior-block:contain; */
 }
 
 .pin{
@@ -78,7 +107,61 @@
     left: calc(26.5% - var(--pin-size) / 2);
 }
 
+.cloud#corner1{
+    background-image: url("/map/assets/clouds/edge-cloud1.webp");
+    top: calc(100% - var(--cloud-size) / 2);
+    left: calc(0% - var(--cloud-size) / 2);
 
+    transform: rotate(20deg);
+}
+
+.cloud#corner2{
+    background-image: url("/map/assets/clouds/edge-cloud1.webp");
+    top: calc(0% - var(--cloud-size) / 2);
+    left: calc(0% - var(--cloud-size) / 2);
+
+    transform: rotate(150deg);
+}
+
+.cloud#corner3{
+    background-image: url("/map/assets/clouds/edge-cloud1.webp");
+    top: calc(100% - var(--cloud-size) / 2);
+    left: calc(90% - var(--cloud-size) / 2);
+
+    transform: rotate(-20deg);
+}
+
+.cloud#corner4{
+    background-image: url("/map/assets/clouds/edge-cloud1.webp");
+    top: calc(0% - var(--cloud-size) / 2);
+    left: calc(90% - var(--cloud-size) / 2);
+
+    transform: rotate(20deg);
+}
+
+.cloud#corner5{
+    background-image: url("/map/assets/clouds/edge-cloud1.webp");
+    top: calc(50% - var(--cloud-size) / 2);
+    left: calc(-25% - var(--cloud-size) / 2);
+
+    transform: rotate(90deg);
+}
+
+.cloud#corner6{
+    background-image: url("/map/assets/clouds/edge-cloud1.webp");
+    top: calc(50% - var(--cloud-size) / 2);
+    left: calc(120% - var(--cloud-size) / 2);
+
+    transform: rotate(-100deg);
+}
+
+.cloud#corner7{
+    background-image: url("/map/assets/clouds/edge-cloud1.webp");
+    top: calc(110% - var(--cloud-size) / 2);
+    left: calc(50% - var(--cloud-size) / 2);
+
+    transform: rotate(0deg);
+}
 
 
 
