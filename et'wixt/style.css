@@ -1,3 +1,105 @@
+
+
+:root{
+    --pin-size: 7vh;
+}
+
+
+
+
+.region-map{
+    background-image: url("/map/assets/etwixt.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    aspect-ratio: 654/486;
+    height: 100%;
+}
+
+.pin{
+    display: block;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("/map/assets/x-mark.webp");
+
+    border: solid transparent 15px; /* easier to click you with my dear */
+
+    position: absolute;
+
+    aspect-ratio: 1;
+    width: var(--pin-size);
+
+    transform: scale(1);
+    transition: transform .1s;
+}
+
+.pin:hover{
+    transform: scale(1.1);
+}
+
+.pin-tooltip{
+    --bs-tooltip-bg: #7c5d34;
+    --bs-tooltip-color: var(--bs-white);
+}
+
+.star{
+
+    display: inline-block;
+    position: relative;
+
+    top: 3px;
+    margin-right: 2px;
+
+    width: 15px;
+    height: 15px;
+}
+
+.star.filled{
+    background-image: url("/Common/filled-star.svg");
+}
+
+.star.unfilled{
+    background-image: url("/Common/unfilled-star.svg");
+}
+
+
+.pin#supercoolios-quest{
+    top: calc(11% - var(--pin-size) / 2);
+    left: calc(57.75% - var(--pin-size) / 2);
+}
+
+.pin#spell-sweeper{
+    top: calc(42% - var(--pin-size) / 2);
+    left: calc(32% - var(--pin-size) / 2);
+}
+
+.pin#standardized-testing{
+    top: calc(53% - var(--pin-size) / 2);
+    left: calc(22.5% - var(--pin-size) / 2);
+}
+
+.pin#preoccupational{
+    top: calc(42.5% - var(--pin-size) / 2);
+    left: calc(72.75% - var(--pin-size) / 2);
+}
+
+
+
+
+
+
+@media screen and (max-width: 520px) and (orientation: portrait) { /* Mobile portrait */
+    .region-map{
+        margin-top: 50px;
+    }
+
+    [data-puzzle='map'] main{
+        overflow-y:scroll !important;
+    }
+
 body {
     opacity: 0;
     transition: opacity .5s;

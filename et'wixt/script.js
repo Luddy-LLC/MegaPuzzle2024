@@ -1,3 +1,6 @@
+
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('body').style.opacity = 1;
     // document.querySelector('body').style.background = "#E3DED4";

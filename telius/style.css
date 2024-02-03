@@ -1,0 +1,177 @@
+
+:root{
+    --pin-size: 7vh;
+    --cloud-size: 120vh;
+}
+
+main{
+    /* background-image: url("/map/assets/clouds/foggy-clouds.webp"); */
+    /* background-color: aqua; */
+    background-size: cover;
+}
+
+.region-map{
+    background-image: url("/map/assets/telius.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    aspect-ratio: 654/486;
+    height: 100%;
+
+    overflow:visible;
+
+    max-width: 1000px
+}
+
+.cloud{
+    display: block;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    position: absolute;
+
+    aspect-ratio: 1;
+    width: var(--cloud-size);
+
+    opacity: .7;
+
+    pointer-events: none;
+
+    /* overscroll-behavior-block:contain; */
+}
+
+.pin{
+    display: block;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("/map/assets/x-mark.webp");
+
+    border: solid transparent 15px; /* easier to click you with my dear */
+
+    position: absolute;
+
+    aspect-ratio: 1;
+    width: var(--pin-size);
+
+    transform: scale(1);
+    transition: transform .1s;
+}
+
+.pin:hover{
+    transform: scale(1.1);
+}
+
+.pin-tooltip{
+    --bs-tooltip-bg: #7c5d34;
+    --bs-tooltip-color: var(--bs-white);
+}
+
+.star{
+
+    display: inline-block;
+    position: relative;
+
+    top: 3px;
+    margin-right: 2px;
+
+    width: 15px;
+    height: 15px;
+}
+
+.star.filled{
+    background-image: url("/Common/filled-star.svg");
+}
+
+.star.unfilled{
+    background-image: url("/Common/unfilled-star.svg");
+}
+
+
+.pin#scansion{
+    top: calc(51% - var(--pin-size) / 2);
+    left: calc(70% - var(--pin-size) / 2);
+}
+
+.pin#a-little-alchemy{
+    top: calc(64% - var(--pin-size) / 2);
+    left: calc(38.5% - var(--pin-size) / 2);
+}
+
+.pin#behind-bars{
+    top: calc(27% - var(--pin-size) / 2);
+    left: calc(26.5% - var(--pin-size) / 2);
+}
+
+.cloud#corner1{
+    background-image: url("/map/assets/clouds/edge-cloud1.webp");
+    top: calc(100% - var(--cloud-size) / 2);
+    left: calc(0% - var(--cloud-size) / 2);
+
+    transform: rotate(20deg);
+}
+
+.cloud#corner2{
+    background-image: url("/map/assets/clouds/edge-cloud1.webp");
+    top: calc(0% - var(--cloud-size) / 2);
+    left: calc(0% - var(--cloud-size) / 2);
+
+    transform: rotate(150deg);
+}
+
+.cloud#corner3{
+    background-image: url("/map/assets/clouds/edge-cloud1.webp");
+    top: calc(100% - var(--cloud-size) / 2);
+    left: calc(90% - var(--cloud-size) / 2);
+
+    transform: rotate(-20deg);
+}
+
+.cloud#corner4{
+    background-image: url("/map/assets/clouds/edge-cloud1.webp");
+    top: calc(0% - var(--cloud-size) / 2);
+    left: calc(90% - var(--cloud-size) / 2);
+
+    transform: rotate(20deg);
+}
+
+.cloud#corner5{
+    background-image: url("/map/assets/clouds/edge-cloud1.webp");
+    top: calc(50% - var(--cloud-size) / 2);
+    left: calc(-25% - var(--cloud-size) / 2);
+
+    transform: rotate(90deg);
+}
+
+.cloud#corner6{
+    background-image: url("/map/assets/clouds/edge-cloud1.webp");
+    top: calc(50% - var(--cloud-size) / 2);
+    left: calc(120% - var(--cloud-size) / 2);
+
+    transform: rotate(-100deg);
+}
+
+.cloud#corner7{
+    background-image: url("/map/assets/clouds/edge-cloud1.webp");
+    top: calc(110% - var(--cloud-size) / 2);
+    left: calc(50% - var(--cloud-size) / 2);
+
+    transform: rotate(0deg);
+}
+
+
+
+
+@media screen and (max-width: 520px) and (orientation: portrait) { /* Mobile portrait */
+    .region-map{
+        margin-top: 50px;
+    }
+
+    [data-puzzle='map'] main{
+        overflow-y:scroll !important;
+    }
+}
