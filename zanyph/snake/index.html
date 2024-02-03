@@ -68,6 +68,9 @@
             <p class="mobile-button" id="right">D</p>
         </div>
 
+    <div class="d-grid gap-2 mt-4 mb-4 d-md-flex justify-content-md-center"> 
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#hints">Hints</button>
+        </div>
     </main>
 
 
@@ -94,6 +97,21 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </aside>
+
+
+    <!-- HINT ASIDE -->
+    <aside>
+        <div class="offcanvas offcanvas-start" data-bs-scroll="false" tabindex="-1" id="hints"
+            aria-labelledby="lore-label">
+            <div class="offcanvas-header">
+                <h1 class="offcanvas-title" id="hints-label">Hints</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <p>There's a whole bunch of really interesting hints going on... have a gander!</p>
             </div>
         </div>
     </aside>

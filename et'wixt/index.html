@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mega Puzzle - Et'wixt</title>
     <script src="https://nouveaureece.github.io/Puzzlestrap/js/popper.min.js"></script>
+    <link rel="preload" as="image" href="../map/assets/fast_clouds_pixleated.webp">
     <script src="https://nouveaureece.github.io/Puzzlestrap/js/bootstrap.bundle.js"></script>
     <link rel="stylesheet" href="/Common/puzzle.css">
     <link rel="stylesheet" href="style.css">
@@ -15,7 +16,8 @@
 <!-- svg -->
 
 <body>
-        <nav class="navbar navbar-nav">
+    <img id="clouds" class="centered clouds freezeframe" src="../map/assets/fast_clouds_pixleated.webp" aria-hidden="true">  
+    <nav class="navbar navbar-nav">
         <div class="navbar-nav">
             <a class="btn" href="/">
                 <svg aria-hidden="true" width="10px"><use href="/Common/icons.svg#ppi-map" xlink:href="/Common/icons.svg#ppi-map"></use></svg>    
@@ -40,7 +42,6 @@
     </nav>
 
     <main>
-
         <div class="region-map">
             <a href="/et'wixt/supercoolios-quest/index.html" class="pin" id="supercoolios-quest" 
                 data-bs-toggle="tooltip" 
@@ -75,6 +76,10 @@
                 data-bs-title="<b>Preoccupational</b><br>Difficulty: <div class='filled star'></div><div class='filled star'></div><div class='unfilled star'></div>">
             </a>
         </div>
+
+        <img class="region-map" src="../map/assets/etwixt.png" alt="A map of the region of et'wixt">
+        <img class="cloud-background" src="../map/assets/clouds_static.png" aria-hidden="true">
+
     </main>
 
 
@@ -101,6 +106,21 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </aside>
+
+
+    <!-- HINT ASIDE -->
+    <aside>
+        <div class="offcanvas offcanvas-start" data-bs-scroll="false" tabindex="-1" id="hints"
+            aria-labelledby="lore-label">
+            <div class="offcanvas-header">
+                <h1 class="offcanvas-title" id="hints-label">Hints</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <p>There's a whole bunch of really interesting hints going on... have a gander!</p>
             </div>
         </div>
     </aside>

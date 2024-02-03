@@ -38,9 +38,25 @@ function moveToPlayButton() {
 }
 
 function start() {
-    document.getElementById('clouds').src = 'map/assets/clouds_pixleated.webp';
+    document.getElementById('clouds').src = '/map/assets/clouds_pixleated.webp';
     document.getElementById('clouds').classList.add("clouds-animated");
 }
+
+window.transitionToPage = function(href) {
+    document.getElementById('clouds').style.display = 'block';
+    document.getElementById('clouds').src = '/map/assets/clouds_pixleated_reverse_fast.webp';
+    setTimeout(function() {
+        document.querySelector('body').style.opacity = 0;
+        setTimeout(function() { 
+            window.location.href = href
+        }, 1000)
+    }, 1400)
+    
+}
+
+document.addEventListener('DOMContentLoaded', function(event) {
+    document.querySelector('body').style.opacity = 1
+})
 
 // const ele = document.getElementById("mapContainer");
 const nw = document.getElementById("aavikk");

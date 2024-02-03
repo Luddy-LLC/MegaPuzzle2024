@@ -8,7 +8,10 @@ body{
     overflow: hidden;
     cursor: grab;
     background-color: #E3DED4;
+    opacity: 0;
+    transition: opacity .5s;
 }
+
 
 #move {
     height: 100px;
@@ -151,6 +154,7 @@ map {
     position: absolute;
     pointer-events: none;
     z-index: 101;
+    height: 100%;
 }
 
 .clouds-animated {
