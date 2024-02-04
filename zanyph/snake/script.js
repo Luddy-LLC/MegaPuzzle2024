@@ -8,7 +8,6 @@
 
 // Fix font problems with sprites - Mallory!
 // TODO: Better Death Message formatting (Do you want to do this mallory?)
-// Give the last letter a special color!
 
 
 //Timing for interpol animation
@@ -52,8 +51,8 @@ let canRespawn = false;
 let directionQueue = [];
 
 //Clue Stuff
-let clueInterval = 5;
-let clue = ["Y", "R", "A", "N", "I", "D", "R", "O"];
+let clueInterval = 4;
+let clue = ["y", "r", "a", "n", "i", "d", "r", "o"];
 let cluedClues = 0;
 
 
@@ -85,8 +84,8 @@ async function killSnake() {
 function getEmptyCoords() {
     let possiblePositions = [];
 
-    for (let x = 0; x != boardSize; ++x) {
-        for (let y = 0; y != boardSize; ++y) {
+    for (let x = 1; x != boardSize-2; ++x) {
+        for (let y = 1; y != boardSize-2; ++y) {
             if (snake.every((p, i) => p[0] != x || p[1] != y)) {
                 possiblePositions.push([x, y]);
             }
@@ -216,6 +215,7 @@ function appleFrame(tick) {
 
 function drawApple() {
     if (snake.length % clueInterval == 0 && cluedClues < clue.length) {
+        if(cluedClues == clue.length-1) ctx.fillStyle = "red";
         ctx.fillText(clue[cluedClues], apple[0] * cellSize, (apple[1] + 1) * cellSize);
     } else {
         var tick = timer;
@@ -236,7 +236,7 @@ function draw() {
 
     // drawing code
     ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
-    ctx.font = "48px serif";
+    ctx.font = "48px Inter";
     ctx.fillStyle = "#0F0";
     ctx.textAlign = "center";
     ctx.beginPath();
@@ -247,7 +247,7 @@ function draw() {
     drawSnake(timer);
 
     if (!started) {
-        ctx.fillText("!eknaS ot emocleW", 256, 100)
+        ctx.fillText("!ekanS ot emocleW", 256, 100)
     }
     else if (isDead) {
         timer = timeStep - 1;

@@ -23,17 +23,16 @@
 }
 
 .mobile-button{
-    aspect-ratio: 1;
     width: 75px;
+    height: 75px;
 
     text-align: center;
-    line-height: 75px;
+    line-height: 60px;
 
-    background-color: aquamarine;
+    font-size: 25px;
 
     margin: 5px;
 }
-
 
 @media screen and (max-width: 520px) { /* Mobile portrait */
 
