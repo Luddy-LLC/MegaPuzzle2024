@@ -4,11 +4,18 @@
 }
 
 
+main{
+    background-image: url("/map/assets/clouds_static.png");
+    background-color: aqua;
+    background-size: cover;
+}
+
 .region-map{
     background-image: url("/map/assets/zanyph.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    transform: scale(1.2);
 
     aspect-ratio: 654/486;
     height: 100%;

@@ -3,12 +3,18 @@
     --pin-size: 7vh;
 }
 
+main{
+    background-image: url("/map/assets/clouds_static.png");
+    background-color: aqua;
+    background-size: cover;
+}
 
 .region-map{
     background-image: url("/map/assets/ithkiya.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    transform: scale(1.3);
 
     aspect-ratio: 654/486;
     height: 100%;

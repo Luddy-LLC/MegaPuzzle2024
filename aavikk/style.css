@@ -4,6 +4,12 @@
 }
 
 
+main{
+    background-image: url("/map/assets/clouds_static.png");
+    background-color: aqua;
+    background-size: cover;
+}
+
 .region-map{
     background-image: url("/map/assets/aavikk.png");
     background-size: contain;

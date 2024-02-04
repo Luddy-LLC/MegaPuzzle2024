@@ -6,7 +6,6 @@
 
 main{
     background-image: url("/map/assets/clouds_static.png");
-    backdrop-filter: opacity;
     background-color: aqua;
     background-size: cover;
 }

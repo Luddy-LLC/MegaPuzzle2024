@@ -6,11 +6,17 @@
 
 
 
+main{
+    background-image: url("/map/assets/clouds_static.png");
+    background-color: aqua;
+    background-size: cover;
+}
+
 
 .region-map{
     background-image: url("/map/assets/etwixt.png");
     background-size: contain;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat !important;
     background-position: center;
 
     aspect-ratio: 654/486;
@@ -99,6 +105,7 @@
     [data-puzzle='map'] main{
         overflow-y:scroll !important;
     }
+}
 
 body {
     opacity: 0;
