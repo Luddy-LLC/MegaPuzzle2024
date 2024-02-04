@@ -1,6 +1,6 @@
 
 :root{
-    --pin-size: 7vh;
+    --pin-size: 20vh;
 }
 
 
@@ -43,8 +43,10 @@ main{
 }
 
 .pin-tooltip{
-    --bs-tooltip-bg: #7c5d34;
+    --bs-tooltip-bg: #410a0a;
     --bs-tooltip-color: var(--bs-white);
+
+    font-size: 2rem;
 }
 
 .star{
@@ -69,8 +71,10 @@ main{
 
 
 .pin#megapuzzle{
-    top: calc(76% - var(--pin-size) / 2);
-    left: calc(44% - var(--pin-size) / 2);
+    top: calc(50% - var(--pin-size) / 2);
+    left: calc(50% - var(--pin-size) / 2);
+
+    filter: brightness(.5);
 }
 
 
