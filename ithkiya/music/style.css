@@ -52,7 +52,6 @@ body{
 
 .bard{
 
-    outline: none !important;
 
     width: 100%;
     aspect-ratio: 1/2;
@@ -74,8 +73,6 @@ body{
 }
 
 .bardrow{
-
-    outline: none !important;
 
     height: 100%;
     padding: 15%;
@@ -114,7 +111,6 @@ body{
 
 .col{
 
-    outline: none !important;
 
     display: flex;
     height: 100%;
@@ -125,9 +121,6 @@ body{
 
 
 .col:hover::after{
-
-    outline: none !important;
-
     content: " ";
     opacity: .5;
     display: block; 
@@ -147,7 +140,6 @@ body{
 
 .col[data-focus="true"]::after{
 
-    outline: none !important;
 
     transform: scale(1.2, 1);
     content: " ";

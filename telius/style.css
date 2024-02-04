@@ -1,7 +1,6 @@
 
 :root{
     --pin-size: 7vh;
-    --cloud-size: 120vh;
 }
 
 main{
@@ -12,37 +11,16 @@ main{
 
 .region-map{
     background-image: url("/map/assets/telius.png");
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    transform: scale(1.8);
 
-    aspect-ratio: 654/486;
+    aspect-ratio: 2425/1193;
     height: 100%;
 
     overflow:visible;
-
-    max-width: 1000px
 }
 
-.cloud{
-    display: block;
-
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-
-    position: absolute;
-
-    aspect-ratio: 1;
-    width: var(--cloud-size);
-
-    opacity: .7;
-
-    pointer-events: none;
-
-    /* overscroll-behavior-block:contain; */
-}
 
 .pin{
     display: block;
@@ -99,71 +77,14 @@ main{
 }
 
 .pin#a-little-alchemy{
-    top: calc(64% - var(--pin-size) / 2);
+    top: calc(72% - var(--pin-size) / 2);
     left: calc(38.5% - var(--pin-size) / 2);
 }
 
 .pin#behind-bars{
-    top: calc(27% - var(--pin-size) / 2);
+    top: calc(15% - var(--pin-size) / 2);
     left: calc(26.5% - var(--pin-size) / 2);
 }
-
-.cloud#corner1{
-    background-image: url("/map/assets/clouds/edge-cloud1.webp");
-    top: calc(100% - var(--cloud-size) / 2);
-    left: calc(0% - var(--cloud-size) / 2);
-
-    transform: rotate(20deg);
-}
-
-.cloud#corner2{
-    background-image: url("/map/assets/clouds/edge-cloud1.webp");
-    top: calc(0% - var(--cloud-size) / 2);
-    left: calc(0% - var(--cloud-size) / 2);
-
-    transform: rotate(150deg);
-}
-
-.cloud#corner3{
-    background-image: url("/map/assets/clouds/edge-cloud1.webp");
-    top: calc(100% - var(--cloud-size) / 2);
-    left: calc(90% - var(--cloud-size) / 2);
-
-    transform: rotate(-20deg);
-}
-
-.cloud#corner4{
-    background-image: url("/map/assets/clouds/edge-cloud1.webp");
-    top: calc(0% - var(--cloud-size) / 2);
-    left: calc(90% - var(--cloud-size) / 2);
-
-    transform: rotate(20deg);
-}
-
-.cloud#corner5{
-    background-image: url("/map/assets/clouds/edge-cloud1.webp");
-    top: calc(50% - var(--cloud-size) / 2);
-    left: calc(-25% - var(--cloud-size) / 2);
-
-    transform: rotate(90deg);
-}
-
-.cloud#corner6{
-    background-image: url("/map/assets/clouds/edge-cloud1.webp");
-    top: calc(50% - var(--cloud-size) / 2);
-    left: calc(120% - var(--cloud-size) / 2);
-
-    transform: rotate(-100deg);
-}
-
-.cloud#corner7{
-    background-image: url("/map/assets/clouds/edge-cloud1.webp");
-    top: calc(110% - var(--cloud-size) / 2);
-    left: calc(50% - var(--cloud-size) / 2);
-
-    transform: rotate(0deg);
-}
-
 
 
 
@@ -175,4 +96,25 @@ main{
     [data-puzzle='map'] main{
         overflow-y:scroll !important;
     }
+}
+
+
+.cloud-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 50%;
+    height: 80%;
+    z-index: 0;
+    transition: all 3s;
+}
+
+.clouds {
+    opacity: 1;
+    transition: opacity 2s;
+
+    width: 100vw;
+    height: 100vh;
+
+    object-fit: cover;
 }

@@ -128,11 +128,14 @@ main {
 
 .clouds {
     opacity: 1;
-    transition: opacity 3s;
+    transition: opacity 2s;
+
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
 }
 
 .region-map {
-    height: 80%;
     transition: all 3s;
     z-index: 10;
 }
