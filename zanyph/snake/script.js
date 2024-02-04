@@ -25,7 +25,7 @@ const snakeHead = document.getElementById("snake-head");
 const snakeBody = document.getElementById("snake-body");
 const snakeCorner = document.getElementById("snake-corner");
 const snakeTail = document.getElementById("snake-tail");
-const background = document.getElementById("background");
+//const background = document.getElementById("background");
 
 const timeStep = 10;
 
@@ -237,10 +237,10 @@ function draw() {
     // drawing code
     ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
     ctx.font = "48px Inter";
-    ctx.fillStyle = "#0F0";
+    ctx.fillStyle = "#b2e3f0";
     ctx.textAlign = "center";
     ctx.beginPath();
-    ctx.drawImage(background, 0, 0);
+    //ctx.drawImage(background, 0, 0);
     ctx.closePath();
 
     drawApple();
