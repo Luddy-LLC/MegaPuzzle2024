@@ -235,7 +235,7 @@ function draw() {
     }
 
     // drawing code
-    ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+    ctx.clearRect(0, 0, canvas.clientWidth*10, canvas.clientHeight*10);
     ctx.font = "48px Inter";
     ctx.fillStyle = "#b2e3f0";
     ctx.textAlign = "center";
