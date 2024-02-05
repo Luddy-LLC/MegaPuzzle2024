@@ -1,5 +1,6 @@
 #game-canvas {
-    background: #444;
+    background: rgba(0,0,0,0);
+    filter: blur(1);
     display: block;
     margin: 0 auto;
     image-rendering: pixelated; 
@@ -8,6 +9,17 @@
     width: 90%;
 
     margin-bottom: 10px;
+    border-radius: 30px;
+    border-color: #2dd7ee;
+    border-style: double;
+}
+
+
+body {
+    background-image: url("assets/background.png");
+    background-position: 0% -10%;
+    background-color: aqua;
+    background-size: cover;
 }
 
 #game-assets {
@@ -16,6 +28,7 @@
 
 .text-container{
     margin-bottom: 20px;
+    margin-top: 15%;
 }
 
 .arrow-buttons{
