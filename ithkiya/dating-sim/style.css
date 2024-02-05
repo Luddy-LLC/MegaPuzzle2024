@@ -3,19 +3,56 @@
     justify-content: right;
     align-items: end;
     position: relative;
-    background-image: url('assets/ocean.jpg');
     background-size: cover;
     height: 400px;
 }
 
+body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('assets/bkgrnd.png');
+    background-attachment: fixed;
+    background-position: right;
+}
+
 #dude {
     position:absolute;
-    left: 0px;
+    margin-bottom: 5%;
+    left: 10px;
     bottom: 0px;
+    animation: rock 3s ease-in-out infinite;
 }
 
 #charibdis {
-    right: 0px;
+    padding-top: 10%;
+    margin-bottom: 5%;
+    animation: undulate 4s ease infinite;
+}
+
+
+@keyframes rock {
+    0% {
+      transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(8deg);
+    }
+    100% {
+        transform: rotate(-5deg);
+    }
+  }
+
+
+@keyframes undulate {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.15, 1.1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
 }
 
 #ui {
