@@ -150,16 +150,36 @@ map {
  z-index: 2;
 }
 
-.clouds {
-    position: absolute;
-    pointer-events: none;
+
+
+.slow-clouds {
+    opacity: 1;
+    transition: opacity 4s ease-in;
+
     z-index: 101;
-    height: 100%;
+
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+
+    pointer-events: none;
 }
 
-.clouds-animated {
+
+.clouds {
+    opacity: 1;
+    transition: opacity 2s;
+
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+
+    z-index: 100;
+}
+
+/* .clouds-animated {
     animation: fadeOut 4s forwards;
-    animation-delay: 2s;
+    animation-delay: 0s;
     -webkit-animation: fadeOut 4s forwards;
     -webkit-animation-delay: 2s;
     -moz-animation: fadeOut 4s forwards;
@@ -168,7 +188,10 @@ map {
     -o-animation-delay: 2s;
     -ms-animation: fadeOut 4s forwards;
     -ms-animation-delay: 2s;
-}
+} */
+
+/* 
+
 
 @keyframes fadeOut {
     0% {
@@ -218,7 +241,7 @@ map {
     100% {
         opacity: 0;
     }
-}
+} */
 
 #region-text {
     display: none;
