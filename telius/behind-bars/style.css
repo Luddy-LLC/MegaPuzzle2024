@@ -47,6 +47,11 @@ html[data-region=telius] .text-container::before, html[data-region=telius] .text
     background: #A38954;
   }
   
+.container{
+    margin-top: 40px;
+}
+
+
 
 .text-container::first-letter{
     font-family: 'Inter', sans-serif;
