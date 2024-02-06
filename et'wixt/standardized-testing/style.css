@@ -2,10 +2,15 @@
     --scale: .9;
 }
 
+body{
+    background-image: url("assets/background.webp");
+    background-size: cover;
+}
+
 .answer {
     width: calc(var(--scale) * 25px);
     height: calc(var(--scale) * 25px);
-    margin: calc(var(--scale) * 2.5px);
+    margin: calc(var(--scale) * 2px);
     border-radius: 20px;
     border: 2px solid black;
 }
@@ -23,12 +28,16 @@
 .test {
     margin: 2rem;
     color: white;
-    width: calc(var(--scale) * 120px);
-    height: calc(var(--scale) * 300px);
+    width: calc(var(--scale) * 170px);
+    height: calc(var(--scale) * 355px);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     background-image: url('./assets/scantron.png');
     background-size: cover;
+
+    background-color: black;
+    border: solid black 20px;
+    border-radius: 20px;
 }
 
 .puzzle-content {
@@ -37,3 +46,10 @@
     justify-content: center;
 }
 
+
+@media screen and (max-width: 520px) and (orientation: portrait) { /* Mobile portrait */
+    :root {
+        --scale: .75;
+    }
+       
+}

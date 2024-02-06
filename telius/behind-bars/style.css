@@ -3,12 +3,56 @@
     --grid-size: 450px;
 }
 
+
+body{
+    background-image: url("assets/background.webp");
+    background-size: cover;
+}
+
 #crossword-wrapper {
     /* border: 1px solid black; */
 
     width: var(--grid-size);
     height: var(--grid-size);
     margin: 0 auto;
+
+    background-color: white;
+
+    outline: 10px solid #B99B5A;
+    border-radius: 4px;
+}
+
+
+html[data-region=telius] .text-container::before, html[data-region=telius] .text-container::after{
+    content: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #DFC382;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #B99B5A;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #A38954;
+  }
+  
+
+.text-container::first-letter{
+    font-family: 'Inter', sans-serif;
+    font-size: var(--bs-body-font-size);
+    font-weight: var(--bs-body-font-weight);
+    margin-right: 0;
 }
 
 .filled {
