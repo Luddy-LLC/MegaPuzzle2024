@@ -99,6 +99,8 @@ foreach FILE ( "README.md" "style.css" "script.js" "index.html" )
 
     </div>
 
+<audio id="audio-player" controls src=""></audio>
+
     <script src="/Common/puzzle.js"></script>
     <script src="script.js"></script>
 </body>
