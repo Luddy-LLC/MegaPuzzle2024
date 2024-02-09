@@ -57,6 +57,14 @@ main[top_layer="false"] {
 }
 
 
+.text-container::first-letter{
+    padding: 4px;
+}
+
+.first-line{
+    line-height: 3rem;
+}
+
 .container-fluid{
     display: flex;
     color: black;
@@ -81,8 +89,16 @@ main[top_layer="false"] {
         flex-direction: column;
     }
 
+    .second-sentence{
+        line-height: 1.7rem;
+    }
+
     p{
         font-size: 18px;
         line-height: 18px;
+    }
+
+    .first-line{
+        line-height: 2rem;
     }
 }   

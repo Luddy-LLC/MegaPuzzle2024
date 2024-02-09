@@ -12,8 +12,8 @@
 
 </head>
 
-<body>
-        <nav class="navbar navbar-nav">
+<body id="body">
+    <nav class="navbar navbar-nav">
         <div class="navbar-nav">
             <a class="btn" href="/">
                 <svg aria-hidden="true" width="10px"><use href="/Common/icons.svg#ppi-map" xlink:href="/Common/icons.svg#ppi-map"></use></svg>    
@@ -37,42 +37,24 @@
         </div>
     </nav>
 
-    <main class="container">
+    <main class="container" id="main">
 
-        <!-- CONTENT GOES HERE, WITHIN CONTAINER -->
-
-
-
-
-
-
-
-        <div class="help">
-            <!-- You can remove this help div when you're ready to code! -->
-            <h1>My Puzzle</h1>
-            <p>This is my fun little puzzle &#x1F642;</p>
-            <p>Please be aware of the following:</p>
-            <ol>
-                <li>All puzzle-specific ____ should be kept in this puzzle's...
-                    <ul>
-                        <li>Assets: <code>assets</code> folder.</li>
-                        <li>Styling: <code>style.css</code> file</li>
-                        <li>JS: <code>script.js</code> file</li>
-                    </ul>
-                <li>Common assets can be accessed using the <code>/common</code> path.</li>
-                <li>Do not use the <code>&#x3C;style&#x3E;</code> tag.</li>
-                <li>Please use the <a href="https://getbootstrap.com/docs/5.3/layout/grid/" target="_blank"
-                        rel="noopener">Bootstrap Grid System</a> for more advanced layouts. (Already imported!)</li>
-
-                <li>Please <a href="https://mothereff.in/html-entities" target="_blank" rel="noopener">HTML encode
-                        special characters</a> for better cross-device support.</li>
-                <li>This puzzle is going to be epiccc</li>
-                <li><a href="https://teams.microsoft.com/l/chat/0/0?users=reeneedh@iu.edu" target="_blank"
-                        rel="noopener">Contact Reece</a> if you have any questions!</li>
-            </ol>
+        <div class="eye" id="eye">
+            <div class="iris" id="iris"></div>
         </div>
 
-    </div>
+        <div class="text-container">
+            <h1 class="sr-only">Dragon Drop</h1>
+            <p>Ominous intro speech. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius iusto ullam architecto repudiandae culpa necessitatibus labore, optio omnis sapiente rerum asperiores quaerat quos perferendis error sit quod tempora consequuntur ratione?</p>
+            <button class="btn btn-primary dragon-btn" id="start-button">Begin</button>
+
+            <input pattern="[a-zA-Z]*"
+                                    title="Letters only, please! No spaces, numbers, or special characters." type="text"
+                                    class="form-control" id="answer" value="" placeholder="Puzzle Answer" required>
+                                <label for="answer">Puzzle Answer</label>
+        </div>
+
+    </main>
 
 
     <aside>
