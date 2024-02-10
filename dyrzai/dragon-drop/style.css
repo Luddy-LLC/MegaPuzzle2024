@@ -1,20 +1,57 @@
 :root{
     --eye-size: 22vw;
+
+    --button-focus: rgb(33, 0, 70);
+    --button-active: rgb(15, 0, 32);
+    --button-regular: rgb(54, 0, 95);
+
+    --button-inset: rgba(12, 0, 56, 0.5);
+    --button-inset-state: rgba(4, 0, 42, 0.5);
+
+    --text-container-bg: rgb(26, 0, 44);
 }
 
 
 @keyframes dilate {
     0%{
-        background-size: 100% 100%;
+        background-size: 120% 100%;
     }
 
     50%{
-        background-size: 200% 100%;
+        background-size: 170% 100%;
     }
 
     100%{
-        background-size: 100% 100%;
+        background-size: 120% 100%;
     }
+}
+
+
+@keyframes breathe {
+    0%{
+        scale: .97;
+        transform: translate(-5px,10px);
+    }
+
+    50%{
+        scale: 1.03;
+        transform: translate(10px,-10px);
+    }
+
+    100%{
+        scale: .97;
+        transform: translate(-5px,10px);
+    }
+}
+
+
+label{
+    margin-bottom: 10px;
+}
+
+p{
+    margin-left: 1px;
+    align-self: flex-start;
 }
 
 body{
@@ -41,8 +78,12 @@ body{
     left: calc(49% - var(--eye-size)/2);
     top: calc(48% - var(--eye-size)/2);
 
-    transform: scale(-1, 1);    
+
+    transition: margin .1s;
+
+    animation: breathe 15s ease-in-out infinite;
 }
+
 
 .iris{
     width: 100%;
@@ -56,62 +97,108 @@ body{
     animation: dilate 20s ease-in-out infinite;
 }
 
+input{
+    font-family: 'Inter', sans-serif;
+}
+
+.toast-container{
+    mix-blend-mode: luminosity;
+}
+
+.me-auto{
+    font-size: 1.12rem;
+}
+
 .text-container{
     position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
 
+    font-family: 'Macondo Swash Caps', serif;
+
+    width: 60%;
+
     margin: 0px 100px;
 
-    /* background: rgba(0, 0, 0, 1); */
-    background-color: rgb(44, 0, 0);
-    /* filter: brightness(.7); */
+    padding-top: 10px;
+
+    background-position: center center;
+    mix-blend-mode: luminosity;
+    background-color: var(--text-container-bg);
+
     color: white;
+    border: solid 5px var(--button-focus);
 
-    border: solid 5px rgb(85, 0, 0);
+    bottom: 8%;
 
-    bottom: 10%;
+    transition: all .5s ease-in-out;
 }
 
 .container{
     display: flex;
     justify-content: center;
 }
+
+.form-floating {
+    width: 100%;
+}
+
+.form-control:focus{
+    background-color: rgb(173 173 173);
+}
+
+.form-control{
+    color: white;
+}
+
+
+.form-floating>.form-control:not(:placeholder-shown)~label{
+    color: rgb(215, 215, 215);
+}
+
+.form-floating>.form-control:focus:not(:placeholder-shown)~label{
+    color: rgba(var(--bs-body-color-rgb), 0.65);
+}
+
+.answer-button{
+    align-self: flex-end;
+}
+
 .dragon-btn{
-    --bs-btn-bg: rgb(95, 19, 0);
-    box-shadow: inset 0 0 5px 2px rgba(56, 0, 0, 0.5);
+    --bs-btn-bg: var(--button-regular);
+    box-shadow: inset 0 0 5px 2px var(--button-inset);
     color: white;
     font-size: 1.25rem;
 }
 
 .dragon-btn:hover{
-    background-color: rgb(87, 17, 0);
-    box-shadow: inset 0 0 5px 2px rgba(42, 0, 0, 0.5);
+    background-color: var(--button-focus);
+    box-shadow: inset 0 0 5px 2px var(--button-inset-state);
     color: rgb(220, 220, 220);
 }
 
 :not(.btn-check)+.btn:active{
-    background-color: rgb(67, 13, 0);
-    box-shadow: inset 0 0 5px 2px rgba(42, 0, 0, 0.5);
+    background-color: var(--button-active);
+    box-shadow: inset 0 0 5px 2px var(--button-inset-state);
     color: rgb(220, 220, 220);
     border-color: black;
 }
 
 .dragon-btn:focus{
-    background-color: rgb(87, 17, 0);
-    box-shadow: inset 0 0 5px 2px rgba(42, 0, 0, 0.5);
+    background-color: var(--button-focus);
+    box-shadow: inset 0 0 5px 2px var(--button-inset-state);
     color: rgb(220, 220, 220);
 }
 
 .dragon-btn:focus-visible{
-    background-color: rgb(87, 17, 0);
-    box-shadow: inset 0 0 5px 2px rgba(42, 0, 0, 0.5);
+    background-color: var(--button-focus);
+    box-shadow: inset 0 0 5px 2px var(--button-inset-state);
     color: rgb(220, 220, 220);
 }
 
 .dragon-btn:target{
-    background-color: rgb(87, 17, 0);
-    box-shadow: inset 0 0 5px 2px rgba(42, 0, 0, 0.5);
+    background-color: var(--button-focus);
+    box-shadow: inset 0 0 5px 2px var(--button-inset-state);
     color: rgb(220, 220, 220);
 }

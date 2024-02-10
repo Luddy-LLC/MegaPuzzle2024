@@ -12,6 +12,11 @@ body{
     transition: opacity .5s;
 }
 
+[data-puzzle='map'] main{
+    bottom: 0;
+    height: 100vh;
+}
+
 
 #move {
     height: 100px;

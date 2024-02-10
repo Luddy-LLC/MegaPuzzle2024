@@ -43,15 +43,28 @@
             <div class="iris" id="iris"></div>
         </div>
 
-        <div class="text-container">
+        <div class="text-container" id="text-container">
             <h1 class="sr-only">Dragon Drop</h1>
             <p>Ominous intro speech. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius iusto ullam architecto repudiandae culpa necessitatibus labore, optio omnis sapiente rerum asperiores quaerat quos perferendis error sit quod tempora consequuntur ratione?</p>
             <button class="btn btn-primary dragon-btn" id="start-button">Begin</button>
+        </div>
 
-            <input pattern="[a-zA-Z]*"
-                                    title="Letters only, please! No spaces, numbers, or special characters." type="text"
-                                    class="form-control" id="answer" value="" placeholder="Puzzle Answer" required>
-                                <label for="answer">Puzzle Answer</label>
+        <!-- Toast message itself -->
+        <!-- By default, Mega Puzzle toasts will not be announced to screen reader users due to ` aria-live="off" `. This is to help minimise clutter. You may consider using ` aria-live="polite" ` if there's a particularly important alert.-->
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div id="liveToast" class="toast fade hide" role="alert" aria-live="off" aria-atomic="true">
+                <div class="toast-header">
+                    <!-- <img src="" class="rounded me-2" alt="..."> -->
+                    <svg aria-hidden="true" width="20px" height="20px" style="margin-right:5px"><use href="/Common/icons.svg#ppi-dragon" xlink:href="/Common/icons.svg#ppi-dragon"></use></svg>    
+                    <strong class="me-auto">
+                        Dyrzai
+                    </strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body" id="toast-body">
+                    Kimaya Riverway temorarily closed for Shavim Water Festival. Please use an alternate route.
+                </div>
+            </div>
         </div>
 
     </main>
