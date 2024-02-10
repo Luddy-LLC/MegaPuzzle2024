@@ -14,11 +14,11 @@ body{
     align-items: left;
 }
 
-.text-container{
+.text-container-smaller{
     margin-top: 5%;
     padding-left: 50px;
     padding-right: 50px;
-    
+    filter: drop-shadow(2px 4px 6px rgba(245, 222, 179,.5));
     max-width: 300px;
 }
 
