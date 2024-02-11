@@ -76,7 +76,7 @@ main{
 
 .pin#music{
     top: calc(32% - var(--pin-size) / 2);
-    left: calc(75% - var(--pin-size) / 2);
+    left: calc(70% - var(--pin-size) / 2);
 }
 
 .pin#ouroboros{
@@ -85,8 +85,8 @@ main{
 }
 
 .pin#rosetta-stone{
-    top: calc(82% - var(--pin-size) / 2);
-    left: calc(52% - var(--pin-size) / 2);
+    top: calc(65.5% - var(--pin-size) / 2);
+    left: calc(67.5% - var(--pin-size) / 2);
 }
 
 
@@ -124,4 +124,13 @@ main{
     height: 100vh;
 
     object-fit: cover;
+}
+
+body {
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+html{
+    background-color: #e2ded1;
 }

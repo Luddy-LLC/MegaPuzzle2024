@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mega Puzzle - A Little Alchemy</title>
+    <title>A Little Alchemy</title>
     <script src="https://nouveaureece.github.io/Puzzlestrap/js/bootstrap.bundle.js"></script>
     <link rel="stylesheet" href="/Common/puzzle.css">
     <link rel="stylesheet" href="style.css">
@@ -38,16 +38,21 @@
 
     <main class="container">
 
-        <!-- CONTENT GOES HERE, WITHIN CONTAINER -->
-        <h1>A Little Bit of Alchemy</h1>
-        <p>
-            LORE STUFFS, AT MALLORY AND REECE
-            <br>
-            Hopefully you're able to find a site that makes cooking the dish as straightforward as possible.
+        <div class="text-container text-container-smaller" id="puzzle-desc">
+            <h1 class="sr-only">Puzzle Prompt</h1>
+            <div aria-label="Introduction">
+                <p>
+                    You happen to stumble upon a very interesting lab and decide to do a little alchemy by following a mysterious recipe.
+                </p>
+            </div>
+        </div>
 
-        </p>
+        <!-- Reece's Change Notes -->
+        <!-- Change(s): List elements were changed to paragraph tags for greater accessibility -->
+        <!-- Reasoning: Some accessibility software will treat lists as respective of row, meaning they will annouce "XYZ Row out of 5 Rows." This would be uninteneded behaviour for text split along lines, which would be the case for this puzzle -->
+        <!-- Future Notes: Only use list elements when explicitly requiring a numbered or bulleted list. Otherwise, use another tag. Moral of the story: if you turn off bullets in CSS, think about whether it's *really* a list. -->
 
-        <div>
+        <div class="text-container-dark symbol-block symbols" aria-label="The Plinth with Mysterious Symbols">
             <ol>
                 <li>Put water and air into a small mixing bowl and lightly stir.</li>
                 <li>Add a scoop of earth to the bowl and combine.</li>
@@ -199,6 +204,8 @@
                 </div>
             </div>
         </div>
+
+<audio id="audio-player" controls src=""></audio>
 
     <script src="/Common/puzzle.js"></script>
     <script src="script.js"></script>

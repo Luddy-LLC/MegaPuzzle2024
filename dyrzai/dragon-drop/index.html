@@ -5,15 +5,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mega Puzzle - PUZZLE_NAME_GOES_HERE</title>
+    <title>PUZZLE_NAME_GOES_HERE</title>
     <script src="https://nouveaureece.github.io/Puzzlestrap/js/bootstrap.bundle.js"></script>
     <link rel="stylesheet" href="/Common/puzzle.css">
     <link rel="stylesheet" href="style.css">
 
 </head>
 
-<body>
-        <nav class="navbar navbar-nav">
+<body id="body">
+    <nav class="navbar navbar-nav">
         <div class="navbar-nav">
             <a class="btn" href="/">
                 <svg aria-hidden="true" width="10px"><use href="/Common/icons.svg#ppi-map" xlink:href="/Common/icons.svg#ppi-map"></use></svg>    
@@ -37,42 +37,37 @@
         </div>
     </nav>
 
-    <main class="container">
+    <main class="container" id="main">
 
-        <!-- CONTENT GOES HERE, WITHIN CONTAINER -->
-
-
-
-
-
-
-
-        <div class="help">
-            <!-- You can remove this help div when you're ready to code! -->
-            <h1>My Puzzle</h1>
-            <p>This is my fun little puzzle &#x1F642;</p>
-            <p>Please be aware of the following:</p>
-            <ol>
-                <li>All puzzle-specific ____ should be kept in this puzzle's...
-                    <ul>
-                        <li>Assets: <code>assets</code> folder.</li>
-                        <li>Styling: <code>style.css</code> file</li>
-                        <li>JS: <code>script.js</code> file</li>
-                    </ul>
-                <li>Common assets can be accessed using the <code>/common</code> path.</li>
-                <li>Do not use the <code>&#x3C;style&#x3E;</code> tag.</li>
-                <li>Please use the <a href="https://getbootstrap.com/docs/5.3/layout/grid/" target="_blank"
-                        rel="noopener">Bootstrap Grid System</a> for more advanced layouts. (Already imported!)</li>
-
-                <li>Please <a href="https://mothereff.in/html-entities" target="_blank" rel="noopener">HTML encode
-                        special characters</a> for better cross-device support.</li>
-                <li>This puzzle is going to be epiccc</li>
-                <li><a href="https://teams.microsoft.com/l/chat/0/0?users=reeneedh@iu.edu" target="_blank"
-                        rel="noopener">Contact Reece</a> if you have any questions!</li>
-            </ol>
+        <div class="eye" id="eye">
+            <div class="iris" id="iris"></div>
         </div>
 
-    </div>
+        <div class="text-container" id="text-container">
+            <h1 class="sr-only">Dragon Drop</h1>
+            <p>Ominous intro speech. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius iusto ullam architecto repudiandae culpa necessitatibus labore, optio omnis sapiente rerum asperiores quaerat quos perferendis error sit quod tempora consequuntur ratione?</p>
+            <button class="btn btn-primary dragon-btn" id="start-button">Begin</button>
+        </div>
+
+        <!-- Toast message itself -->
+        <!-- By default, Mega Puzzle toasts will not be announced to screen reader users due to ` aria-live="off" `. This is to help minimise clutter. You may consider using ` aria-live="polite" ` if there's a particularly important alert.-->
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div id="liveToast" class="toast fade hide" role="alert" aria-live="off" aria-atomic="true">
+                <div class="toast-header">
+                    <!-- <img src="" class="rounded me-2" alt="..."> -->
+                    <svg aria-hidden="true" width="20px" height="20px" style="margin-right:5px"><use href="/Common/icons.svg#ppi-dragon" xlink:href="/Common/icons.svg#ppi-dragon"></use></svg>    
+                    <strong class="me-auto">
+                        Dyrzai
+                    </strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body" id="toast-body">
+                    Kimaya Riverway temorarily closed for Shavim Water Festival. Please use an alternate route.
+                </div>
+            </div>
+        </div>
+
+    </main>
 
 
     <aside>
@@ -206,6 +201,8 @@
                 </div>
             </div>
         </div>
+
+<audio id="audio-player" controls src=""></audio>
 
     <script src="/Common/puzzle.js"></script>
     <script src="script.js"></script>

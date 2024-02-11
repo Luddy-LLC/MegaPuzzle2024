@@ -21,7 +21,7 @@ if (window.location.href.includes('?m=1') || getCookie('name') == "") {
     window.history.replaceState(null, '', window.location.pathname);
     window.history.pushState({}, document.title, window.location.pathname);
 } else {
-    document.getElementById('clouds').style.display = 'none';
+    document.getElementById('slow-clouds').style.display = 'none';
 }
 
 if (getCookie('name') == "") {
@@ -37,26 +37,36 @@ function moveToPlayButton() {
     document.getElementById('play-buttons').classList.toggle('fade');
 }
 
+
+/* -------------------------------- */
+/* Cloud animation stuff            */
+/* -------------------------------- */
+
 function start() {
-    document.getElementById('clouds').src = '/map/assets/clouds_pixleated.webp';
-    document.getElementById('clouds').classList.add("clouds-animated");
+    document.getElementById('slow-clouds').src = '/map/assets/clouds_pixleated.webp';
+    document.getElementById('slow-clouds').classList.add("clouds-animated");
+    document.getElementById('slow-clouds').style.opacity = 0;
+}
+
+window.onload = () => {
+    document.querySelector('body').style.opacity = 1;
+    document.getElementsByClassName('clouds')[0].src = '/map/assets/fast_clouds_pixleated.webp';
+    document.getElementsByClassName('clouds')[0].style.opacity = 0;
+    document.getElementsByClassName('region-map')[0].style.height = "100%";
 }
 
 window.transitionToPage = function(href) {
-    document.getElementById('clouds').style.display = 'block';
+    document.getElementById('clouds').style.opacity = 1;
     document.getElementById('clouds').src = '/map/assets/clouds_pixleated_reverse_fast.webp';
     setTimeout(function() {
         document.querySelector('body').style.opacity = 0;
         setTimeout(function() { 
             window.location.href = href
-        }, 1000)
-    }, 1400)
-    
+        }, 500)
+    }, 1000) // timeout within timeout!!!!!!   
 }
 
-document.addEventListener('DOMContentLoaded', function(event) {
-    document.querySelector('body').style.opacity = 1
-})
+/* -------------------------------- */
 
 // const ele = document.getElementById("mapContainer");
 const nw = document.getElementById("aavikk");
@@ -67,13 +77,6 @@ const ne = document.getElementById("zanyph");
 const mtn = document.getElementById("mountain");
 var rl = document.getElementById("region-label");
 
-window.addEventListener("keydown", e=>{
-    if((e.key == "I" && e.ctrlKey && e.shiftKey) || (e.key == "J" && e.ctrlKey && e.shiftKey) 
-    || (e.key == "C" && e.ctrlKey && e.shiftKey) || e.key == "F12"){
-        alert("Ah ah ah... no");
-        e.preventDefault();
-    }
-});
 
 window.oncontextmenu = function () {
     return false;

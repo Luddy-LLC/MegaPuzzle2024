@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mega Puzzle - Et'wixt</title>
+    <title>Et'wixt</title>
     <script src="https://nouveaureece.github.io/Puzzlestrap/js/popper.min.js"></script>
-    <link rel="preload" as="image" href="../map/assets/fast_clouds_pixleated.webp">
+    <link rel="preload" as="image" href="/map/assets/fast_clouds_pixleated.webp">
+    <link rel="preload" as="image" href="/map/assets/clouds_pixleated_reverse_fast.webp">
     <script src="https://nouveaureece.github.io/Puzzlestrap/js/bootstrap.bundle.js"></script>
     <link rel="stylesheet" href="/Common/puzzle.css">
     <link rel="stylesheet" href="style.css">
@@ -20,7 +21,7 @@
     <img id="clouds" class="centered clouds freezeframe" src="../map/assets/fast_clouds_pixleated.webp" aria-hidden="true">  
     <nav class="navbar navbar-nav">
         <div class="navbar-nav">
-            <a class="btn" href="/">
+            <a class="btn" onclick="transitionToPage(`/`)">
                 <svg aria-hidden="true" width="10px"><use href="/Common/icons.svg#ppi-map" xlink:href="/Common/icons.svg#ppi-map"></use></svg>    
                 Map
             </a>
@@ -211,6 +212,8 @@
                 </div>
             </div>
         </div>
+
+<audio id="audio-player" controls src=""></audio>
 
     <script src="/Common/puzzle.js"></script>
     <script src="script.js"></script>

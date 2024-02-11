@@ -120,3 +120,12 @@ main{
 
     object-fit: cover;
 }
+
+body {
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+html{
+    background-color: #e2ded1;
+}

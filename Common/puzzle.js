@@ -119,3 +119,36 @@ if (document.getElementById('check-answer')) {
     document.getElementById('answer-modal').addEventListener("hidden.bs.modal", clearAnswer);
     document.getElementById('check-answer').addEventListener("submit", preventDefaultSubmission);
 }
+
+// AUDIO
+const audioplayer = document.getElementById('audio-player');
+const nowplaying = document.getElementsByClassName('now-playing')[0];
+const audioLibrary = {
+    "rosetta" : ["coconutmall.mp3", "Coconut Mall", "Nintendo"]
+}
+function togglePlay() {
+    const svg = document.querySelector('body > nav > div:nth-child(1) > button > svg > use');
+    audioplayer.paused ? svg.setAttribute('href','/Common/icons.svg#ppi-unmuted') : svg.setAttribute('href','/Common/icons.svg#ppi-muted');
+    return audioplayer.paused ? audioplayer.play() : audioplayer.pause();
+}
+function toggleNowPlaying() {
+    return audioplayer.paused ? nowplaying.style.opacity = 0 : nowplaying.style.opacity = 1;
+}
+if (audioplayer) {
+    const puzzle = document.getElementsByTagName('html')[0].getAttribute('data-puzzle');
+    audioplayer.setAttribute('src','/Common/audio/'+audioLibrary[puzzle][0]);
+    audioplayer.style.display = 'none';
+    audioplayer.addEventListener("canplaythrough", () => {
+        audioplayer.play().catch(e => {
+        window.addEventListener('click', () => {
+            document.getElementsByClassName('card-title')[0].innerText = audioLibrary[puzzle][1];
+            document.getElementsByClassName('card-text')[0].innerText = audioLibrary[puzzle][2];
+            audioplayer.play()
+        }, { once: true })
+        })
+    });
+    audioplayer.addEventListener('pause', toggleNowPlaying);
+    audioplayer.addEventListener('play', toggleNowPlaying);
+    
+    document.querySelector('nav > div:nth-child(1) > button').addEventListener("click", togglePlay);
+}

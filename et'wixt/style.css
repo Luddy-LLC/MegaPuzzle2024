@@ -4,7 +4,9 @@
     --pin-size: 7vh;
 }
 
-
+html{
+    background-color: #e2ded1;
+}
 
 main{
     background-image: url("/map/assets/clouds_static.png");
