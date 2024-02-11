@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mega Puzzle - PUZZLE_NAME_GOES_HERE</title>
+    <title>Dating Simulator</title>
     <script src="https://nouveaureece.github.io/Puzzlestrap/js/bootstrap.bundle.js"></script>
     <link rel="stylesheet" href="/Common/puzzle.css">
     <link rel="stylesheet" href="style.css">
@@ -47,47 +47,58 @@
 
 
     <main class="container">
-
         <!-- CONTENT GOES HERE, WITHIN CONTAINER -->
+        <h1 class="sr-only">Dating Simulator</h1>
 
         <div id="game">
             <div id="graphics">
-                <img class="charibdis" src="assets/chrbds.png" width="400px" id="charibdis">
-                <img class="dude" src="assets/guy.png" width="150px" id="dude">
+                <img id="charibdis" src="assets/chrbds.png" id="charibdis">
+                <img id="dude" src="assets/guy.png" width="150px" id="dude">
             </div>
-            <div id="ui">
-                <div id="text">
-                    The Pirate Captain Limberakis Fedallah of the ship Etna sailed the seas for many years, 
-                    renowned for the ability to talk out of any situation and return from any venture.
-                    At a port in Ithkiya one fateful night, a passing stranger raised a challenge that the Captain could not turn down...
-                    "You claim to be able to charm anyone across the sea, yet you cower from the center of the Ithkiyan Bay just as any other sailor. 
-                    Surely, then, someone as skilled as you would have no issue sailing over the Great Beast Charibdis?"
-                    Fedallah fumed at this, scoffing that such a feat should be mere child's play. 
-                    With the exchange ended, the captain gathered Etna's crew and set out to prove a most dangerous point.
-                    The crew somberly sang songs of the beast in the water, 
-                    a beautiful daughter of the earth and waves chained to the sea's floor by a vindictive god, 
-                    cursed to take the form of a hideous sea monster...
-                    They hush as the ship approaches her.
-
-                    <button id="start">Start</button>
-                </div>
-                <div id="options">
+            <div id="ui" class="text-container">
+                
+                <div class="d-flex justify-content-between">
                     <h2 id="ttl"></h2>
-                    <button id="opt1">A</button>
-                    <button id="opt2">B</button>
-                    <button id="opt3">C</button>
-                    <button id="opt4">D</button>
+
+                    <div id="stats">
+                    </div>
                 </div>
-                <div id="result">
-                    <button id="reset">
+                
+                <div id="text">
+                    <p id="description">
+                        The Pirate Captain Limberakis Fedallah of the ship Etna sailed the seas for many years, 
+                        renowned for the ability to talk out of any situation and return from any venture.
+                        At a port in Ithkiya one fateful night, a passing stranger raised a challenge that the Captain could not turn down...
+                        "You claim to be able to charm anyone across the sea, yet you cower from the center of the Ithkiyan Bay just as any other sailor. 
+                        Surely, then, someone as skilled as you would have no issue sailing over the Great Beast Charibdis?"
+                        Fedallah fumed at this, scoffing that such a feat should be mere child's play. 
+                        With the exchange ended, the captain gathered Etna's crew and set out to prove a most dangerous point.
+                        The crew somberly sang songs of the beast in the water, 
+                        a beautiful daughter of the earth and waves chained to the sea's floor by a vindictive god, 
+                        cursed to take the form of a hideous sea monster...
+                        They hush as the ship approaches her.
+                    </p>
+
+                    <button id="start" class="btn btn-primary">Start</button>
+                </div>
+
+                <div id="options">
+                    <!-- <p id="reaction"></p> -->
+                    <button id="opt1" class="btn">A</button>
+                    <button id="opt2" class="btn">B</button>
+                    <button id="opt3" class="btn">C</button>
+                    <button id="opt4" class="btn">D</button>
+                </div>
+                <div id="idk">
+                    <div id="result"></div>
+                    <button id="reset" class="btn btn-primary">
                         Try Again?
                     </button>
-
                 </div>
             </div>
-
         </div>
-    <div class="d-grid gap-2 mt-4 mb-4 d-md-flex justify-content-md-center"> 
+
+        <div class="d-grid gap-2 mt-4 mb-4 d-md-flex justify-content-center"> 
             <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#hints">Hints</button>
         </div>
     </main>
