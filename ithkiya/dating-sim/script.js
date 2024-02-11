@@ -4,6 +4,8 @@
 // Assets by Mallory Miller
 // Date: February 2024
 
+// TODO: If you get to the end, stop moving, so you don't get eated
+
 function lerp(x1, x2, t) {
     return x1 + t * (x2 - x1)
 }
