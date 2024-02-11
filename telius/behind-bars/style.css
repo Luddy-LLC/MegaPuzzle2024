@@ -10,8 +10,6 @@ body{
 }
 
 #crossword-wrapper {
-    /* border: 1px solid black; */
-
     width: var(--grid-size);
     height: var(--grid-size);
     margin: 0 auto;
