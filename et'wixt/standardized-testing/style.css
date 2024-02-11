@@ -8,10 +8,10 @@ body{
 }
 
 .answer {
-    width: calc(var(--scale) * 25px);
-    height: calc(var(--scale) * 25px);
-    margin: calc(var(--scale) * 2px);
-    border-radius: 20px;
+    width: calc(var(--scale) * 26px);
+    height: calc(var(--scale) * 26px);
+    margin: calc(var(--scale) * 4px);
+    border-radius: 200px;
     border: 2px solid black;
 }
 
@@ -21,22 +21,20 @@ body{
 
 .score {
     grid-column: span 4;
-    height: calc(var(--scale) * 30px);
+    height: calc(var(--scale) * 32px);
     text-align: center;
 }
 
 .test {
     margin: 2rem;
     color: white;
-    width: calc(var(--scale) * 170px);
-    height: calc(var(--scale) * 355px);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     background-image: url('./assets/scantron.png');
     background-size: cover;
 
     background-color: black;
-    border: solid black 20px;
+    border: solid black 12px;
     border-radius: 20px;
 }
 
@@ -51,5 +49,4 @@ body{
     :root {
         --scale: .75;
     }
-       
 }
