@@ -3,8 +3,6 @@ body{
 
   background-color: black;
 
-  overflow: hidden;
-
   background-image: url("./assets/rocky\ beach.png");
   background-position: bottom right;
   background-size: cover;
