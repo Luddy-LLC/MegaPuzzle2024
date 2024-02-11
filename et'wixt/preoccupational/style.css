@@ -3,10 +3,6 @@ body{
     background-size: cover;
 }
 
-.text-container{
-    margin-top: 20px;
-    width: fit-content;
-}
 
 .container{
     display: flex;
