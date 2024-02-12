@@ -1,6 +1,48 @@
 <!DOCTYPE html>
 <html lang="en" data-region="zanyph" data-puzzle="snake">
 
+<!-- 
+OOxl:;;;;;;;;;,'''''',;:;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:clodxxkkxxxxddddd
+xoc;;;;;;;;;;;,'''''',;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:clodxxkkxxxddddoo
+;;;;;;;;;;;;;,,''''''',;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:clodxxkkxxxddooll
+;;;;;;;;;;;;;,,,''''''',;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:clodxxkkxxxddolll
+;;;;;;;;;;;;;;,'''''''',;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:clodxxkkxxxdoollc
+;;;;;;;;;;;;;;,,,,,,,,',,;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:clodxxxxxxddoollc
+;;;;;;;;;;,;;;;;,,,,,,,,,;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:lodddxxxddoolllc
+;;;;;;;,'..'',;;:::;;;;;,,;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:clooodddooolllcc
+;;;;;;;;'....;llc:::::;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:cllloolllllclcc
+;;;;;;;,.....lOOkxolc:;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::cccccccccccc
+;;;;;;;;;;;'.cOOOOOOkdoc;,,;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;,,,,,,,,,,,,,,,,
+;;;;;;:cccc:':k0OOOOOOOOxoc;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;,''''''''''',;co
+;;;;;;cccccc;,oOOOOOOOOOOOOxoc:;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;,''''',;:ldxOOO
+;;;;;:ccccc::;;dOOOOO00OOOOO0Oxl:;;;:;;;;;;;;;;;;;;;;;;;;;;;;;;;;,',:coxkOOOOOOO
+;;;;:cccccc:::,;dOOOOOOOOOOOOOOOkoc;;;;;;;;;;;;;;;;;;;;;;;;;;;;:cloxOOOOOOOOOOOO
+;;;;:cccccc:;;,,;okOOOOOOOOOOOOOOOko:;::cccccllllllooollllcccldkOOOOOOOOOOOOOOOO
+;;;::ccccc::;,,,',cxOOOOOOOOOOOOOOOOkxkkkkOOOOO00OOO0OOOOOOOOOOOOOOOOOOOO0OOOOOO
+;;;;::::::;;;,,'''';okOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+;,,,,,,,,,,,,'''''''';okO0OkOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOkd
+;,'''''''''''''''''''.';oxdxOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOxocc
+,''.......'''''','.''''.'lkO0OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOkxdxoc:::c
+'............'''''''''''ckOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO0OOOOOOO0OOOOOkc,;::::
+...............''''',''ckOOOOOOkxdlcdOOOOOOOOOOOOOOOOOOOOOkdocokOOOOOOOOOkl;;;:;
+...............'''',,';xOOOOOOOloOo',dOOOOOOOOOOOOOOOOOOOdlkk;.lO0OOOOOOO0k:,;;;
+...............'''',,,oOOOOOOOkc,;,.'d00OOOOOOOOOOOOOOOO0d,;;'.ckOOOOOOOOOOd;,,,
+...............''',,,ck0OOOOOOOkl:;:oO0OOOOOOOOOOOOOOOOOOOo:;;lkOOOOOOOOOOOkc'''
+...............''',,;d0OOOOOOOOOOOkO0OOOOOOkocldkOOOOOOOOO0OkOOOOOOOOOOOOOOOx;''
+..............''',,,lkkxdddxkOOOOOOOOOOOOOOkdlldkOOOOOOOOOOOOOOOOkddddxO0OOOOl''
+............'''',,,;oxlcccccldkOOOOOOOOOOOOOO0OO00OOOOOOOOOOOOOxocccccclxOOOOx:'
+'''''''''''',,,,;;,:do:ccccc:lkOOOOOOOOOO00OkxdddxxkO0OO0OOOO0OocccccccclkOO0Oo,
+,,,,,,,,;;;;;;;;::;cxkocccccoxOOOOOOOOOOOOxooooooooloOOOOO0OOOOxlcccccccdOOOOOx:
+;;;;::::::::::::c:::dOOkxxxkkOOOOOOOOOOOOOolxxxxxxxolxOOOOOOOOOOkxdooodkOOOOOOOo
+;;:::cccccccccccccc:ckOOOOOOOOOOOOOOOOOOOOxloxxxxxxolxOOOOOOOOOOOOOOOOOOOO0OOOOx
+;:::cccccccccccccccc:lkOOOOOOOOOOOOOOOOOOOOkdooodoooxOOOOOOOOOOOOOOOOOOOOOOOOOOO
+;:::cccccccccccccccc::lk0OOOOOOOOOOOOOOOOOOOOOkkkkOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+;;::::cccccccccccc:::;;lkO0OOOOOOOOOOOOOOOOOOOOOO0OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+;;;::::::::::::::::::;;,lOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+;;;;;;;;;;;;;;;;;;;;;;,,lOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+;;,,,,;;,,,,,,,,;;,,,,,;d00OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+ -->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
