@@ -52,29 +52,44 @@
 
         <div id="game">
             <div id="graphics">
-                <img id="charibdis" src="assets/chrbds.png" id="charibdis">
+                <div id="char_neuter">
+                    <img id="charibdis" src="assets/chrbds.png" class="charibdis">
+                </div>
+                <div id="char_angry">
+                    <img id="charibdis" src="assets/chrbds_angy.png" class="charibdis">
+                </div>
+                <div id="char_happy">
+                    <img id="charibdis" src="assets/chrbds_happier.png" class="charibdis">
+                </div>
+                <div id="char_win">
+                    <img id="charibdis" src="assets/chrbds_win.png" class="charibdis">
+                </div>
                 <img id="dude" src="assets/guy.png" width="150px" id="dude">
             </div>
             <div id="ui" class="text-container">
-                
+
                 <div class="d-flex justify-content-between">
                     <h2 id="ttl"></h2>
 
                     <div id="stats">
                     </div>
                 </div>
-                
+
                 <div id="text">
                     <p id="description">
-                        The Pirate Captain Limberakis Fedallah of the ship Etna sailed the seas for many years, 
+                        The Pirate Captain Limberakis Fedallah of the ship Etna sailed the seas for many years,
                         renowned for the ability to talk out of any situation and return from any venture.
-                        At a port in Ithkiya one fateful night, a passing stranger raised a challenge that the Captain could not turn down...
-                        "You claim to be able to charm anyone across the sea, yet you cower from the center of the Ithkiyan Bay just as any other sailor. 
-                        Surely, then, someone as skilled as you would have no issue sailing over the Great Beast Charibdis?"
-                        Fedallah fumed at this, scoffing that such a feat should be mere child's play. 
-                        With the exchange ended, the captain gathered Etna's crew and set out to prove a most dangerous point.
-                        The crew somberly sang songs of the beast in the water, 
-                        a beautiful daughter of the earth and waves chained to the sea's floor by a vindictive god, 
+                        At a port in Ithkiya one fateful night, a passing stranger raised a challenge that the Captain
+                        could not turn down...
+                        "You claim to be able to charm anyone across the sea, yet you cower from the center of the
+                        Ithkiyan Bay just as any other sailor.
+                        Surely, then, someone as skilled as you would have no issue sailing over the Great Beast
+                        Charibdis?"
+                        Fedallah fumed at this, scoffing that such a feat should be mere child's play.
+                        With the exchange ended, the captain gathered Etna's crew and set out to prove a most dangerous
+                        point.
+                        The crew somberly sang songs of the beast in the water,
+                        a beautiful daughter of the earth and waves chained to the sea's floor by a vindictive god,
                         cursed to take the form of a hideous sea monster...
                         They hush as the ship approaches her.
                     </p>
@@ -98,8 +113,9 @@
             </div>
         </div>
 
-        <div class="d-grid gap-2 mt-4 mb-4 d-md-flex justify-content-center"> 
-            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#hints">Hints</button>
+        <div class="d-grid gap-2 mt-4 mb-4 d-md-flex justify-content-center">
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#hints">Hints</button>
         </div>
     </main>
 
@@ -237,7 +253,7 @@
         </div>
     </div>
 
-<audio id="audio-player" controls src=""></audio>
+    <audio id="audio-player" controls src=""></audio>
 
     <script src="/Common/puzzle.js"></script>
     <script src="script.js"></script>

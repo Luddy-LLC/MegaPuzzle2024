@@ -37,13 +37,30 @@ body {
     left: 10px;
     bottom: 0px;
     animation: rock 3s ease-in-out infinite;
+    width: min(20vw, 150px)
 }
 
-#charibdis {
+.charibdis {
     padding-top: 10%;
     margin-bottom: 5%;
     animation: undulate 4s ease infinite;
     width: min(400px, 50vw);
+}
+
+#char_neuter {
+    display: block;
+}
+
+#char_angry {
+    display: none;   
+}
+
+#char_happy {
+    display: none;   
+}
+
+#char_win {
+    display: none;   
 }
 
 @keyframes rock {
@@ -107,9 +124,5 @@ body {
 
 #ttl::first-letter {
     font-family: "Macondo Swash Caps";
-}
-
-#description::first-letter {
-    font-family: "Macondo Swash Caps";
-    font-size: 2rem;
+    font-size: 1.5em;
 }

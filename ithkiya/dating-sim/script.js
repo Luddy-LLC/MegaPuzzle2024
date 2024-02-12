@@ -126,6 +126,38 @@ reset.addEventListener("click", ()=>resetGame())
 
 const stats = document.getElementById("stats")
 
+const moods = {
+    "angry": document.getElementById("char_angry"),
+    "normal": document.getElementById("char_neuter"),
+    "happier": document.getElementById("char_happy"),
+    "winning": document.getElementById("char_win")
+}
+
+function chooseMood() {
+    if (score < 0) {
+        moods.angry.style.display = "block";
+        moods.normal.style.display = "none";
+        moods.happier.style.display = "none";
+        moods.winning.style.display = "none";
+    } else if (score < 4) {
+        moods.angry.style.display = "none";
+        moods.normal.style.display = "block";
+        moods.happier.style.display = "none";
+        moods.winning.style.display = "none";
+    } else if (score < 9) {
+        moods.angry.style.display = "none";
+        moods.normal.style.display = "none";
+        moods.happier.style.display = "block";
+        moods.winning.style.display = "none";
+    } else  {
+        moods.angry.style.display = "none";
+        moods.normal.style.display = "none";
+        moods.happier.style.display = "none";
+        moods.winning.style.display = "block";
+    }
+}
+
+
 function advanceGame(opt) {
     gamePhase++
     
@@ -135,6 +167,8 @@ function advanceGame(opt) {
         // Update the score!
         let res  = results[opt].outcome
         score += res
+
+        chooseMood()
     }
     console.log("AS", gamePhase)
 
@@ -181,9 +215,7 @@ function advanceGame(opt) {
                 result.innerText = "Charibdis strives for perfection. \n [-9] [-4] [-21] [-10] [0] [-12] [1] [19] [-8] [36]"
             }
         }
-
     }
-
 }
 
 
@@ -194,6 +226,9 @@ function resetGame() {
     result.style.display = "none"
     gamePhase = -1
     distance = 100
+
+    score = 0
+    chooseMood()
 }
 
 const ship = document.getElementById("dude")
@@ -220,7 +255,9 @@ function moveShip() {
         speed = 100
     }
 
-    distance = Math.max(distance - speed/timeFactor, 0)
+    if (gamePhase < 10) {
+        distance = Math.max(distance - speed/timeFactor, 0)
+    }
 
     stats.innerHTML="Distance: " + Math.round(distance) + " km&eacute; <br>Score: "+ score
 
