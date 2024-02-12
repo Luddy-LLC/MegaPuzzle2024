@@ -19,7 +19,10 @@ body {
     background:url("assets/woood\ texture\ tst.png");
 
     background-position:  center;
-    background-size:cover;
-    height:100vh;
+    background-size:contain;
+    background-repeat:repeat;
+}
 
+.boards {
+    overflow-x: hidden;
 }
