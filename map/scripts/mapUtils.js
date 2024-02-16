@@ -52,7 +52,6 @@ window.onload = () => {
     document.querySelector('body').style.opacity = 1;
     document.getElementsByClassName('clouds')[0].src = './map/assets/fast_clouds_pixleated.webp';
     document.getElementsByClassName('clouds')[0].style.opacity = 0;
-    document.getElementsByClassName('region-map')[0].style.height = "100%";
 }
 
 window.transitionToPage = function(href) {
