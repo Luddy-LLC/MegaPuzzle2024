@@ -43,21 +43,21 @@ function moveToPlayButton() {
 /* -------------------------------- */
 
 function start() {
-    document.getElementById('slow-clouds').src = '/map/assets/clouds_pixleated.webp';
+    document.getElementById('slow-clouds').src = './map/assets/clouds_pixleated.webp';
     document.getElementById('slow-clouds').classList.add("clouds-animated");
     document.getElementById('slow-clouds').style.opacity = 0;
 }
 
 window.onload = () => {
     document.querySelector('body').style.opacity = 1;
-    document.getElementsByClassName('clouds')[0].src = '/map/assets/fast_clouds_pixleated.webp';
+    document.getElementsByClassName('clouds')[0].src = './map/assets/fast_clouds_pixleated.webp';
     document.getElementsByClassName('clouds')[0].style.opacity = 0;
     document.getElementsByClassName('region-map')[0].style.height = "100%";
 }
 
 window.transitionToPage = function(href) {
     document.getElementById('clouds').style.opacity = 1;
-    document.getElementById('clouds').src = '/map/assets/clouds_pixleated_reverse_fast.webp';
+    document.getElementById('clouds').src = './map/assets/clouds_pixleated_reverse_fast.webp';
     setTimeout(function() {
         document.querySelector('body').style.opacity = 0;
         setTimeout(function() { 
