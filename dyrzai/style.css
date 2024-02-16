@@ -5,13 +5,13 @@
 
 
 main{
-    background-image: url("/map/assets/thunder_clouds.png");
+    background-image: url("../map/assets/thunder_clouds.png");
     background-color: aqua;
     background-size: cover;
 }
 
 .region-map{
-    background-image: url("/map/assets/dyrzai.png");
+    background-image: url("../map/assets/dyrzai.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -25,7 +25,7 @@ main{
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url("/map/assets/x-mark.webp");
+    background-image: url("../map/assets/x-mark.webp");
 
     border: solid transparent 15px; /* easier to click you with my dear */
 
@@ -62,11 +62,11 @@ main{
 }
 
 .star.filled{
-    background-image: url("/Common/filled-star.svg");
+    background-image: url("../Common/filled-star.svg");
 }
 
 .star.unfilled{
-    background-image: url("/Common/unfilled-star.svg");
+    background-image: url("../Common/unfilled-star.svg");
 }
 
 
