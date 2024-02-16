@@ -80,8 +80,8 @@ main{
 }
 
 .pin#spell-sweeper{
-    top: calc(42% - var(--pin-size) / 2);
-    left: calc(32% - var(--pin-size) / 2);
+    top: calc(35% - var(--pin-size) / 2);
+    left: calc(38% - var(--pin-size) / 2);
 }
 
 .pin#standardized-testing{
