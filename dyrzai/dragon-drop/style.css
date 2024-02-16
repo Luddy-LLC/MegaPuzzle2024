@@ -141,6 +141,8 @@ input{
 }
 
 .form-floating {
+    display: flex;
+    flex-direction: column;
     width: 100%;
 }
 
@@ -201,4 +203,10 @@ input{
     background-color: var(--button-focus);
     box-shadow: inset 0 0 5px 2px var(--button-inset-state);
     color: rgb(220, 220, 220);
+}
+
+
+#answer-check{
+    display: none;
+    opacity: 0;
 }
