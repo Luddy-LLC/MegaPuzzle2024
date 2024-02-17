@@ -90,7 +90,9 @@ body{
     display: block;
     position: absolute;
     height: 100%;
-    left: 0;
+
+    left: 40px;
+
     top: 0;
 }
 
@@ -99,7 +101,9 @@ body{
     height: 100%;
     margin: auto;
     z-index: 5;
-    left: 0;
+
+    left: 40px;
+
     top:0;
 }
 
