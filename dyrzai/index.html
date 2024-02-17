@@ -7,8 +7,8 @@
     <title>Dyrzai</title>
     <script src="https://nouveaureece.github.io/Puzzlestrap/js/bootstrap.bundle.js"></script>
 
-    <link rel="preload" as="image" href="/map/assets/fast_clouds_pixleated.webp">
-    <link rel="preload" as="image" href="/map/assets/clouds_pixleated_reverse_fast.webp">
+    <link rel="preload" as="image" href="../map/assets/fast_clouds_pixleated.webp">
+    <link rel="preload" as="image" href="../map/assets/clouds_pixleated_reverse_fast.webp">
 
     <link type="text/css" rel="stylesheet" href="../Common/puzzle.css">
     <link type="text/css" rel="stylesheet" href="style.css">
@@ -16,9 +16,11 @@
 </head>
 
 <body>
+    <img id="clouds" class="centered clouds freezeframe" src="../map/assets/fast_clouds_pixleated.webp" aria-hidden="true">  
+
     <nav class="navbar navbar-nav">
         <div class="navbar-nav">
-            <a class="btn" href="../">
+            <a class="btn" onclick="transitionToPage(`../`)">
                 <svg aria-hidden="true" width="10px"><use href="../Common/icons.svg#ppi-map" xlink:href="../Common/icons.svg#ppi-map"></use></svg>    
                 Map
             </a>
@@ -107,16 +109,16 @@
                 <div class="modal-content">
                     <form id="check-answer" class="form-floating needs-validation" autocomplete="on">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Check Puzzle Answer</h1>
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">What are you trying to solve?</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <div class="form-floating mb-3">
+                            <!-- <div class="form-floating mb-3">
                                 <input pattern="[a-zA-Z]*"
                                     title="Letters only, please! No spaces, numbers, or special characters." type="text"
                                     class="form-control" id="answer" value="" placeholder="Puzzle Answer" required>
                                 <label for="answer">Puzzle Answer</label>
-                            </div>
+                            </div> -->
                             <div class="form-floating mb-3" style="display: none;">
                                 <input type="text" autocomplete="username" class="form-control" id="team" value=""
                                     placeholder="Team" required>
@@ -149,7 +151,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Check Answer</button>
+                            <!-- <button type="submit" class="btn btn-primary">Check Answer</button> -->
                         </div>
                     </form>
                 </div>

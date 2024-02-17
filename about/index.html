@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
     <script src="https://nouveaureece.github.io/Puzzlestrap/js/bootstrap.bundle.js"></script>
-    <link rel="stylesheet" href="/Common/puzzle.css">
-    <link rel="stylesheet" href="style.css">
+    <link type="text/css" rel="stylesheet" href="../Common/puzzle.css">
+    <link type="text/css" rel="stylesheet" href="style.css">
 
 </head>
 
@@ -16,22 +16,22 @@
     <nav class="navbar navbar-nav">
         <div class="navbar-nav">
             <a class="btn" href="/">
-                <svg aria-hidden="true" width="10px"><use href="/Common/icons.svg#ppi-map" xlink:href="/Common/icons.svg#ppi-map"></use></svg>    
+                <svg aria-hidden="true" width="10px"><use href="../Common/icons.svg#ppi-map" xlink:href="../Common/icons.svg#ppi-map"></use></svg>    
                 Map
             </a>
             <button class="btn">
-                <svg aria-hidden="true"><use href="/Common/icons.svg#ppi-unmuted" xlink:href="/Common/icons.svg#ppi-unmuted"></use></svg>    
+                <svg aria-hidden="true"><use href="../Common/icons.svg#ppi-unmuted" xlink:href="../Common/icons.svg#ppi-unmuted"></use></svg>    
                 Music
             </button>
         </div>
         <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" alt="Bootstrap" width="30" height="24">
         <div class="navbar-nav">
             <button class="btn" data-bs-toggle="modal" data-bs-target="#answer-modal">
-                <svg aria-hidden="true"><use href="/Common/icons.svg#ppi-check" xlink:href="/Common/icons.svg#ppi-check"></use></svg>    
+                <svg aria-hidden="true"><use href="../Common/icons.svg#ppi-check" xlink:href="../Common/icons.svg#ppi-check"></use></svg>    
                 Solve
             </button>
             <button class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions">
-                <svg aria-hidden="true"><use href="/Common/icons.svg#ppi-lore" xlink:href="/Common/icons.svg#ppi-lore"></use></svg>    
+                <svg aria-hidden="true"><use href="../Common/icons.svg#ppi-lore" xlink:href="../Common/icons.svg#ppi-lore"></use></svg>    
                 Lore    
             </button>
         </div>
@@ -76,7 +76,7 @@
                 </div>
             </div>
     
-            <div class="text-container inner-container" id="basics-desc">
+            <div class="text-container inner-container" id="structure-desc">
                 <h1 class="sr-only">Structure</h1>
                 <h3>Structure</h3>
                 <div aria-label="Introduction">
@@ -111,7 +111,7 @@
                 <ul>
                     <li><b>Acrostic</b> clues are where the first letter, syllable, or word of each line, paragraph, or other recurring feature spells out a word or message.</li>
                     <li><b>Indexing</b> is a very popular way of extracting single letters from words, and you will run across this type of puzzle solving strategy a lot. Unfortunately as programmers some puzzle creators were more comfortable with 0 indexing while others preferred 1 indexing. Just be weary when indexing that if you find that you get nonsense one way, try the other kind of indexing. For example: 2 Cake, 6 Pudding, 5 Shortening gives you: C<b>a</b>ke, Puddi<b>n</b>g, and Shor<b>t</b>ening, or <b>ant</b> with 1 indexing.</li>
-                    <li><b>Alpha-numeric</b> codes are also very common.  If you end up with a list of numbers try replacing the numbers with the corresponding letters like this: 1 = A, 2 = B, 3 = C... 26 = Z. Again, programmer brain rot affects us all and you may try replacing numbers for letters like this: 0 = A, 1 = B, 2 = C ... 25 = Z. </li>
+                    <li><b>Alpha-numeric</b> codes are also very common.  If you end up with a list of numbers try replacing the numbers with the corresponding letters like this: 1 = A, 2 = B, 3 = C... 26 = Z. Again, programmer brain rot affects us all and you may have to try replacing numbers for letters like this: 0 = A, 1 = B, 2 = C ... 25 = Z. </li>
                     <li><b>Braille</b> codes are occasionally used. Try braille when puzzles seem to be encoded in 2x3 matrices.</li>
                     <li><b>Morse code</b> codes are also occasionally used. Try using morse code when you see that data is split into three distinct categories (dot, dash, and space).</li>
                     <li><b>Binary</b>, of course we have no mention binary. We are Luddy students after all. Use binary if you have two distinct categories (one and zero). Once you have binary, you can try converting that to an ascii character, or a decimal number, or whatever to be honest...</li>
@@ -137,7 +137,7 @@
                         <div class="col-12">
                             <div class="card-body">
                                 <div class="card-head">
-                                    <img src="../Common//wave.gif" class="img-fluid rounded-start" alt="...">
+                                    <img src="../Common/wave.gif" class="img-fluid rounded-start" alt="...">
                                     <h1 class="text-body-secondary">Now Playing</h1>
                                 </div>
                                 <p class="card-title">Visions of Gideon</p>
@@ -171,16 +171,16 @@
                 <div class="modal-content">
                     <form id="check-answer" class="form-floating needs-validation" autocomplete="on">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Check Puzzle Answer</h1>
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">What are you trying to solve?</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <div class="form-floating mb-3">
+                            <!-- <div class="form-floating mb-3">
                                 <input pattern="[a-zA-Z]*"
                                     title="Letters only, please! No spaces, numbers, or special characters." type="text"
                                     class="form-control" id="answer" value="" placeholder="Puzzle Answer" required>
                                 <label for="answer">Puzzle Answer</label>
-                            </div>
+                            </div> -->
                             <div class="form-floating mb-3" style="display: none;">
                                 <input type="text" autocomplete="username" class="form-control" id="team" value=""
                                     placeholder="Team" required>
@@ -213,7 +213,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Check Answer</button>
+                            <!-- <button type="submit" class="btn btn-primary">Check Answer</button> -->
                         </div>
                     </form>
                 </div>
@@ -256,8 +256,7 @@
         </div>
 
 
-
-
+        <script src="../Common/puzzle.js"></script>
     <script src="script.js"></script>
 </body>
 

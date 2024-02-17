@@ -3,6 +3,9 @@
     --pin-size: 20vh;
 }
 
+html{
+    background-color: #e2ded1;
+}
 
 main{
     background-image: url("../map/assets/thunder_clouds.png");
@@ -91,6 +94,14 @@ main{
     }
 }
 
+body {
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+main {
+    background-color: transparent!important;
+}
 
 .cloud-background {
     position: absolute;
@@ -101,3 +112,28 @@ main{
     z-index: 0;
     transition: all 3s;
 }
+
+.clouds {
+    opacity: 1;
+    transition: opacity 2s;
+
+    position: fixed;
+    top: -5vh;
+    left: -5vw;
+
+    width: 110vw;
+    height: 110vh;
+    object-fit: fill;
+
+    /* hsl(38, 24%, 57%) */
+    /* hsl(337, 8%, 42%) */
+/* hue-rotate(299deg) saturate(84%) brightness(85%); */
+    filter: brightness(50%) sepia(1) hue-rotate(285deg) saturate(50%) brightness(70%);
+    /* object-fit: cover; */
+}
+
+.region-map {
+    transition: all 3s;
+    z-index: 10;
+}
+

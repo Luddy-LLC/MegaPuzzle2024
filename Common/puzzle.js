@@ -63,15 +63,15 @@ function autofill() {
 }
 
 function clearAnswer() {
-    document.getElementById('answer').value = "";
-    document.getElementById('puzzle').value = "";
-    document.getElementById('team').value = "";
-    document.getElementById('person').value = "";
-    document.getElementById('personName').innerText = "UNKNOWN";
-    document.getElementById('teamName').innerText = "UNKNOWN";
-    document.getElementById('correct').style.display = 'none';
-    document.getElementById('incorrect').style.display = 'none';
-    document.getElementById('technical-error').style.display = 'none';
+    if(document.getElementById('answer')) document.getElementById('answer').value = "";
+    if(document.getElementById('puzzle')) document.getElementById('puzzle').value = "";
+    if(document.getElementById('team')) document.getElementById('team').value = "";
+    if(document.getElementById('person')) document.getElementById('person').value = "";
+    if(document.getElementById('personName')) document.getElementById('personName').innerText = "UNKNOWN";
+    if(document.getElementById('teamName')) document.getElementById('teamName').innerText = "UNKNOWN";
+    if(document.getElementById('correct')) document.getElementById('correct').style.display = 'none';
+    if(document.getElementById('incorrect')) document.getElementById('incorrect').style.display = 'none';
+    if(document.getElementById('technical-error')) document.getElementById('technical-error').style.display = 'none';
 }
 
 if (document.getElementById('check-answer')) {
