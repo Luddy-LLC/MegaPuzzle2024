@@ -1,3 +1,7 @@
+body {
+    background-color: #1a300d;
+}
+
 .puzzle {
     width:80%;
     margin-left: auto;
@@ -14,4 +18,15 @@
 .puzzle-desc{
     padding-left: 20px;
     padding-right: 5px;
+}
+
+
+.table> :not(caption)>*>*  {
+    margin-top: 10px;
+    background-color: #1f7a1155 !important;
+    background-blend-mode: screen;
+}
+
+.text-container {
+    background-color: #aaa07fbf;
 }
