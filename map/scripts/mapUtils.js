@@ -54,6 +54,12 @@ window.onload = () => {
     document.getElementsByClassName('clouds')[0].style.opacity = 0;
 }
 
+window.onpageshow = () => {
+    document.querySelector('body').style.opacity = 1;
+    document.getElementsByClassName('clouds')[0].src = './map/assets/fast_clouds_pixleated.webp';
+    document.getElementsByClassName('clouds')[0].style.opacity = 0;
+}
+
 window.transitionToPage = function(href) {
     document.getElementById('clouds').style.opacity = 1;
     document.getElementById('clouds').src = './map/assets/clouds_pixleated_reverse_fast.webp';
