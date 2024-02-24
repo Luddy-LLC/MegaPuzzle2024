@@ -128,7 +128,7 @@ const audioLibrary = {
 }
 function togglePlay() {
     const svg = document.querySelector('body > nav > div:nth-child(1) > button > svg > use');
-    audioplayer.paused ? svg.setAttribute('href','/Common/icons.svg#ppi-unmuted') : svg.setAttribute('href','/Common/icons.svg#ppi-muted');
+    audioplayer.paused ? svg.setAttribute('href','/MegaPuzzle2024/Common/icons.svg#ppi-unmuted') : svg.setAttribute('href','/MegaPuzzle2024/Common/icons.svg#ppi-muted');
     return audioplayer.paused ? audioplayer.play() : audioplayer.pause();
 }
 function toggleNowPlaying() {
@@ -136,7 +136,7 @@ function toggleNowPlaying() {
 }
 if (audioplayer) {
     const puzzle = document.getElementsByTagName('html')[0].getAttribute('data-puzzle');
-    audioplayer.setAttribute('src','/Common/audio/'+audioLibrary[puzzle][0]);
+    audioplayer.setAttribute('src','/MegaPuzzle2024/Common/audio/'+audioLibrary[puzzle][0]);
     audioplayer.style.display = 'none';
     audioplayer.addEventListener("canplaythrough", () => {
         audioplayer.play().catch(e => {
