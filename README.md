@@ -1,7 +1,7 @@
 # MegaPuzzle2024
 The source code for the 2024 Mega Puzzle!
 
-[View Site](https://luddy-llc.github.io/MegaPuzzle2024/)
+<a href="https://luddy-llc.github.io/MegaPuzzle2024/" target="_blank">View Site</a>
 
 # Special Requirements
 ## `div`s with text
