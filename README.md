@@ -1,6 +1,8 @@
 # MegaPuzzle2024
 The source code for the 2024 Mega Puzzle!
 
+[View Site](https://luddy-llc.github.io/MegaPuzzle2024/)
+
 # Special Requirements
 ## `div`s with text
 If you're using text on your puzzle page, please include `div`s conforming to either the `text-container` or `text-container-dark` class. This will provide a backdrop for your text:
