@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-puzzle="map" data-region="map">
+<html lang="en" data-puzzle="main-map" data-region="map">
 
 <head>
     <meta charset="UTF-8">
@@ -19,15 +19,21 @@
             z-index: 10;
         }
 
+        .modal-backdrop {
+            display: none;
+        }
+
         .back-to-menu svg {
             height: 15px;
             width: 15px;
         }
+
+
     </style>
 </head>
 
 <body>
-    <audio style="height: 100px; width: 100px; z-index: 3000; position: absolute; top: 0; left: 50px;" id="background-audio" src="/map/assets/titlescreen.mp3" loop="true"></audio>
+    <audio id="audio-player" src=""></audio>
     <div id="move" aria-hidden="true">
         <!-- Don't fill in this img tag... that's done by JS. -->
         <img id="region-label" src="" alt="">
@@ -37,7 +43,7 @@
             <svg width="10px" aria-hidden="true"><use href="/Common/icons.svg#ppi-scroll" xlink:href="/Common/icons.svg#ppi-map"></use></svg>    
             Main Menu
         </a>
-        <div class="modal fade" id="main-menu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" onmouseover="document.getElementById('background-audio').play();">
+        <div class="modal fade" id="main-menu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-body">
@@ -160,6 +166,7 @@
         </div>
     </main>
     <script type="text/javascript" src="./map/scripts/mapUtils.js"></script>
+    <script type="text/javascript" src="/Common/puzzle.js"></script>
 </body>
 
 </html>

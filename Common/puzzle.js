@@ -124,6 +124,7 @@ if (document.getElementById('check-answer')) {
 const audioplayer = document.getElementById('audio-player');
 const nowplaying = document.getElementsByClassName('now-playing')[0];
 const audioLibrary = {
+    "main-map" : ["titlescreen.mp3","202220123","Ryuichi Sakamoto"],
     "rosetta" : ["coconutmall.mp3", "Coconut Mall", "Nintendo"]
 }
 function togglePlay() {
