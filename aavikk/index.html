@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PUZZLE_NAME_GOES_HERE</title>
+    <title>Aavikk</title>
     <script src="https://nouveaureece.github.io/Puzzlestrap/js/popper.min.js"></script>
     <script src="https://nouveaureece.github.io/Puzzlestrap/js/bootstrap.bundle.js"></script>
 
-    <link rel="preload" as="image" href="/map/assets/fast_clouds_pixleated.webp">
-    <link rel="preload" as="image" href="/map/assets/clouds_pixleated_reverse_fast.webp">
+    <link rel="preload" as="image" href="../map/assets/fast_clouds_pixleated.webp">
+    <link rel="preload" as="image" href="../map/assets/clouds_pixleated_reverse_fast.webp">
 
-    <link rel="stylesheet" href="/Common/puzzle.css">
-    <link rel="stylesheet" href="style.css">
+    <link type="text/css" rel="stylesheet" href="../Common/puzzle.css">
+    <link type="text/css" rel="stylesheet" href="style.css">
 
 </head>
 
@@ -23,23 +23,23 @@
 
     <nav class="navbar navbar-nav">
         <div class="navbar-nav">
-            <a class="btn" onclick="transitionToPage(`/`)">
-                <svg aria-hidden="true" width="10px"><use href="/Common/icons.svg#ppi-map" xlink:href="/Common/icons.svg#ppi-map"></use></svg>    
+            <a class="btn" onclick="transitionToPage(`../`)">
+                <svg aria-hidden="true" width="10px"><use href="../Common/icons.svg#ppi-map" xlink:href="../Common/icons.svg#ppi-map"></use></svg>    
                 Map
             </a>
             <button class="btn">
-                <svg aria-hidden="true"><use href="/Common/icons.svg#ppi-unmuted" xlink:href="/Common/icons.svg#ppi-unmuted"></use></svg>    
+                <svg aria-hidden="true"><use href="../Common/icons.svg#ppi-unmuted" xlink:href="../Common/icons.svg#ppi-unmuted"></use></svg>    
                 Music
             </button>
         </div>
         <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" alt="Bootstrap" width="30" height="24">
         <div class="navbar-nav">
             <button class="btn" data-bs-toggle="modal" data-bs-target="#answer-modal">
-                <svg aria-hidden="true"><use href="/Common/icons.svg#ppi-check" xlink:href="/Common/icons.svg#ppi-check"></use></svg>    
+                <svg aria-hidden="true"><use href="../Common/icons.svg#ppi-check" xlink:href="../Common/icons.svg#ppi-check"></use></svg>    
                 Solve
             </button>
             <button class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions">
-                <svg aria-hidden="true"><use href="/Common/icons.svg#ppi-lore" xlink:href="/Common/icons.svg#ppi-lore"></use></svg>    
+                <svg aria-hidden="true"><use href="../Common/icons.svg#ppi-lore" xlink:href="../Common/icons.svg#ppi-lore"></use></svg>    
                 Lore    
             </button>
         </div>
@@ -47,7 +47,7 @@
 
     <main>
         <div class="region-map">
-            <a href="/aavikk/cooking/index.html" class="pin" id="cooking" 
+            <a href="./cooking" class="pin" id="cooking" 
                 data-bs-toggle="tooltip" 
                 data-bs-placement="top"
                 data-bs-html="true"
@@ -55,15 +55,15 @@
                 data-bs-custom-class="pin-tooltip"
                 data-bs-title="<b>Cooking Minigame</b><br>Difficulty: <div class='filled star'></div><div class='filled star'></div><div class='unfilled star'></div>">
             </a>
-            <a href="/aavikk/forced-mate/index.html" class="pin" id="forced-mate"
+            <a href="./forced-mate" class="pin" id="forced-mate"
                 data-bs-toggle="tooltip" 
                 data-bs-placement="top"
                 data-bs-html="true"
                 aria-describedby="tooltip603854"
                 data-bs-custom-class="pin-tooltip"
-                data-bs-title="<b>Forced Mate</b><br>Difficulty: <div class='filled star'></div><div class='filled star'></div><div class='unfilled star'></div>">
+                data-bs-title="<b>Forced Mate</b><br>Difficulty: <div class='filled star'></div><div class='filled star'></div><div class='filled star'></div>">
             </a>
-            <a href="/aavikk/maze-mania/index.html" class="pin" id="maze-mania"
+            <a href="./maze-mania" class="pin" id="maze-mania"
                 data-bs-toggle="tooltip" 
                 data-bs-placement="top"
                 data-bs-html="true"
@@ -71,13 +71,13 @@
                 data-bs-custom-class="pin-tooltip"
                 data-bs-title="<b>Maze Mania</b><br>Difficulty: <div class='filled star'></div><div class='filled star'></div><div class='unfilled star'></div>">
             </a>
-            <a href="/aavikk/rubiks-cube/index.html" class="pin" id="rubiks-cube"
+            <a href="./rubiks-cube" class="pin" id="rubiks-cube"
                 data-bs-toggle="tooltip" 
                 data-bs-placement="top"
                 data-bs-html="true"
                 aria-describedby="tooltip603854"
                 data-bs-custom-class="pin-tooltip"
-                data-bs-title="<b>Rubik's Cube</b><br>Difficulty: <div class='filled star'></div><div class='filled star'></div><div class='unfilled star'></div>">
+                data-bs-title="<b>Rubik's Cube</b><br>Difficulty: <div class='filled star'></div><div class='unfilled star'></div><div class='unfilled star'></div>">
             </a>
         </div>
     </main>
@@ -90,14 +90,17 @@
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-                <p>There's a whole bunch of really interesting lore going on... have a gander!</p>
+                <p>The land of Aavikk is my primary focus of study. Once a thriving center of learning and magic, it was reduced to ashen rubble when the dragon who lives atop Mount Dyrzai attacked, burningn their cities to the ground and taking or destroying their great libraries.</p>
+                <p>Little is known about what might have provoked the creature, or why it targetted libraries in taking books, but such is the central thesis of my studies. From what I have found, he much of the information culled in the dragon's fires was about magic, and the people of Aavikk before their destruction seemed to be quite well informed on the mechanics of magic, having mastered the art of portals in particular. They seemed to generally teach that magic flows from ambition, whether that be a positive or negative drive.</p>
+                <p>The survivors of the dragon's attack ultimately were scattered to the wind, making accounts difficult to come by. However, it is said that those who are more in tune with magic often live much longer lives, and since Aavikk was home to several powerful wizards many speculate some of them settled down in homes far or distant after the attack, given they survived. This, however, is difficult to determine since the people from Aavikk visually looked very similar to the people of Et'wixt, and after so long cast into foreign lands would likely have assimilated.</p>
+                <p>For all of my work, much is still unknown about Aavikk and its people. It is, however, likely that my efforts to study the cause of their downfall have invoked the same rage of that ancient dragon who took my Cat from me in its attempt to again obfuscate the knowledge of those arts it went through such pains to rid this land of before.</p>
                 <div class="card mb-3 now-playing" style="max-width: 540px;">
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
                     <div class="row g-0">
                         <div class="col-12">
                             <div class="card-body">
                                 <div class="card-head">
-                                    <img src="/Common/wave.gif" class="img-fluid rounded-start" alt="...">
+                                    <img src="../Common/wave.gif" class="img-fluid rounded-start" alt="...">
                                     <h1 class="text-body-secondary">Now Playing</h1>
                                 </div>
                                 <p class="card-title">Visions of Gideon</p>
@@ -131,16 +134,16 @@
                 <div class="modal-content">
                     <form id="check-answer" class="form-floating needs-validation" autocomplete="on">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Check Puzzle Answer</h1>
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">What are you trying to solve?</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <div class="form-floating mb-3">
+                            <!-- <div class="form-floating mb-3">
                                 <input pattern="[a-zA-Z]*"
                                     title="Letters only, please! No spaces, numbers, or special characters." type="text"
                                     class="form-control" id="answer" value="" placeholder="Puzzle Answer" required>
                                 <label for="answer">Puzzle Answer</label>
-                            </div>
+                            </div> -->
                             <div class="form-floating mb-3" style="display: none;">
                                 <input type="text" autocomplete="username" class="form-control" id="team" value=""
                                     placeholder="Team" required>
@@ -173,7 +176,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Check Answer</button>
+                            <!-- <button type="submit" class="btn btn-primary">Check Answer</button> -->
                         </div>
                     </form>
                 </div>
@@ -217,7 +220,7 @@
 
 <audio id="audio-player" controls src=""></audio>
 
-    <script src="/Common/puzzle.js"></script>
+    <script src="../Common/puzzle.js"></script>
     <script src="script.js"></script>
 </body>
 

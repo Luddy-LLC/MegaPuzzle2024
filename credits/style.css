@@ -1,7 +1,7 @@
 body{
     background-color: rgb(0, 0, 0);
 
-    background-image: url("/aavikk/forced-mate/assets/woood\ texture\ tst.png");
+    background-image: url("../aavikk/forced-mate/assets/woood\ texture\ tst.png");
 }
 
 
@@ -13,7 +13,7 @@ body{
     margin-top: 30px;
 }
 
-.card{
+.card.credit-person{
     margin: 20px;
     width: 375px !important;
 
@@ -24,16 +24,16 @@ body{
     box-shadow: rgba(0,0,0,.1) 0px 0px 10px 10px;
 }
 
-.card-subtitle {
+.credit-person .card-subtitle {
     color: aliceblue !important;
 }
 
-.card-title{
+.credit-person .card-title{
     font-family: "Macondo Swash Caps", serif;
     font-size: 2rem;
 }
 
-.card-img-top{
+.credit-person .card-img-top{
     aspect-ratio: 1/1;
     object-fit: cover;
     width: 50%;
@@ -42,16 +42,16 @@ body{
     margin: 10px;
 }
 
-.links{
+.credit-person .links{
     margin-top: -30px;
 }
 
-.card-actions{
+.credit-person .card-actions{
     margin-top: 0;
     margin-bottom: 25px;
 }
 
-.bi{
+.credit-person .bi{
     transition: color .1s;
 
     color: rgb(210, 210, 210);
@@ -59,6 +59,12 @@ body{
     height: 30px;
 }
 
-.bi:hover, .bi:active, .bi:focus{
+.credit-person .bi:hover, .bi:active, .bi:focus{
     color: rgb(171, 171, 171);
+}
+
+.credit-person p.card-text::first-letter{
+    font-family: Inter, sans-serif !important;
+    font-size: 16px !important;
+    margin-right: 0 !important;
 }

@@ -3,15 +3,18 @@
     --pin-size: 20vh;
 }
 
+html{
+    background-color: #e2ded1;
+}
 
 main{
-    background-image: url("/map/assets/thunder_clouds.png");
+    background-image: url("../map/assets/thunder_clouds.png");
     background-color: aqua;
     background-size: cover;
 }
 
 .region-map{
-    background-image: url("/map/assets/dyrzai.png");
+    background-image: url("../map/assets/dyrzai.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -25,7 +28,7 @@ main{
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url("/map/assets/x-mark.webp");
+    background-image: url("../map/assets/x-mark.webp");
 
     border: solid transparent 15px; /* easier to click you with my dear */
 
@@ -62,11 +65,11 @@ main{
 }
 
 .star.filled{
-    background-image: url("/Common/filled-star.svg");
+    background-image: url("../Common/filled-star.svg");
 }
 
 .star.unfilled{
-    background-image: url("/Common/unfilled-star.svg");
+    background-image: url("../Common/unfilled-star.svg");
 }
 
 
@@ -91,6 +94,14 @@ main{
     }
 }
 
+body {
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+main {
+    background-color: transparent!important;
+}
 
 .cloud-background {
     position: absolute;
@@ -101,3 +112,28 @@ main{
     z-index: 0;
     transition: all 3s;
 }
+
+.clouds {
+    opacity: 1;
+    transition: opacity 2s;
+
+    position: fixed;
+    top: -5vh;
+    left: -5vw;
+
+    width: 110vw;
+    height: 110vh;
+    object-fit: fill;
+
+    /* hsl(38, 24%, 57%) */
+    /* hsl(337, 8%, 42%) */
+/* hue-rotate(299deg) saturate(84%) brightness(85%); */
+    filter: brightness(50%) sepia(1) hue-rotate(285deg) saturate(50%) brightness(70%);
+    /* object-fit: cover; */
+}
+
+.region-map {
+    transition: all 3s;
+    z-index: 10;
+}
+

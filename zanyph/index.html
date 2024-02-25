@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PUZZLE_NAME_GOES_HERE</title>
+    <title>Zanyph</title>
     <script src="https://nouveaureece.github.io/Puzzlestrap/js/bootstrap.bundle.js"></script>
 
     <link rel="preload" as="image" href="/map/assets/fast_clouds_pixleated.webp">
     <link rel="preload" as="image" href="/map/assets/clouds_pixleated_reverse_fast.webp">
 
-    <link rel="stylesheet" href="/Common/puzzle.css">
-    <link rel="stylesheet" href="style.css">
+    <link type="text/css" rel="stylesheet" href="../Common/puzzle.css">
+    <link type="text/css" rel="stylesheet" href="style.css">
 
 </head>
 
@@ -19,23 +19,23 @@
     <img id="clouds" class="centered clouds freezeframe" src="../map/assets/fast_clouds_pixleated.webp" aria-hidden="true">  
     <nav class="navbar navbar-nav">
         <div class="navbar-nav">
-            <a class="btn" onclick="transitionToPage(`/`)">
-                <svg aria-hidden="true" width="10px"><use href="/Common/icons.svg#ppi-map" xlink:href="/Common/icons.svg#ppi-map"></use></svg>    
+            <a class="btn" onclick="transitionToPage(`../`)">
+                <svg aria-hidden="true" width="10px"><use href="../Common/icons.svg#ppi-map" xlink:href="../Common/icons.svg#ppi-map"></use></svg>    
                 Map
             </a>
             <button class="btn">
-                <svg aria-hidden="true"><use href="/Common/icons.svg#ppi-unmuted" xlink:href="/Common/icons.svg#ppi-unmuted"></use></svg>    
+                <svg aria-hidden="true"><use href="../Common/icons.svg#ppi-unmuted" xlink:href="../Common/icons.svg#ppi-unmuted"></use></svg>    
                 Music
             </button>
         </div>
         <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" alt="Bootstrap" width="30" height="24">
         <div class="navbar-nav">
             <button class="btn" data-bs-toggle="modal" data-bs-target="#answer-modal">
-                <svg aria-hidden="true"><use href="/Common/icons.svg#ppi-check" xlink:href="/Common/icons.svg#ppi-check"></use></svg>    
+                <svg aria-hidden="true"><use href="../Common/icons.svg#ppi-check" xlink:href="../Common/icons.svg#ppi-check"></use></svg>    
                 Solve
             </button>
             <button class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions">
-                <svg aria-hidden="true"><use href="/Common/icons.svg#ppi-lore" xlink:href="/Common/icons.svg#ppi-lore"></use></svg>    
+                <svg aria-hidden="true"><use href="../Common/icons.svg#ppi-lore" xlink:href="../Common/icons.svg#ppi-lore"></use></svg>    
                 Lore    
             </button>
         </div>
@@ -43,7 +43,7 @@
 
     <main>
         <div class="region-map">
-            <a href="/zanyph/already-solved-riddle/index.html" class="pin" id="already-solved-riddle" 
+            <a href="already-solved-riddle/index.html" class="pin" id="already-solved-riddle" 
                 data-bs-toggle="tooltip" 
                 data-bs-placement="top"
                 data-bs-html="true"
@@ -51,7 +51,7 @@
                 data-bs-custom-class="pin-tooltip"
                 data-bs-title="<b>Already Solved Riddle</b><br>Difficulty: <div class='filled star'></div><div class='unfilled star'></div><div class='unfilled star'></div>">
             </a>
-            <a href="/zanyph/asdfs-anger/index.html" class="pin" id="asdfs-anger"
+            <a href="asdfs-anger/index.html" class="pin" id="asdfs-anger"
                 data-bs-toggle="tooltip" 
                 data-bs-placement="top"
                 data-bs-html="true"
@@ -59,7 +59,7 @@
                 data-bs-custom-class="pin-tooltip"
                 data-bs-title="<b>Asdf's Anger</b><br>Difficulty: <div class='filled star'></div><div class='filled star'></div><div class='unfilled star'></div>">
             </a>
-            <a href="/zanyph/castaway/index.html" class="pin" id="castaway"
+            <a href="castaway/index.html" class="pin" id="castaway"
                 data-bs-toggle="tooltip" 
                 data-bs-placement="top"
                 data-bs-html="true"
@@ -67,7 +67,7 @@
                 data-bs-custom-class="pin-tooltip"
                 data-bs-title="<b>Castaway</b><br>Difficulty: <div class='filled star'></div><div class='filled star'></div><div class='unfilled star'></div>">
             </a>
-            <a href="/zanyph/snake/index.html" class="pin" id="snake"
+            <a href="snake/index.html" class="pin" id="snake"
                 data-bs-toggle="tooltip" 
                 data-bs-placement="top"
                 data-bs-html="true"
@@ -93,7 +93,7 @@
                         <div class="col-12">
                             <div class="card-body">
                                 <div class="card-head">
-                                    <img src="/Common/wave.gif" class="img-fluid rounded-start" alt="...">
+                                    <img src="../Common/wave.gif" class="img-fluid rounded-start" alt="...">
                                     <h1 class="text-body-secondary">Now Playing</h1>
                                 </div>
                                 <p class="card-title">Visions of Gideon</p>
@@ -127,16 +127,16 @@
                 <div class="modal-content">
                     <form id="check-answer" class="form-floating needs-validation" autocomplete="on">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Check Puzzle Answer</h1>
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">What are you trying to solve?</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <div class="form-floating mb-3">
+                            <!-- <div class="form-floating mb-3">
                                 <input pattern="[a-zA-Z]*"
                                     title="Letters only, please! No spaces, numbers, or special characters." type="text"
                                     class="form-control" id="answer" value="" placeholder="Puzzle Answer" required>
                                 <label for="answer">Puzzle Answer</label>
-                            </div>
+                            </div> -->
                             <div class="form-floating mb-3" style="display: none;">
                                 <input type="text" autocomplete="username" class="form-control" id="team" value=""
                                     placeholder="Team" required>
@@ -169,7 +169,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Check Answer</button>
+                            <!-- <button type="submit" class="btn btn-primary">Check Answer</button> -->
                         </div>
                     </form>
                 </div>
@@ -213,7 +213,7 @@
 
 <audio id="audio-player" controls src=""></audio>
 
-    <script src="/Common/puzzle.js"></script>
+    <script src="../Common/puzzle.js"></script>
     <script src="script.js"></script>
 </body>
 

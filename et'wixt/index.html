@@ -9,8 +9,8 @@
     <link rel="preload" as="image" href="/map/assets/fast_clouds_pixleated.webp">
     <link rel="preload" as="image" href="/map/assets/clouds_pixleated_reverse_fast.webp">
     <script src="https://nouveaureece.github.io/Puzzlestrap/js/bootstrap.bundle.js"></script>
-    <link rel="stylesheet" href="/Common/puzzle.css">
-    <link rel="stylesheet" href="style.css">
+    <link type="text/css" rel="stylesheet" href="../Common/puzzle.css">
+    <link type="text/css" rel="stylesheet" href="style.css">
 
 </head>
 
@@ -21,23 +21,23 @@
     <img id="clouds" class="centered clouds freezeframe" src="../map/assets/fast_clouds_pixleated.webp" aria-hidden="true">  
     <nav class="navbar navbar-nav">
         <div class="navbar-nav">
-            <a class="btn" onclick="transitionToPage(`/`)">
-                <svg aria-hidden="true" width="10px"><use href="/Common/icons.svg#ppi-map" xlink:href="/Common/icons.svg#ppi-map"></use></svg>    
+            <a class="btn" onclick="transitionToPage(`../`)">
+                <svg aria-hidden="true" width="10px"><use href="../Common/icons.svg#ppi-map" xlink:href="../Common/icons.svg#ppi-map"></use></svg>    
                 Map
             </a>
             <button class="btn">
-                <svg aria-hidden="true"><use href="/Common/icons.svg#ppi-unmuted" xlink:href="/Common/icons.svg#ppi-unmuted"></use></svg>    
+                <svg aria-hidden="true"><use href="../Common/icons.svg#ppi-unmuted" xlink:href="../Common/icons.svg#ppi-unmuted"></use></svg>    
                 Music
             </button>
         </div>
         <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" alt="Bootstrap" width="30" height="24">
         <div class="navbar-nav">
             <button class="btn" data-bs-toggle="modal" data-bs-target="#answer-modal">
-                <svg aria-hidden="true"><use href="/Common/icons.svg#ppi-check" xlink:href="/Common/icons.svg#ppi-check"></use></svg>    
+                <svg aria-hidden="true"><use href="../Common/icons.svg#ppi-check" xlink:href="../Common/icons.svg#ppi-check"></use></svg>    
                 Solve
             </button>
             <button class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions">
-                <svg aria-hidden="true"><use href="/Common/icons.svg#ppi-lore" xlink:href="/Common/icons.svg#ppi-lore"></use></svg>    
+                <svg aria-hidden="true"><use href="../Common/icons.svg#ppi-lore" xlink:href="../Common/icons.svg#ppi-lore"></use></svg>    
                 Lore    
             </button>
         </div>
@@ -45,23 +45,23 @@
 
     <main>
         <div class="region-map">
-            <a href="/et'wixt/supercoolios-quest/index.html" class="pin" id="supercoolios-quest" 
+            <a href="supercoolios-quest/index.html" class="pin" id="supercoolios-quest" 
                 data-bs-toggle="tooltip" 
                 data-bs-placement="top"
                 data-bs-html="true"
                 aria-describedby="tooltip603854"
                 data-bs-custom-class="pin-tooltip"
-                data-bs-title="<b>Supercoolio's Quest</b><br>Difficulty: <div class='filled star'></div><div class='filled star'></div><div class='unfilled star'></div>">
+                data-bs-title="<b>Supercoolio's Quest</b><br>Difficulty: <div class='filled star'></div><div class='unfilled star'></div><div class='unfilled star'></div>">
             </a>
-            <a href="/et'wixt/spell-sweeper/index.html" class="pin" id="spell-sweeper"
+            <a href="spell-sweeper/index.html" class="pin" id="spell-sweeper"
                 data-bs-toggle="tooltip" 
                 data-bs-placement="top"
                 data-bs-html="true"
                 aria-describedby="tooltip603854"
                 data-bs-custom-class="pin-tooltip"
-                data-bs-title="<b>Spell Sweeper</b><br>Difficulty: <div class='filled star'></div><div class='filled star'></div><div class='unfilled star'></div>">
+                data-bs-title="<b>Spell Sweeper</b><br>Difficulty: <div class='filled star'></div><div class='unfilled star'></div><div class='unfilled star'></div>">
             </a>
-            <a href="/et'wixt/standardized-testing/index.html" class="pin" id="standardized-testing"
+            <a href="standardized-testing/index.html" class="pin" id="standardized-testing"
                 data-bs-toggle="tooltip" 
                 data-bs-placement="top"
                 data-bs-html="true"
@@ -69,7 +69,7 @@
                 data-bs-custom-class="pin-tooltip"
                 data-bs-title="<b>Standardized Testing</b><br>Difficulty: <div class='filled star'></div><div class='filled star'></div><div class='unfilled star'></div>">
             </a>
-            <a href="/et'wixt/preoccupational/index.html" class="pin" id="preoccupational"
+            <a href="preoccupational/index.html" class="pin" id="preoccupational"
                 data-bs-toggle="tooltip" 
                 data-bs-placement="top"
                 data-bs-html="true"
@@ -88,14 +88,15 @@
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-                <p>There's a whole bunch of really interesting lore going on... have a gander!</p>
+                <p>Et'Wixt is one of the more ambitious players on the current world stage, insisting on a ceaseless expansionism which decimates those towns and villages with sits nearest to them. I am, admittedly, rather biased in these affairs since I hail from Ithkiya, which is Et'Wixt's primary rival in terms of power, but I would still like to think of myself as somewhat capable of analasis on these terms. I find myself first and foremost disliking foremost Et'Wixt's tendency to not just conquer but also destroy those which they deem "lesser."</p>
+                <p>Not only do I disagree that we other peoples are "lesser" than those who live in Et'Wixt, but it hurts my heart knowing how much knowledge and life has been lost in the pursuit of assimilating the rest of known society into their fold. I've dedicated my professional career to recovering information about peoples who were lost, so watching cultures be actively wiped out by Et'Wixt's nationalist tendencies makes me sick when I think of it. I've sometimes personally been accused of being "stuck in the past," but I feel strongly that when histories are erased its hard to know what might lie waiting in our future.</p>
                 <div class="card mb-3 now-playing" style="max-width: 540px;">
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
                     <div class="row g-0">
                         <div class="col-12">
                             <div class="card-body">
                                 <div class="card-head">
-                                    <img src="/Common/wave.gif" class="img-fluid rounded-start" alt="...">
+                                    <img src="../Common/wave.gif" class="img-fluid rounded-start" alt="...">
                                     <h1 class="text-body-secondary">Now Playing</h1>
                                 </div>
                                 <p class="card-title">Visions of Gideon</p>
@@ -129,16 +130,16 @@
                 <div class="modal-content">
                     <form id="check-answer" class="form-floating needs-validation" autocomplete="on">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Check Puzzle Answer</h1>
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">What are you trying to solve?</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <div class="form-floating mb-3">
+                            <!-- <div class="form-floating mb-3">
                                 <input pattern="[a-zA-Z]*"
                                     title="Letters only, please! No spaces, numbers, or special characters." type="text"
                                     class="form-control" id="answer" value="" placeholder="Puzzle Answer" required>
                                 <label for="answer">Puzzle Answer</label>
-                            </div>
+                            </div> -->
                             <div class="form-floating mb-3" style="display: none;">
                                 <input type="text" autocomplete="username" class="form-control" id="team" value=""
                                     placeholder="Team" required>
@@ -171,7 +172,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Check Answer</button>
+                            <!-- <button type="submit" class="btn btn-primary">Check Answer</button> -->
                         </div>
                     </form>
                 </div>
@@ -215,7 +216,7 @@
 
 <audio id="audio-player" controls src=""></audio>
 
-    <script src="/Common/puzzle.js"></script>
+    <script src="../Common/puzzle.js"></script>
     <script src="script.js"></script>
 </body>
 

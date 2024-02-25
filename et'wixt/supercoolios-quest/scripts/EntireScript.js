@@ -1444,7 +1444,8 @@ const g = canvas.getContext("2d");
 
 const transitionMessages = ["Alright, that's enough of that", "Wait what???", "Ok this is scaring me", "Is this a time loop?", "Please let me out!",
                             "Did I say my spell wrong?", "This is crazy!", "LET ME OUT LET ME OUT", "Is it over yet???"];
-const transitionSubMessages = ["Time to leave the paiting", "Why am I still in here?", "I just want to leave :(", "Am I stuck in here???", "I just want to go home!!",
+// Matei can't spell! Teeheehee
+const transitionSubMessages = ["Time to leave the painting", "Why am I still in here?", "I just want to leave :(", "Am I stuck in here???", "I just want to go home!!",
                                 "This might have been a mistake...", "I didn't even know there was a time loop spell...", "LET ME OUT LET ME OUT", "Please please please"];
 
 let mx, my = 0;

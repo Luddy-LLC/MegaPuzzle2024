@@ -7,31 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maze Mania</title>
     <script src="https://nouveaureece.github.io/Puzzlestrap/js/bootstrap.bundle.js"></script>
-    <link rel="stylesheet" href="/Common/puzzle.css">
-    <link rel="stylesheet" href="style.css">
+    <link type="text/css" rel="stylesheet" href="../../Common/puzzle.css">
+    <link type="text/css" rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
         <nav class="navbar navbar-nav">
         <div class="navbar-nav">
-            <a class="btn" href="/">
-                <svg aria-hidden="true" width="10px"><use href="/Common/icons.svg#ppi-map" xlink:href="/Common/icons.svg#ppi-map"></use></svg>    
+            <a class="btn" href="../..">
+                <svg aria-hidden="true" width="10px"><use href="../../Common/icons.svg#ppi-map" xlink:href="../../Common/icons.svg#ppi-map"></use></svg>    
                 Map
             </a>
             <button class="btn">
-                <svg aria-hidden="true"><use href="/Common/icons.svg#ppi-unmuted" xlink:href="/Common/icons.svg#ppi-unmuted"></use></svg>    
+                <svg aria-hidden="true"><use href="../../Common/icons.svg#ppi-unmuted" xlink:href="../../Common/icons.svg#ppi-unmuted"></use></svg>    
                 Music
             </button>
         </div>
         <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" alt="Bootstrap" width="30" height="24">
         <div class="navbar-nav">
             <button class="btn" data-bs-toggle="modal" data-bs-target="#answer-modal">
-                <svg aria-hidden="true"><use href="/Common/icons.svg#ppi-check" xlink:href="/Common/icons.svg#ppi-check"></use></svg>    
+                <svg aria-hidden="true"><use href="../../Common/icons.svg#ppi-check" xlink:href="../../Common/icons.svg#ppi-check"></use></svg>    
                 Solve
             </button>
             <button class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions">
-                <svg aria-hidden="true"><use href="/Common/icons.svg#ppi-lore" xlink:href="/Common/icons.svg#ppi-lore"></use></svg>    
+                <svg aria-hidden="true"><use href="../../Common/icons.svg#ppi-lore" xlink:href="../../Common/icons.svg#ppi-lore"></use></svg>    
                 Lore    
             </button>
         </div>
@@ -42,11 +42,11 @@
             <image id="maze" class="maze img" src="./assets/MazeSide1.png"> </img>
             <div class="text-container">
                 <h1 class="sr-only">Puzzle Introduction</h1>
-                <p><span class="first-line">Seven people are lost in this maze, </span> each with a key to a different door.</p><p class="second-sentence">Help each of them find their respective door as quickly as possible.</p>
-                <button id="swap" onclick="nextSide();" class="btn" type="button" top_layer = true><small>Enter a Portal</small></button>
+                <p class="pd"><span class="first-line">Seven people are lost in this maze, </span> each with a key to a different door.</p><p class="second-sentence pd">Help each of them find their respective door as quickly as possible.</p>
+                <button id="swap" onclick="nextSide();" class="btn btn-portal" type="button" top_layer = true><small>Enter a Portal</small></button>
             </div>
         </div>
-    <div class="d-grid gap-2 mt-4 mb-4 d-md-flex justify-content-md-center"> 
+        <div class="d-grid gap-2 mt-4 mb-4 d-md-flex justify-content-md-center"> 
             <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#hints">Hints</button>
         </div>
     </main>
@@ -59,14 +59,16 @@
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-                <p>There's a whole bunch of really interesting lore going on... have a gander!</p>
+                <p>The people of Aavikk took great pride in their intillect and problem solving abilities. This contraption was created as a sort of "game," one designed to pit various minds against one another. The objective is to naviagate out of the maze first, competing against various others to reach the end first.</p>
+                <p>In it's prime, onlookers would view the progress unfold as maze runners tried to navigate their way out, and it became a sport similar in caliber to the Colleseum of Et'Wixt in its entrappments. Each show would contain a new maze for competitors, usually with some kind of gimick. As the years have dredged on with no maintenance, however, the  original traps and hints of its last iteration have broken down and eroded, making it nigh impossible to navigate without outside assisstance.</p>
+                <p>Unfortunately, it's portal entrances have also fallen into severe disrepair, which happens to sit along a still used road. Sometimes folks will find themselves treading too close to the entrances, and ultimately falling into the competition unwillingly.</p>
                 <div class="card mb-3 now-playing" style="max-width: 540px;">
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
                     <div class="row g-0">
                         <div class="col-12">
                             <div class="card-body">
                                 <div class="card-head">
-                                    <img src="/Common/wave.gif" class="img-fluid rounded-start" alt="...">
+                                    <img src="../../Common/wave.gif" class="img-fluid rounded-start" alt="...">
                                     <h1 class="text-body-secondary">Now Playing</h1>
                                 </div>
                                 <p class="card-title">Visions of Gideon</p>
@@ -186,7 +188,7 @@
 
 <audio id="audio-player" controls src=""></audio>
 
-    <script src="/Common/puzzle.js"></script>
+    <script src="../../Common/puzzle.js"></script>
     <script src="script.js"></script>
 </body>
 

@@ -4,12 +4,6 @@
 // Assets by Mallory Miller
 // Date: February 2024
 
-// TODO: If you get to the end, stop moving, so you don't get eated
-
-function lerp(x1, x2, t) {
-    return x1 + t * (x2 - x1)
-}
-
 const JIMOTHY = 1
 const MALLORY_MILLER = -2
 const BANANA = 0
@@ -210,9 +204,9 @@ function advanceGame(opt) {
             reset.style.display = "flex"
             if (score == 10) {
                 // Perfect
-                result.innerText = "That was a perfect date. \n [-9] [-4] [-21] [-10] [0] [-12] [1] [19] [-8] [36]"
+                result.innerText = "That was a perfect date. \n [-9] [-4] [-21] [-10] [0] [-13] [1] [19] [-8] [36]"
             } else {
-                result.innerText = "Charibdis strives for perfection. \n [-9] [-4] [-21] [-10] [0] [-12] [1] [19] [-8] [36]"
+                result.innerText = "Charibdis strives for perfection. \n [-9] [-4] [-21] [-10] [0] [-13] [1] [19] [-8] [36]"
             }
         }
     }

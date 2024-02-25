@@ -9,14 +9,14 @@ html{
 }
 
 main{
-    background-image: url("/map/assets/clouds_static.png");
+    background-image: url("../map/assets/clouds_static.png");
     background-color: aqua;
     background-size: cover;
 }
 
 
 .region-map{
-    background-image: url("/map/assets/etwixt.png");
+    background-image: url("../map/assets/etwixt.png");
     background-size: contain;
     background-repeat: no-repeat !important;
     background-position: center;
@@ -31,7 +31,7 @@ main{
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url("/map/assets/x-mark.webp");
+    background-image: url("../map/assets/x-mark.webp");
 
     border: solid transparent 15px; /* easier to click you with my dear */
 
@@ -66,11 +66,11 @@ main{
 }
 
 .star.filled{
-    background-image: url("/Common/filled-star.svg");
+    background-image: url("../Common/filled-star.svg");
 }
 
 .star.unfilled{
-    background-image: url("/Common/unfilled-star.svg");
+    background-image: url("../Common/unfilled-star.svg");
 }
 
 
@@ -80,8 +80,8 @@ main{
 }
 
 .pin#spell-sweeper{
-    top: calc(42% - var(--pin-size) / 2);
-    left: calc(32% - var(--pin-size) / 2);
+    top: calc(35% - var(--pin-size) / 2);
+    left: calc(38% - var(--pin-size) / 2);
 }
 
 .pin#standardized-testing{

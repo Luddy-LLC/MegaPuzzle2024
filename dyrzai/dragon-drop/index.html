@@ -7,31 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dragon Drop</title>
     <script src="https://nouveaureece.github.io/Puzzlestrap/js/bootstrap.bundle.js"></script>
-    <link rel="stylesheet" href="/Common/puzzle.css">
-    <link rel="stylesheet" href="style.css">
+    <link type="text/css" rel="stylesheet" href="../../Common/puzzle.css">
+    <link type="text/css" rel="stylesheet" href="style.css">
 
 </head>
 
 <body id="body">
     <nav class="navbar navbar-nav">
         <div class="navbar-nav">
-            <a class="btn" href="/">
-                <svg aria-hidden="true" width="10px"><use href="/Common/icons.svg#ppi-map" xlink:href="/Common/icons.svg#ppi-map"></use></svg>    
+            <a class="btn" href="../../">
+                <svg aria-hidden="true" width="10px"><use href="../../Common/icons.svg#ppi-map" xlink:href="../../Common/icons.svg#ppi-map"></use></svg>    
                 Map
             </a>
             <button class="btn">
-                <svg aria-hidden="true"><use href="/Common/icons.svg#ppi-unmuted" xlink:href="/Common/icons.svg#ppi-unmuted"></use></svg>    
+                <svg aria-hidden="true"><use href="../../Common/icons.svg#ppi-unmuted" xlink:href="../../Common/icons.svg#ppi-unmuted"></use></svg>    
                 Music
             </button>
         </div>
         <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" alt="Bootstrap" width="30" height="24">
         <div class="navbar-nav">
             <button class="btn" data-bs-toggle="modal" data-bs-target="#answer-modal">
-                <svg aria-hidden="true"><use href="/Common/icons.svg#ppi-check" xlink:href="/Common/icons.svg#ppi-check"></use></svg>    
+                <svg aria-hidden="true"><use href="../../Common/icons.svg#ppi-check" xlink:href="../../Common/icons.svg#ppi-check"></use></svg>    
                 Solve
             </button>
             <button class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions">
-                <svg aria-hidden="true"><use href="/Common/icons.svg#ppi-lore" xlink:href="/Common/icons.svg#ppi-lore"></use></svg>    
+                <svg aria-hidden="true"><use href="../../Common/icons.svg#ppi-lore" xlink:href="../../Common/icons.svg#ppi-lore"></use></svg>    
                 Lore    
             </button>
         </div>
@@ -45,7 +45,13 @@
 
         <div class="text-container" id="text-container">
             <h1 class="sr-only">Dragon Drop</h1>
-            <p>Ominous intro speech. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius iusto ullam architecto repudiandae culpa necessitatibus labore, optio omnis sapiente rerum asperiores quaerat quos perferendis error sit quod tempora consequuntur ratione?</p>
+            <p>
+                At last you come unto my hidden lair, 
+                with puzzles solved, riddles addressed.
+                Yet now a test you finally face, to prove
+                your worth, with wit - weak-willed won't win this quest.
+                Art thou prepared to begin the end?
+            </p>
             <button class="btn btn-primary dragon-btn" id="start-button">Begin</button>
         </div>
 
@@ -61,7 +67,7 @@
             <div id="liveToast" class="toast fade hide" role="alert" aria-live="off" aria-atomic="true">
                 <div class="toast-header">
                     <!-- <img src="" class="rounded me-2" alt="..."> -->
-                    <svg aria-hidden="true" width="20px" height="20px" style="margin-right:5px"><use href="/Common/icons.svg#ppi-dragon" xlink:href="/Common/icons.svg#ppi-dragon"></use></svg>    
+                    <svg aria-hidden="true" width="20px" height="20px" style="margin-right:5px"><use href="../../Common/icons.svg#ppi-dragon" xlink:href="../../Common/icons.svg#ppi-dragon"></use></svg>    
                     <strong class="me-auto">
                         Dyrzai
                     </strong>
@@ -83,14 +89,15 @@
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-                <p>There's a whole bunch of really interesting lore going on... have a gander!</p>
+                <p>It watches.</p>
+                <p>Dragons are interesting creatures. Most notoriously, they are fueled by deep desires, or greed as some call it. The subject of their greed, however, can have variety. Some hunger for knowledge, others for money, and still others for food itself. The great curse of dragons, however, is that they cannot create that which they hunger for most. They cannot create money, they do not know how to develop their own knowledge, and they cannot cook. Because of this, any questions the dragon asks me must have answers that exist elsewhere, it must have taken the words from somewhere. If I have trouble figuring out what answers it seeks, they surely can be found elsewhere...</p>
                 <div class="card mb-3 now-playing" style="max-width: 540px;">
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
                     <div class="row g-0">
                         <div class="col-12">
                             <div class="card-body">
                                 <div class="card-head">
-                                    <img src="/Common/wave.gif" class="img-fluid rounded-start" alt="...">
+                                    <img src="../../Common/wave.gif" class="img-fluid rounded-start" alt="...">
                                     <h1 class="text-body-secondary">Now Playing</h1>
                                 </div>
                                 <p class="card-title">Visions of Gideon</p>
@@ -210,7 +217,7 @@
 
 <audio id="audio-player" controls src=""></audio>
 
-    <script src="/Common/puzzle.js"></script>
+    <script src="../../Common/puzzle.js"></script>
     <script src="script.js"></script>
 </body>
 

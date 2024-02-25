@@ -6,23 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Letterhead</title>
     <script src="https://nouveaureece.github.io/Puzzlestrap/js/bootstrap.bundle.js"></script>
-    <link rel="stylesheet" href="/Common/puzzle.css">
-    <link rel="stylesheet" href="style.css">
+    <link type="text/css" rel="stylesheet" href="../../Common/puzzle.css">
+    <link type="text/css" rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
     <nav class="navbar navbar-nav">
         <div class="navbar-nav">
-            <a class="btn" href="/">
+            <a class="btn" href="../../">
                 <svg aria-hidden="true" width="10px">
-                    <use href="/Common/icons.svg#ppi-map" xlink:href="/Common/icons.svg#ppi-map"></use>
+                    <use href="../../Common/icons.svg#ppi-map" xlink:href="../../Common/icons.svg#ppi-map"></use>
                 </svg>
                 Map
             </a>
             <button class="btn">
                 <svg aria-hidden="true">
-                    <use href="/Common/icons.svg#ppi-unmuted" xlink:href="/Common/icons.svg#ppi-unmuted"></use>
+                    <use href="../../Common/icons.svg#ppi-unmuted" xlink:href="../../Common/icons.svg#ppi-unmuted"></use>
                 </svg>
                 Music
             </button>
@@ -32,13 +32,13 @@
         <div class="navbar-nav">
             <button class="btn" data-bs-toggle="modal" data-bs-target="#answer-modal">
                 <svg aria-hidden="true">
-                    <use href="/Common/icons.svg#ppi-check" xlink:href="/Common/icons.svg#ppi-check"></use>
+                    <use href="../../Common/icons.svg#ppi-check" xlink:href="../../Common/icons.svg#ppi-check"></use>
                 </svg>
                 Solve
             </button>
             <button class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions">
                 <svg aria-hidden="true">
-                    <use href="/Common/icons.svg#ppi-lore" xlink:href="/Common/icons.svg#ppi-lore"></use>
+                    <use href="../../Common/icons.svg#ppi-lore" xlink:href="../../Common/icons.svg#ppi-lore"></use>
                 </svg>
                 Lore
             </button>
@@ -49,7 +49,7 @@
         <!-- CONTENT GOES HERE, WITHIN CONTAINER -->
         <div class="text-container" id="puzzle-desc">
             <h1 class="sr-only">Puzzle Prompt</h1>
-            <div aria-label="Introduction">
+            <div aria-label="Introduction" class="pd">
                 <p>
                     While wandering in the desert, you come across an ancient relic. The pedestal
                     that it's standing on has some strange symbols on it.
@@ -95,14 +95,16 @@
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-                <p>There's a whole bunch of really interesting lore going on... have a gander!</p>
+                <p>It's very difficult to say what this relic might imply about Aavikk's culture and people, but it clearly held some sort of prominence to whoever placed it here due to how it is propped up with such pride. My initial theory is that this artifact may have held some kind of magical importance, being a foci for a particular spell or magical practice. However, this does not account for why it would be on such display.</p>
+                <p>Another theory could be that it is some kind of art piece. Its regular sides are pleasing to the eye, and based on a variety of tests I have determined that the sides once held some kind of coloring. This theory, however, also holds flaws in that there would be little reason for the relic to be so thorougly and cleanly articulated to be twisted and turned if it was only meant to be viewed rather than used as some kind of tool</p>
+                <p>More research would likely reveal its purpose, if any. The instructions engraved in particular should be a good starting point.</p>
                 <div class="card mb-3 now-playing" style="max-width: 540px;">
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
                     <div class="row g-0">
                         <div class="col-12">
                             <div class="card-body">
                                 <div class="card-head">
-                                    <img src="/Common/wave.gif" class="img-fluid rounded-start" alt="...">
+                                    <img src="../../Common/wave.gif" class="img-fluid rounded-start" alt="...">
                                     <h1 class="text-body-secondary">Now Playing</h1>
                                 </div>
                                 <p class="card-title">Visions of Gideon</p>
@@ -222,7 +224,7 @@
 
 <audio id="audio-player" controls src=""></audio>
 
-    <script src="/Common/puzzle.js"></script>
+    <script src="../../Common/puzzle.js"></script>
     <script src="script.js"></script>
 </body>
 
