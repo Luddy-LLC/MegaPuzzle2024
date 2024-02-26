@@ -130,7 +130,7 @@ input{
     color: white;
     border: solid 5px var(--button-focus);
 
-    bottom: 8%;
+    bottom: 10%;
 
     transition: all .5s ease-in-out;
 }
@@ -209,4 +209,9 @@ input{
 #answer-check{
     display: none;
     opacity: 0;
+}
+
+#hint {
+    position: absolute;
+    bottom: -1%;
 }
