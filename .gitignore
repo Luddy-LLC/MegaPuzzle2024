@@ -1,4 +1,7 @@
 # Ignore macOS DS_Store files
 .DS_Store
+.ds_store
 # Ignore calvin disabling error messages
 .hintrc
+# Ignore VSCode config
+.vscode
