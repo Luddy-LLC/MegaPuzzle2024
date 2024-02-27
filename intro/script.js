@@ -21,7 +21,9 @@ setInterval(() => {
     document.getElementById("clickText").style.opacity = "1";
     document.getElementById("body").style.cursor = "pointer";
     window.addEventListener("click", e => {
-        signin.show();
+        if (getCookie('team') == "" || getCookie('name') == "") {
+            signin.show();
+        } else transitionToPage(`../index.html`);
     });
 }, 27000);
 
