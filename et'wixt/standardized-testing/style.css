@@ -3,7 +3,7 @@
 }
 
 body{
-    background-image: url("assets/background.webp");
+    background-image: url("assets/bg.png");
     background-size: cover;
 }
 
@@ -50,3 +50,5 @@ body{
         --scale: .75;
     }
 }
+
+
