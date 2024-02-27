@@ -1,0 +1,452 @@
+
+@keyframes introSlides {
+    0%{
+        opacity: 0;
+    }
+    1%{
+        opacity: 1;
+        background: linear-gradient(-0.25turn, black 10%, transparent 25%),
+                    linear-gradient(0.25turn, black 10%, transparent 25%),
+                    radial-gradient(transparent, black),
+                    url('./assets/intro1.png');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+    }
+    9%{opacity: 1;
+        background: linear-gradient(-0.25turn, black 10%, transparent 25%),
+        linear-gradient(0.25turn, black 10%, transparent 25%),
+        radial-gradient(transparent, black),
+        url('./assets/intro1.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;}
+    10%{
+        opacity: 0;
+    }
+    11%{
+        opacity: 1;
+        background: linear-gradient(-0.25turn, black 10%, transparent 25%),
+                    linear-gradient(0.25turn, black 10%, transparent 25%),
+                    radial-gradient(transparent, black),
+                    url('./assets/intro2.png');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+    }
+    19%{opacity: 1;
+        background: linear-gradient(-0.25turn, black 10%, transparent 25%),
+        linear-gradient(0.25turn, black 10%, transparent 25%),
+        radial-gradient(transparent, black),
+        url('./assets/intro2.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;}
+    20%{
+        opacity: 0;
+    }
+    21%{
+        opacity: 1;
+        background: linear-gradient(-0.25turn, black 10%, transparent 25%),
+                    linear-gradient(0.25turn, black 10%, transparent 25%),
+                    radial-gradient(transparent, black),
+                    url('./assets/intro3.png');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+    }
+    29%{opacity: 1;
+        background: linear-gradient(-0.25turn, black 10%, transparent 25%),
+        linear-gradient(0.25turn, black 10%, transparent 25%),
+        radial-gradient(transparent, black),
+        url('./assets/intro3.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;}
+    30%{
+        opacity: 0;
+    }
+    31%{
+        opacity: 1;
+        background: linear-gradient(-0.25turn, black 10%, transparent 25%),
+                    linear-gradient(0.25turn, black 10%, transparent 25%),
+                    radial-gradient(transparent, black),
+                    url('./assets/intro4.png');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+    }
+    39%{opacity: 1;
+        background: linear-gradient(-0.25turn, black 10%, transparent 25%),
+        linear-gradient(0.25turn, black 10%, transparent 25%),
+        radial-gradient(transparent, black),
+        url('./assets/intro4.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;}
+    40%{
+        opacity: 0;
+    }
+    41%{
+        opacity: 1;
+        background: linear-gradient(-0.25turn, black 10%, transparent 25%),
+                    linear-gradient(0.25turn, black 10%, transparent 25%),
+                    radial-gradient(transparent, black),
+                    url('./assets/intro5.png');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+    }
+    49%{opacity: 1;
+        background: linear-gradient(-0.25turn, black 10%, transparent 25%),
+        linear-gradient(0.25turn, black 10%, transparent 25%),
+        radial-gradient(transparent, black),
+        url('./assets/intro5.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;}
+    50%{
+        opacity: 0;
+    }
+    51%{
+        opacity: 1;
+        background: linear-gradient(-0.25turn, black 10%, transparent 25%),
+                    linear-gradient(0.25turn, black 10%, transparent 25%),
+                    radial-gradient(transparent, black),
+                    url('./assets/intro6.png');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+    }
+    59%{opacity: 1;
+        background: linear-gradient(-0.25turn, black 10%, transparent 25%),
+        linear-gradient(0.25turn, black 10%, transparent 25%),
+        radial-gradient(transparent, black),
+        url('./assets/intro6.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;}
+    60%{
+        opacity: 0;
+    }
+    61%{
+        opacity: 1;
+        background: linear-gradient(-0.25turn, black 10%, transparent 25%),
+                    linear-gradient(0.25turn, black 10%, transparent 25%),
+                    radial-gradient(transparent, black),
+                    url('./assets/intro7.png');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+    }
+    69%{opacity: 1;
+        background: linear-gradient(-0.25turn, black 10%, transparent 25%),
+        linear-gradient(0.25turn, black 10%, transparent 25%),
+        radial-gradient(transparent, black),
+        url('./assets/intro7.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;}
+    70%{
+        opacity: 0;
+    }
+    71%{
+        opacity: 1;
+        background: linear-gradient(-0.25turn, black 10%, transparent 25%),
+                    linear-gradient(0.25turn, black 10%, transparent 25%),
+                    radial-gradient(transparent, black),
+                    url('./assets/intro8.png');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+    }
+    79%{opacity: 1;
+        background: linear-gradient(-0.25turn, black 10%, transparent 25%),
+        linear-gradient(0.25turn, black 10%, transparent 25%),
+        radial-gradient(transparent, black),
+        url('./assets/intro8.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;}
+    80%{
+        opacity: 0;
+    }
+    81%{
+        opacity: 1;
+        background: linear-gradient(-0.25turn, black 8%, transparent 20%),
+        linear-gradient(0.25turn, black 8%, transparent 20%),
+        url('./assets/intro9.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    89%{opacity: 1;
+        background: linear-gradient(-0.25turn, black 8%, transparent 20%),
+        linear-gradient(0.25turn, black 8%, transparent 20%),
+        url('./assets/intro9.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    97%{opacity: 1;
+        background: linear-gradient(-0.25turn, black 8%, transparent 20%),
+        linear-gradient(0.25turn, black 8%, transparent 20%),
+        url('./assets/intro9.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    100%{
+        opacity: 0;
+        background: linear-gradient(-0.25turn, black 8%, transparent 20%),
+        linear-gradient(0.25turn, black 8%, transparent 20%),
+        url('./assets/intro9.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+
+html{
+    background-color: black;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+
+    transition: opacity .5s;
+}
+
+main{
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+
+    background: linear-gradient(-0.25turn, black 10%, transparent 25%),
+                linear-gradient(0.25turn, black 10%, transparent 25%),
+                radial-gradient(transparent, black),
+                url('./assets/intro1.png');
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    animation: introSlides 25s ease-in-out 2s infinite;
+}
+
+
+h2{
+    z-index: 100;
+    position: fixed;
+    font-size: calc(30px + 3vw);
+
+    font-family: "Macondo Swash Caps", serif;
+    color: aliceblue;
+
+    text-align: center;
+    width: 100vw;
+    bottom: 10%;
+
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.clouds {
+    opacity: 1;
+    transition: opacity 2s;
+
+    width: 100vw;
+    height: 100vh;
+
+    object-fit: cover;
+}
+
+
+
+
+@keyframes introSlidesNoVignette {
+    0%{
+        opacity: 0;
+    }
+    1%{
+        opacity: 1;
+        background: 
+                    url('./assets/intro1.png');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+    }
+    9%{opacity: 1;
+        background: 
+        url('./assets/intro1.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;}
+    10%{
+        opacity: 0;
+    }
+    11%{
+        opacity: 1;
+        background: 
+                    url('./assets/intro2.png');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+    }
+    19%{opacity: 1;
+        background: 
+        url('./assets/intro2.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;}
+    20%{
+        opacity: 0;
+    }
+    21%{
+        opacity: 1;
+        background: 
+                    url('./assets/intro3.png');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+    }
+    29%{opacity: 1;
+        background: 
+        url('./assets/intro3.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;}
+    30%{
+        opacity: 0;
+    }
+    31%{
+        opacity: 1;
+        background: 
+                    url('./assets/intro4.png');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+    }
+    39%{opacity: 1;
+        background: 
+        url('./assets/intro4.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;}
+    40%{
+        opacity: 0;
+    }
+    41%{
+        opacity: 1;
+        background: 
+                    url('./assets/intro5.png');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+    }
+    49%{opacity: 1;
+        background: 
+        url('./assets/intro5.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;}
+    50%{
+        opacity: 0;
+    }
+    51%{
+        opacity: 1;
+        background: 
+                    url('./assets/intro6.png');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+    }
+    59%{opacity: 1;
+        background: 
+        url('./assets/intro6.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;}
+    60%{
+        opacity: 0;
+    }
+    61%{
+        opacity: 1;
+        background: 
+                    url('./assets/intro7.png');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+    }
+    69%{opacity: 1;
+        background: 
+        url('./assets/intro7.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;}
+    70%{
+        opacity: 0;
+    }
+    71%{
+        opacity: 1;
+        background: 
+                    url('./assets/intro8.png');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+    }
+    79%{opacity: 1;
+        background: 
+        url('./assets/intro8.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;}
+    80%{
+        opacity: 0;
+    }
+    81%{
+        opacity: 1;
+        background: 
+        url('./assets/intro9.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    89%{opacity: 1;
+        background: 
+        url('./assets/intro9.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    97%{opacity: 1;
+        background: 
+        url('./assets/intro9.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    100%{
+        opacity: 0;
+        background: 
+        url('./assets/intro9.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+
+
+
+@media (max-width: 1480px){
+    h2{
+        bottom: 5%;
+    }
+
+    main{
+        animation: introSlidesNoVignette 25s ease-in-out 2s infinite;
+    }
+}

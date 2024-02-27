@@ -1,6 +1,5 @@
 // JS available in all puzzles
 
-
 // COOKIE HELPERS
 function setCookie(cname, cvalue, exdays) {
     const d = new Date();
