@@ -24,9 +24,14 @@ body{
 }
 
 .fw-bold {
-    color: white
+    padding: 5px;
+    width: 85%;
+    position:fixed;
 }
 
+.top-padding {
+    margin-top: 70px;
+}
 
 html[data-region=telius] .text-container::before, html[data-region=telius] .text-container::after{
     content: none;
