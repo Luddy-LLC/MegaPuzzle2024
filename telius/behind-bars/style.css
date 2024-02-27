@@ -4,9 +4,12 @@
 }
 
 
+
 body{
-    background-image: url("assets/background.webp");
+    background-image: url("assets/bg.png");
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 #crossword-wrapper {
@@ -18,6 +21,10 @@ body{
 
     outline: 10px solid #B99B5A;
     border-radius: 4px;
+}
+
+.fw-bold {
+    color: white
 }
 
 
@@ -45,9 +52,15 @@ html[data-region=telius] .text-container::before, html[data-region=telius] .text
     background: #A38954;
   }
   
-.container{
-    margin-top: 40px;
-}
+  .container {
+    width: 600px;
+    align-self: right;
+    right: 0px;
+  }
+
+  body {
+    align-items: right;
+  }
 
 
 
