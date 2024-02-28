@@ -18,15 +18,15 @@ function specialSignUserIn(data) {
 
 
 setInterval(() => {
-    document.getElementById("main").style.opacity = "1";
-    document.getElementById("main").style.backgroundImage = `url('./assets/intro9.png')`;
+    document.getElementById("clickText").style.opacity = "1";
+    // document.getElementById("main").style.backgroundImage = `url('./assets/intro9.png')`;
     document.getElementById("body").style.cursor = "pointer";
     window.addEventListener("click", e => {
         if (getCookie('team') == "" || getCookie('name') == "") {
             signin.show();
         } else transitionToPage(`../index.html`);
     });
-}, 27000);
+}, 20000);
 
 
 window.onload = () => {
