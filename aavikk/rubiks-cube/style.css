@@ -12,7 +12,7 @@
 }
 
 body {
-    background-image: url('assets/background.webp');
+    background-image: url('assets/bg.png');
     /* background: black; */
     background-repeat: no-repeat;
     background-size: cover;
@@ -44,4 +44,10 @@ body {
 
         padding: 20px;
     }
+}
+
+
+.kyoob {
+    transform: scale(2.5) translate(0, 5vh);
+    margin-bottom: 300px;
 }
