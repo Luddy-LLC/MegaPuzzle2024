@@ -18,7 +18,8 @@ function specialSignUserIn(data) {
 
 
 setInterval(() => {
-    document.getElementById("clickText").style.opacity = "1";
+    document.getElementById("main").style.opacity = "1";
+    document.getElementById("main").style.backgroundImage = `url('./assets/intro9.png')`;
     document.getElementById("body").style.cursor = "pointer";
     window.addEventListener("click", e => {
         if (getCookie('team') == "" || getCookie('name') == "") {
