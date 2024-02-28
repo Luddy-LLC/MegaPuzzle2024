@@ -24,9 +24,9 @@ body{
     flex-direction: column;
     justify-content: center;
 
-    background-image: url("./assets/pixelart-cabin.webp");
-    background-size: cover;
-    background-position: center;
+    background-image: url("./assets/woood\ texture\ up.png");
+    background-repeat: repeat;
+
 
     padding-bottom: 150px;
 }

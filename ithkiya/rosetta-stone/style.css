@@ -6,10 +6,11 @@
 }
 
 body {
-    background-image: url('assets/library.png');
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: url('assets/bg.png');
+    background-repeat: repeat-y;
+    background-size: 100vw;
     background-position: top center;
+    background-attachment: fixed;
 }
 
 .container-xl {
