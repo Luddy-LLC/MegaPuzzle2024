@@ -17,7 +17,6 @@ function getCookie(cname) {
 var menu = new bootstrap.Modal(document.getElementById('main-menu'), {})
 if (window.location.href.includes('?m=1') || getCookie('name') == "") {
     menu.toggle();
-    console.log(getCookie('name'))
     window.history.replaceState(null, '', window.location.pathname);
     window.history.pushState({}, document.title, window.location.pathname);
 } else {
@@ -36,6 +35,7 @@ function moveToPlayButton() {
     document.getElementById('go-to-play-button').classList.toggle('fade');
     document.getElementById('play-buttons').classList.toggle('fade');
 }
+
 
 
 /* -------------------------------- */
@@ -177,4 +177,13 @@ mtn.onmouseleave = function () {
     rl.alt = "";
     rl.style.display = "none";
 };
+
+const backaudio = document.getElementById('background-audio');
+backaudio.addEventListener("canplaythrough", () => {
+    backaudio.play().catch(e => {
+    window.addEventListener('click', () => {
+        backaudio.play()
+    }, { once: true })
+    })
+});
 
