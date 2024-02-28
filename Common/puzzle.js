@@ -123,8 +123,16 @@ if (document.getElementById('check-answer')) {
 const audioplayer = document.getElementById('audio-player');
 const nowplaying = document.getElementsByClassName('now-playing')[0];
 const audioLibrary = {
-    "main-map" : ["titlescreen.mp3","202220123","Ryuichi Sakamoto"],
-    "rosetta" : ["coconutmall.mp3", "Coconut Mall", "Nintendo"]
+    "map" : ["titlescreen.mp3","202220123","Ryuichi Sakamoto"],
+    "rosetta" : ["coconutmall.mp3", "Coconut Mall", "Nintendo"],
+    "castaway" : ["spin.mp3", "Spin", "Andreas Ihlebæk"],
+    "spell-sweeper"  : ["harpsichord.mp3", "Harpsichord Concerto No. 1 in D Minor, BWV 1052", "La tempête, Simon-Pierre Bestion & Louis-Noël Bestion de Camboulas"],
+    "supercoolios-quest" : ["matter.mp3", "Matter. Antimatter. What's the Meter?", "Marina Baranova"],
+    "snake"  : ["sevens.mp3", "Sevens", "Liz Carroll"],
+    "dating-sim" : ["datingsim.mp3", "Hear Me", "Keyframe"],
+    "behind-bars" : ["birds.mp3", "Bird Songs", "Telii Mail Delivery Aviary"],
+    "ouroboros" : ["wind.mp3", "Desert Winds", "Western Ithkiyaaqui Desert"],
+    "forced-mate" : ["bundleofjoy.mp3", "Bundle of Joy", "Michael Giacchino"],
 }
 function togglePlay() {
     const svg = document.querySelector('body > nav > div:nth-child(1) > button > svg > use');
