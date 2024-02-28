@@ -260,7 +260,8 @@ function draw() {
 setInterval(draw, 10);
 
 document.addEventListener("keydown", (e) => {
-    if (document.getElementById('answer-modal').classList.contains('show')) {
+    if (document.getElementById('answer-modal').classList.contains('show') ||
+        document.getElementById('signin-modal').classList.contains('show')) {
 
         resetGame();
         started = false;

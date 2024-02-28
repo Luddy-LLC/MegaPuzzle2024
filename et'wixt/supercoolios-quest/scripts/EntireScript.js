@@ -1514,7 +1514,10 @@ function renderGame(){
 
 document.onkeydown = document.onkeyup = function(e){
     keyMap[e.key.toLowerCase()] = e.type == 'keydown'; 
-    if(!document.getElementById("answer-modal") || !document.getElementById("answer-modal").classList.contains("show")) e.preventDefault()
+    if((!document.getElementById("answer-modal") || 
+       !document.getElementById("answer-modal").classList.contains("show")) &&
+       (!document.getElementById("signin-modal") || 
+       !document.getElementById("signin-modal").classList.contains("show"))) e.preventDefault()
 }
 
 function buttonPress(e, key, ele){
