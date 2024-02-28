@@ -234,7 +234,7 @@ main{
     background-repeat: no-repeat;
     background-position: center;
 
-    animation: introSlides 25s ease-in-out 2s infinite;
+    animation: introSlidesNoVignette 25s ease-in-out 2s infinite;
 }
 
 
