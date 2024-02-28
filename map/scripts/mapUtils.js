@@ -130,7 +130,7 @@ sw.onmouseleave = function () {
 
 cnr.onmouseover = function () {
     rl.src = "./map/assets/labels/etwixt.png";
-    rl.alt = "Region of Et'Wixt";
+    rl.alt = "Region of Et'wixt";
     rl.style.display = "block";
 };
 
