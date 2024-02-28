@@ -124,7 +124,7 @@ const audioplayer = document.getElementById('audio-player');
 const nowplaying = document.getElementsByClassName('now-playing')[0];
 const audioLibrary = {
     "map" : ["titlescreen.mp3","202220123","Ryuichi Sakamoto"],
-    "rosetta" : ["coconutmall.mp3", "Coconut Mall", "Nintendo"],
+    // "rosetta" : ["coconutmall.mp3", "Coconut Mall", "Nintendo"],
     "castaway" : ["spin.mp3", "Spin", "Andreas Ihlebæk"],
     "spell-sweeper"  : ["harpsichord.mp3", "Harpsichord Concerto No. 1 in D Minor, BWV 1052", "La tempête, Simon-Pierre Bestion & Louis-Noël Bestion de Camboulas"],
     "supercoolios-quest" : ["matter.mp3", "Matter. Antimatter. What's the Meter?", "Marina Baranova"],
@@ -133,7 +133,13 @@ const audioLibrary = {
     "behind-bars" : ["birds.mp3", "Bird Songs", "Telii Mail Delivery Aviary"],
     "ouroboros" : ["wind.mp3", "Desert Winds", "Western Ithkiyaaqui Desert"],
     "forced-mate" : ["bundleofjoy.mp3", "Bundle of Joy", "Michael Giacchino"],
+    "rubiks-cube" : ["twice.mp3", "Twice (Reimagined by Mercan Dede)", "Ludovico Einaudi"],
+    "already-solved" : ["watermans.mp3", "Watermans", "Michael McGoldrick"],
+    "asdfs-anger" : ["bute-cello.mp3", "Bute Cello Duets: III", "Katherine Jenkinson & Nicholas Holland"]
 }
+document.getElementsByClassName('card-title')[0].innerText = "";
+document.getElementsByClassName('card-text')[0].innerText = "";
+
 function togglePlay() {
     const svg = document.querySelector('body > nav > div:nth-child(1) > button > svg > use');
     audioplayer.paused ? svg.setAttribute('href','/MegaPuzzle2024/Common/icons.svg#ppi-unmuted') : svg.setAttribute('href','/MegaPuzzle2024/Common/icons.svg#ppi-muted');
@@ -145,6 +151,7 @@ function toggleNowPlaying() {
 if (audioplayer) {
     const puzzle = document.getElementsByTagName('html')[0].getAttribute('data-puzzle');
     audioplayer.setAttribute('src','/MegaPuzzle2024/Common/audio/'+audioLibrary[puzzle][0]);
+    audioplayer.loop = true;
     audioplayer.style.display = 'none';
     audioplayer.addEventListener("canplaythrough", () => {
         audioplayer.play().catch(e => {
