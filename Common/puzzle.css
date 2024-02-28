@@ -20,6 +20,12 @@
     transform: translateX(-50%);
 }
 
+@media (max-width: 650px){
+    .navbar-nav img{
+        display: none;
+    }
+}
+
 .puzzle-description {
     text-align: center;
 }
