@@ -13,6 +13,11 @@ body{
     margin-right: 0 !important;
 }
 
+.text-container>h3::first-letter{
+    font-family: 'Macondo Swash Caps', serif;
+    font-size: 3em;
+}
+
 #structure-desc>h3::first-letter{
     margin-right: 2px;
     font-family: "Macondo Swash Caps", serif;
