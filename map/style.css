@@ -285,3 +285,11 @@ map {
 .modal-content{
     z-index: 1000 !important;
 } */
+
+.about{
+    position: absolute;
+    top: 5px;
+    left: 140px;
+    z-index: 10;
+    height: 38px;
+}
