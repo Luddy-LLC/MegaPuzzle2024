@@ -1805,6 +1805,8 @@ function drawIntro(g){
     }
 }
 
+document.getElementById("skip-btn").onclick = () => introFrameNo = speechDelay * 10;
+
 function writeCenteredText(g, text, x, y){
     const textM = g.measureText(text);
     g.fillText(text, x-textM.width/2, y);
