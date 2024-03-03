@@ -184,8 +184,27 @@ class BaseLevel {
         g.font = "22px Inter";
         g.fillText(`${this.stageMsg}`, 70, 685);
 
-        g.font = "bold 70px Inter"
-        g.fillText(`Deaths: ${deaths}`, 500, 680);
+        g.font = "bold 35px Inter"
+        g.fillText(`Deaths: ${deaths}`, 710, 655);
+
+        // make death counter showup after win
+
+        let minutes = ~~(timerMilli / 60000);
+        let seconds = ~~((timerMilli / 1000) % 60);
+        let millis = (timerMilli % 1000) / 10;
+    
+        let minsAndSecs = minutes > 0 ? `${minutes}:${seconds}.` : `${seconds}.`;
+        let milliText = millis >= 10 ? `${millis}` : `0${millis}`;
+    
+        g.font = "bold 35px Inter";
+        g.fillStyle = "#5fc16f";
+        g.fillText(minsAndSecs, 710, 700);
+    
+        let textW = g.measureText(minsAndSecs).width;
+    
+        g.font = "bold 25px Inter";
+        g.fillText(milliText,  textW + 710, 700);
+        // g.fillText(`${minutes}:${seconds}.${millis}`, 710, 700);
     }
 
     handleKeyInputs(keyMap) {
@@ -1468,11 +1487,16 @@ let levels = [new BaseLevel(colorScheme = getRandColors(), stageNum = 1, stageMs
                 new SpecialSpikeLevel(colorScheme = getRandColors(), stageNum = 8, stageMsg = "How many ways can you die?"),
                 new BlindLevel(colorScheme = getRandColors(), stageNum = 9, stageMsg = "How well do you remember your way?")
             ];
-let extraLevel = new BaseLevel(colorScheme = getRandColors(), stageNum = levels.length + 1, stageMsg = "Keep Playing Just for Fun!");
+let extraLevel = new BaseLevel(colorScheme = getRandColors(), stageNum = levels.length + 1, stageMsg = "The end...");
 let changeStage = false;
 
 let keepPlaying = false;
 let setBorder = false;
+
+let inGame = false;
+let inputReceived = false;
+
+let timerMilli = 0;
 
 function renderGame(){
 
@@ -1482,16 +1506,20 @@ function renderGame(){
     
     // level = extraLevel;
     if(drawIntro(g) != 1) return;
-    
 
+    inGame = true;
+    
     if(level == extraLevel){
         drawOutro(g);
         return;
     } else if(!setBorder){
+
         canvas.style.border = "calc(3vw + 15px) solid pink";
         canvas.style.borderImage = "url(\"./assets/frame.png\") 7";
         setBorder = true;
     }
+
+    if(inputReceived) timerMilli += 10;
 
     outroFrameNo = 0;
 
@@ -1506,13 +1534,23 @@ function renderGame(){
     if(transitionTimer == 0 && changeStage){
         level.player.kill(level.pStartX, level.pStartY, level.button, level.door);
         levelNum++;
-        extraLevel = new BaseLevel(colorScheme = getRandColors(), stageNum = levelNum+1, stageMsg = "Keep Playing Just for Fun!");
+        extraLevel = new BaseLevel(colorScheme = getRandColors(), stageNum = levelNum+1, stageMsg = "The end...");
         changeStage = false;
     }
 
 }
 
+document.getElementById("reset-btn").onclick = () => {
+    window.location.reload();
+}
+
 document.onkeydown = document.onkeyup = function(e){
+
+    if(e.key == "r" && e.ctrlKey){
+        window.location.reload();
+    }
+
+    if(inGame) inputReceived = true;
     keyMap[e.key.toLowerCase()] = e.type == 'keydown'; 
     if((!document.getElementById("answer-modal") || 
        !document.getElementById("answer-modal").classList.contains("show")) &&
@@ -1594,6 +1632,41 @@ onmousemove = function(e){
     my = e.y - canvas.offsetTop;
 }
 
+function outroBottomBar(g){
+    g.fillStyle = "black";
+    g.fillRect(0, 600, 925, 120);
+    g.fillStyle = "white";
+
+    g.font = "bolder 27px Inter";
+    g.fillText("Level 1", 70, 650);
+    g.font = "27px Inter";
+    g.fillText(`Stage ${this.stageNum}`, 170, 650);
+
+    g.font = "22px Inter";
+    g.fillText(`${this.stageMsg}`, 70, 685);
+
+    g.font = "bold 35px Inter"
+    g.fillText(`Deaths: ${deaths}`, 710, 655);
+
+    // make death counter showup after win
+
+    let minutes = ~~(timerMilli / 60000);
+    let seconds = ~~((timerMilli / 1000) % 60);
+    let millis = (timerMilli % 1000) / 10;
+
+    let minsAndSecs = minutes > 0 ? `${minutes}:${seconds}.` : `${seconds}.`;
+    let milliText = millis >= 10 ? `${millis}` : `0${millis}`;
+
+    g.font = "bold 35px Inter";
+    g.fillStyle = "#5fc16f";
+    g.fillText(minsAndSecs, 710, 700);
+
+    let textW = g.measureText(minsAndSecs).width;
+
+    g.font = "bold 25px Inter";
+    g.fillText(milliText,  textW + 710, 700);
+}
+
 
 let shatteredGlass = new Image();
 let trophy = new Image();
@@ -1618,6 +1691,8 @@ function drawOutro(g){
     // Draw BG
     g.fillStyle = "white";
     g.fillRect(0,0,1000000,1000000);
+
+    outroBottomBar(g);
 
     //Outro is over and postgres thanks you
     if(outroFrameNo > 800){
