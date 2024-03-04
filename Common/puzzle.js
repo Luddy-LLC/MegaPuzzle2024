@@ -135,7 +135,8 @@ const audioLibrary = {
     "forced-mate" : ["bundleofjoy.mp3", "Bundle of Joy", "Michael Giacchino"],
     "rubiks-cube" : ["twice.mp3", "Twice (Reimagined by Mercan Dede)", "Ludovico Einaudi"],
     "already-solved" : ["watermans.mp3", "Watermans", "Michael McGoldrick"],
-    "asdfs-anger" : ["bute-cello.mp3", "Bute Cello Duets: III", "Katherine Jenkinson & Nicholas Holland"]
+    "asdfs-anger" : ["bute-cello.mp3", "Bute Cello Duets: III", "Katherine Jenkinson & Nicholas Holland"],
+    "cooking" : ["boiling.mp3","Cooking Noises","Mega Puzzle Chefs"]
 }
 document.getElementsByClassName('card-title')[0].innerText = "";
 document.getElementsByClassName('card-text')[0].innerText = "";
