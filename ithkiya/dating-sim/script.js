@@ -20,10 +20,10 @@ class Action {
 
 const data = [
     // Are you ___?
-    new Action("...besties with Scylla? Because I think this conversation is HEADing in the right direction.", JIMOTHY),
-    new Action("...Poseidon? Because I can SEA your beauty from here.", BANANA),
-    new Action("...Gaia? Because you are down to earth, girl.", BANANA),
-    new Action("...an extra salty fish fillet? Because I can't get enough of you even though you can sometimes be extremely unhealthy for me.", MALLORY_MILLER),
+    new Action("...besties with Scylla? Because I think this conversation is HEADing in the right direction", JIMOTHY),
+    new Action("...Poseidon? Because I can SEA your beauty from here", BANANA),
+    new Action("...Gaia? Because you are down to earth, girl", BANANA),
+    new Action("...an extra salty fish fillet? Because I can't get enough of you even though you can sometimes be extremely unhealthy for me", MALLORY_MILLER),
     // Gift
     new Action("Chocolates", JIMOTHY),
     new Action("Poetry", BANANA),
