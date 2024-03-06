@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mega Puzzle - Leaderboard</title>
+    <script src="https://nouveaureece.github.io/Puzzlestrap/js/bootstrap.bundle.js"></script>
+    <link type="text/css" rel="stylesheet" href="../Common/puzzle.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico?">
+    <link type="text/css" rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-nav">
+        <div class="navbar-nav">
+            <a class="btn" href="../">
+                <svg aria-hidden="true" width="10px"><use href="../Common/icons.svg#ppi-map" xlink:href="../Common/icons.svg#ppi-map"></use></svg>    
+                Map
+            </a>
+            <button class="btn">
+                <svg aria-hidden="true"><use href="../Common/icons.svg#ppi-unmuted" xlink:href="../Common/icons.svg#ppi-unmuted"></use></svg>    
+                Music
+            </button>
+        </div>
+        <img src="../Common/MPLogo.png" alt="Bootstrap" width="30" height="24">
+        <div class="navbar-nav">
+            <button class="btn" data-bs-toggle="modal" data-bs-target="#answer-modal">
+                <svg aria-hidden="true"><use href="../Common/icons.svg#ppi-check" xlink:href="../Common/icons.svg#ppi-check"></use></svg>    
+                Solve
+            </button>
+            <button class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions">
+                <svg aria-hidden="true"><use href="../Common/icons.svg#ppi-lore" xlink:href="../Common/icons.svg#ppi-lore"></use></svg>    
+                Lore    
+            </button>
+        </div>
+    </nav>
+
+
+    <div class="paralaxbg" id="mallory-miller"></div>
+
+    <main class="container">
+
+        <p class="leaderboard">Leaderboard</p>
+
+        <div class="table">
+            <div class="tbody">
+                <div class="text-container">
+                    <div class="td">Mallory Milelr</div>
+                    <div class="td">123</div>
+                </div>
+                <div class="text-container">
+                    <div class="td">Malasdal</div>
+                    <div class="td">13</div>
+                </div>
+                <div class="text-container">
+                    <div class="td">Maadsll</div>
+                    <div class="td">1223</div>
+                </div>
+                <div class="text-container">
+                    <div class="td">Mafll</div>
+                    <div class="td">121233</div>
+                </div>
+                <div class="text-container">
+                    <div class="td">Mall</div>
+                    <div class="td">123</div>
+                </div>
+                <div class="text-container">
+                    <div class="td">Malasdal</div>
+                    <div class="td">13</div>
+                </div>
+                <div class="text-container">
+                    <div class="td">Maadsll</div>
+                    <div class="td">1223</div>
+                </div>
+                <div class="text-container">
+                    <div class="td">Mafll</div>
+                    <div class="td">121233</div>
+                </div>
+                <div class="text-container">
+                    <div class="td">Mallory Milelr</div>
+                    <div class="td">123</div>
+                </div>
+                <div class="text-container">
+                    <div class="td">Malasdal</div>
+                    <div class="td">13</div>
+                </div>
+                <div class="text-container">
+                    <div class="td">Maadsll</div>
+                    <div class="td">1223</div>
+                </div>
+                <div class="text-container">
+                    <div class="td">Mafll</div>
+                    <div class="td">121233</div>
+                </div>
+                <div class="text-container">
+                    <div class="td">Mall</div>
+                    <div class="td">123</div>
+                </div>
+                <div class="text-container">
+                    <div class="td">Malasdal</div>
+                    <div class="td">13</div>
+                </div>
+                <div class="text-container">
+                    <div class="td">Maadsll</div>
+                    <div class="td">1223</div>
+                </div>
+                <div class="text-container">
+                    <div class="td">Mafll</div>
+                    <div class="td">121233</div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+    
+    <aside>
+        <div class="offcanvas offcanvas-end" data-bs-scroll="false" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="lore-label">
+            <div class="offcanvas-header">
+                <h1 class="offcanvas-title" id="lore-label">Lore</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <p>Why would there be lore on this page?</p>
+                <div class="card mb-3 now-playing" style="max-width: 540px;">
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
+                    <div class="row g-0">
+                        <div class="col-12">
+                            <div class="card-body">
+                                <div class="card-head">
+                                    <img src="../Common/wave.gif" class="img-fluid rounded-start" alt="...">
+                                    <h1 class="text-body-secondary">Now Playing</h1>
+                                </div>
+                                <p class="card-title">Visions of Gideon</p>
+                                <p class="card-text">Sufjan Stevens</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+
+    <!-- HINT ASIDE -->
+    <aside>
+        <div class="offcanvas offcanvas-start" data-bs-scroll="false" tabindex="-1" id="hints"
+            aria-labelledby="lore-label">
+            <div class="offcanvas-header">
+                <h1 class="offcanvas-title" id="hints-label">Hints</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <p>What do you need a hint for?</p>
+            </div>
+        </div>
+    </aside>
+        <!-- ANSWER CHECKING MODAL -->
+        <div class="modal fade" id="answer-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+            data-bs-backdrop="static">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form id="check-answer" class="form-floating needs-validation" autocomplete="on">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">There is no puzzle to solve on this page.<br>Head over to a puzzle page to start solving!</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- <div class="form-floating mb-3">
+                                <input pattern="[a-zA-Z]*"
+                                    title="Letters only, please! No spaces, numbers, or special characters." type="text"
+                                    class="form-control" id="answer" value="" placeholder="Puzzle Answer" required>
+                                <label for="answer">Puzzle Answer</label>
+                            </div> -->
+                            <div class="form-floating mb-3" style="display: none;">
+                                <input type="text" autocomplete="username" class="form-control" id="team" value=""
+                                    placeholder="Team" required>
+                                <label for="team">Team</label>
+                            </div>
+                            <div class="form-floating mb-3" style="display: none;">
+                                <input type="text" autocomplete="given-name" class="form-control" id="person" value=""
+                                    placeholder="Name" required>
+                                <label for="person">Name</label>
+                            </div>
+                            <div class="form-floating mb-3" style="display: none;">
+                                <input type="text" class="form-control" id="puzzle" value="" required readonly>
+                                <label for="puzzle">Puzzle Name</label>
+                            </div>
+                            <small>Hi, <strong><span id="personName"></span></strong>. You're submitting
+                                with team <strong><span id="teamName"></span></strong><br>
+                                (or <button class="btn btn-link signout" onclick="signout()">Change
+                                    User</button>)</small>
+                            <div id="correct" class="valid-feedback">
+                                Great job! That's correct :)<br>Be sure to save your answer for later.
+                            </div>
+                            <div id="incorrect" class="invalid-feedback">
+                                Not quite... try again
+                            </div>
+                            <div id="technical-error" class="invalid-feedback">
+                                Whoops... there was a technical issue. Please try again later...
+                            </div>
+
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <!-- <button type="submit" class="btn btn-primary">Check Answer</button> -->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- SIGN IN MODAL -->
+        <div class="modal fade" id="signin-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+            data-bs-backdrop="static" data-bs-keyboard="false">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form id="signin" class="form-floating needs-validation" autocomplete="on">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Welcome to Mega Puzzle!</h1>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mb-3"><small>Please enter your name and which team you're in.</small></div>
+                            <div class="form-floating mb-3">
+                                <input type="text" autocomplete="given-name" class="form-control" id="signin-person"
+                                    value="" placeholder="Name" required>
+                                <label for="person">Your Name</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" autocomplete="username" class="form-control" id="signin-team"
+                                    value="" placeholder="Team" name="" required>
+                                <label for="team">Team Name</label>
+                                <div class="form-text" id="basic-addon4"><strong>Not in a team yet?</strong> Grab
+                                    some friends and enter a name to create a team. Then, your friends can use this
+                                    same team name when signing in.</div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary"
+                                onclick="signUserIn(document.getElementById('signin'));">Start Adventure</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="../Common/puzzle.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
