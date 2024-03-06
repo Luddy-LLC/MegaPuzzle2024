@@ -1,0 +1,17 @@
+on:
+  repository_dispatch:
+    types: [my-event]
+permissions:
+  contents: write
+jobs:
+  myEvent:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: git checkout leaderboard
+      - run: echo "let data = \"${{ github.event.client_payload.out }}\"" > leaderboard/data.js
+      - run: git config --global user.email "matei.cloteaux@gmail.com"
+      - run: git config --global user.name "Matei Cloteaux"
+      - run: git add leaderboard
+      - run: git commit -m "Workflowtest"
+      - run: git push origin main
