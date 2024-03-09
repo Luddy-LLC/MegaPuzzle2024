@@ -1559,6 +1559,7 @@ document.onkeydown = document.onkeyup = function(e){
 }
 
 function buttonPress(e, key, ele){
+    if(inGame) inputReceived = true;
     keyMap[key] = e.type == 'touchstart'; 
 }   
 
