@@ -293,3 +293,11 @@ map {
     z-index: 10;
     height: 38px;
 }
+
+.leaderboard{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    z-index: 10;
+    height: 38px;
+}
