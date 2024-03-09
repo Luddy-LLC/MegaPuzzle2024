@@ -9,7 +9,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: git fetch
-      - run: git checkout leaderboard
       - run: echo "let data = \"${{ github.event.client_payload.out }}\"" > leaderboard/data.js
       - run: echo "let date = \"$( date +%D\ %T )\"" > leaderboard/date.js
       - run: git config --global user.email "matei.cloteaux@gmail.com"
