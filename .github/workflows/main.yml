@@ -11,7 +11,7 @@ jobs:
       - run: git fetch
       - run: git checkout leaderboard
       - run: echo "let data = \"${{ github.event.client_payload.out }}\"" > leaderboard/data.js
-      - run: echo "let date = \"$( date +%D )\"" > leaderboard/date.js
+      - run: echo "let date = \"$( date +%D\ %T )\"" > leaderboard/date.js
       - run: git config --global user.email "matei.cloteaux@gmail.com"
       - run: git config --global user.name "Matei Cloteaux"
       - run: git add leaderboard
