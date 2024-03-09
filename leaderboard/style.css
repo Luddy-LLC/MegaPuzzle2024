@@ -38,7 +38,7 @@ body{
 
 .leaderboard{
     margin-top: 50px;
-    margin-bottom: -20px;
+    margin-bottom: 20px;
 
     color: white;
 
@@ -107,7 +107,7 @@ body{
 
 
 
-.tbody>*:first-child{
+.first-place{
     filter: drop-shadow(0px 10px 60px rgba(245, 222, 179, 1603));
 
     mix-blend-mode:difference;
@@ -117,7 +117,7 @@ body{
 }
 
 
-.tbody>*:first-child>*:first-child{
+.first-place>*:first-child{
     filter: drop-shadow(0px 0px 30px rgb(251, 255, 0));
 }
 

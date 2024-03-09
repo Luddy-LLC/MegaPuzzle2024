@@ -3,10 +3,12 @@ onscroll = e => {
     mall.style.backgroundPositionY = `${-window.scrollY/5}px`;
 }
 
-const update = document.getElementById("update");
-update.innerText = "Last updated: "+date; 
+// const update = document.getElementById("update");
+// update.innerText = "Last updated: "+date; 
 
 const tbody = document.getElementById("tbody");
+
+let firstScore = "0";
 
 data = data.substring(2, data.length-2);
 let newData = data.split("},{");
@@ -25,8 +27,12 @@ for(let i=0; i<newData.length; ++i){
     name.innerText = newNewNewData[0];
     score.innerText = newNewNewData[1];
 
+    if(i==0) firstScore = newNewNewData[1];
+
     tc.appendChild(name);
     tc.appendChild(score);
 
     tbody.appendChild(tc);
+
+    if(i==0 || newNewNewData[1] == firstScore) tc.classList.add("first-place");
 }
