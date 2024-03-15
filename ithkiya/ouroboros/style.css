@@ -12,8 +12,64 @@ body {
 
 .btn {
     margin: auto;
+    z-index: 20;
 }
 
 .text-container {
+    z-index: 20;
     margin-top: 10%;
+}
+
+
+
+
+.option  {
+    animation: shift 5s ease-in-out infinite;
+    position: fixed;
+    filter:hue-rotate(250deg);
+    transition: ease-in-out 1s;
+    border-radius: 25%;
+
+    background-color: rgb(131, 63, 208) !important;
+    mix-blend-mode: multiply;
+    filter:hue-rotate(-200deg);
+
+    border: 10px;
+    filter: blur(50px);
+    border-style: dotted;
+    border-radius: 100vh;
+    border-color: rgb(255, 0, 0);
+
+    font-size: 15px;
+    transform: translate(10px, 15vh);
+
+
+}
+
+a {
+
+    text-decoration: none !important;
+}
+
+
+
+
+
+.btn-primary {
+    align-self: center;
+}
+
+
+@keyframes shift {
+    0% {
+        opacity: 0%;
+    }
+
+    75% {
+        opacity: 90%
+    }
+
+    100% {
+        opacity: 0%
+    }
 }
