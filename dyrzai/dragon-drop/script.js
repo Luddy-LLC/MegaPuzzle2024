@@ -119,8 +119,6 @@ butt.onclick = (e) => {
 
 function nextQuestion(e) {
     e.preventDefault();
-    goToFinalFinalFinalAnswer();
-    return;
 
     const answerInput = document.getElementById("answer");
     if (!answerInput.checkValidity()) return;
@@ -177,8 +175,6 @@ function checkAnswer(answers, p) {
     p.innerText = "correct";
     butt = document.getElementById("start-button");
     butt.innerText = "Final Question";
-    butt.onclick = goToFinalFinalFinalAnswer;
-    return;
 
     fetch("https://megapuzzle.carbonizar-planetario03.workers.dev/dyrzai", {
         method: "post",
@@ -279,10 +275,6 @@ function submitFinalFinalFinalAnswer(e){
 
     const p = answerDiv.querySelector("p");
 
-    playEnd()
-
-
-    return;
 
 
     //  check answer
@@ -302,8 +294,7 @@ function submitFinalFinalFinalAnswer(e){
         try {
             response.json().then((obj) => {
                 if (obj.result == "correct") {
-                    p.innerText = "Final Correct!!";
-                    document.getElementById("start-button").style.display = "none";
+                    playEnd();
                 } else if (obj.result == "incorrect") {
                     p.innerText = "Wrong LOL!";
                     butt = document.getElementById("start-button");
@@ -364,13 +355,12 @@ function playEnd() {
         // code to be executed after 1.5 seconds
 
         setTimeout(function() {
+            // code to be executed after 2.5 seconds
 
-            final_items.innerHTML = 
-            `<video id="intro-video" src="./assets/cat-show.webm" autoplay></video>`;
-            // code to be executed after 1.5 seconds
+            window.location.assign("../../outro/index.html");
 
         
-        }, 3000)
+        }, 2500)
       
       }, 1500)
     return;
