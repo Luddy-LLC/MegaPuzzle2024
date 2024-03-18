@@ -4,13 +4,12 @@ body {
 
 #ontro-video {
     position: fixed;
-    transform: scale(0.75) translate(0px, -50px);
-    top: 0;
+    transform: scale(0.75) translate(0px, -70%);
     left: 0;
+    top: 50%;
 
 
     width: 100%;
-    height: 100%;
 }
 
 
@@ -46,7 +45,7 @@ body {
     text-align: center;
 }
 
-.text-container button {
+.next {
     margin-top: 20px;
 }
 
@@ -69,7 +68,10 @@ body {
     margin-left:50vw;
     margin-top: 50vw;
     width: fit-content;
-    box-shadow: rgba(226, 168, 113, 0.651) 0px 0px 100vh 50px;
+    mix-blend-mode: screen;
+    box-shadow: rgba(226, 168, 113, 0.473) 0px 0px 100vh 50px;
+    align-items: center;
+    background-color: rgba(226, 168, 113, 0.842);
     animation: fadeIn 1.5s;
 }
 

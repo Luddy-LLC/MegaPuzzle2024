@@ -11,7 +11,7 @@ setTimeout(function() {
     `
     <div id= "actual-info" class="text-container dark">
         Hmmn... What an... interesting name... So you are the one who lived in that house?
-        <button class="btn btn-primary answer-button" id="answer-button" onclick="secondPart()">Continue</button>
+        <button class="btn btn-primary answer-button next" id="answer-button" onclick="secondPart()">Continue</button>
     </div>`;
 
   
@@ -27,7 +27,7 @@ function secondPart() {
     `
     <div id= "actual-info" class="text-container dark">
         I knew that whoever could live in the same place as a noble creature such as that must be worldly enough to solve my riddles. I should not want the creature to pass into untoward hands, so I found this test... necessary. Take care of your pet. I have grown fond of the creature, despite myself.
-        <button class="btn btn-primary answer-button" id="answer-button" onclick="thirdPart()">Continue</button>
+        <button class="btn btn-primary answer-button next" id="answer-button" onclick="thirdPart()">Continue</button>
     </div>`;
 
 }
@@ -39,7 +39,7 @@ function thirdPart() {
     `
     <div id= "actual-info" class="text-container dark">
         Now, go, and hold no grudge.
-        <button class="btn btn-primary answer-button" id="answer-button" onclick="fourthPart()">Continue</button>
+        <button class="btn btn-primary answer-button next" id="answer-button" onclick="fourthPart()">Continue</button>
     </div>`;
 
 }
