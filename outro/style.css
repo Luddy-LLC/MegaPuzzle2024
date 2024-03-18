@@ -15,7 +15,7 @@ body {
 
 
 
-.text-container{
+.dark{
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -54,3 +54,124 @@ body {
     0% { opacity: 0; }
     100% { opacity: 1; }
   }
+
+@keyframes scrolling {
+    0% { transform: translate(0px, 100vh); }
+    100% { transform: translate(0px, -4500px); }
+}
+  
+
+.smaller {
+    position: absolute;
+    right: 10vw;
+    bottom: 10vh;
+    transform: scale(2);
+    margin-left:50vw;
+    margin-top: 50vw;
+    width: fit-content;
+    box-shadow: rgba(226, 168, 113, 0.651) 0px 0px 100vh 50px;
+    animation: fadeIn 1.5s;
+}
+
+
+
+.credits-container {
+    position: absolute;
+    height: 100vh;
+    overflow: hidden;
+    width:400px;
+    margin-left: 10vw;
+
+}
+
+
+.scroller {
+    position: fixed;
+
+}
+
+
+.container{
+    position: relative;
+    justify-content:left; 
+
+    margin-top: 30px;
+}
+
+.card.credit-person{
+
+    position: relative;
+    margin: 20px;
+    width: 375px !important;
+
+    background-color: transparent;
+
+    color: aliceblue;
+
+    box-shadow: rgba(0,0,0,.1) 0px 0px 10px 10px;
+
+    animation: scrolling 70s linear infinite;
+}
+
+.credit-person .card-subtitle {
+    position: relative;
+    color: aliceblue !important;
+}
+
+.credit-person .card-title{
+    position: relative;
+    font-family: "Macondo Swash Caps", serif;
+    font-size: 2rem;
+}
+
+.credit-person .card-img-top{
+    position: relative;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    width: 50%;
+    border: solid var(--bs-border-color-translucent) 5px;
+    border-radius: 100%;
+    margin: 10px;
+}
+
+.credit-person .links{
+    position: relative;
+    margin-top: -30px;
+}
+
+.credit-person .card-actions{
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.credit-person .bi{
+    position: relative;
+    transition: color .1s;
+
+    color: rgb(210, 210, 210);
+    width: 30px;
+    height: 30px;
+}
+
+.credit-person .bi:hover, .bi:active, .bi:focus{
+    position: relative;
+    color: rgb(171, 171, 171);
+}
+
+.credit-person p.card-text::first-letter{
+    position: relative;
+    font-family: Inter, sans-serif !important;
+    font-size: 16px !important;
+    margin-right: 0 !important;
+}
+
+#first {
+    position: relative;
+    display: none;
+}
+
+.an {
+
+    animation: scrolling 20s linear;
+}
