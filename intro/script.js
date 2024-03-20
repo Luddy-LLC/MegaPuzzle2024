@@ -1,5 +1,6 @@
 var signin = new bootstrap.Modal(document.getElementById('signin-modal'), {});
 
+document.getElementById('intro-video').play();
 
 document.getElementById('signin').onsubmit = e => {
     e.preventDefault();
