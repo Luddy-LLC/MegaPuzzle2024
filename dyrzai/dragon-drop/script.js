@@ -172,9 +172,6 @@ function nextQuestion(e) {
 
 
 function checkAnswer(answers, p) {
-    p.innerText = "correct";
-    butt = document.getElementById("start-button");
-    butt.innerText = "Final Question";
 
     fetch("https://megapuzzle.carbonizar-planetario03.workers.dev/dyrzai", {
         method: "post",
