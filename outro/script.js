@@ -45,7 +45,7 @@ function thirdPart() {
 }
 
 async function fourthPart() {
-    vid.innerHTML= `<image id="ontro-video" src="assets/ending4.png"> </image>
+    vid.innerHTML= `<image id="ontro-video" class="final" src="assets/ending4.png"> </image>
     `;
     document.getElementById('cred').innerHTML =
     await fetch("../credits/index.html")
