@@ -3,6 +3,7 @@ const eye = document.getElementById("eye");
 
 let windowW, windowH;
 let eyeCenterX, eyeCenterY;
+let attention = true;
 
 window.onload = window.onresize = () => {
     windowW = window.innerWidth;
@@ -12,13 +13,27 @@ window.onload = window.onresize = () => {
     eyeCenterY = 0.48 * windowH - 0.11 * windowW;
 };
 
-document.getElementById("body").onmousemove = (e) => {
-    iris.style.marginLeft = -(eyeCenterX - e.x) / 12 + "px";
-    iris.style.marginTop = -(eyeCenterY - e.y) / 12 + "px";
 
-    eye.style.marginLeft = -(eyeCenterX - e.x) / 80 + "px";
-    eye.style.marginTop = -(eyeCenterY - e.y) / 80 + "px";
-};
+function set_eye(e) {
+    let x_pos;
+    let y_pos;
+
+    if ( e == null || attention == false ) {
+        x_pos = windowW;
+        y_pos = windowH;
+    } else {
+        x_pos = e.x;
+        y_pos = e.y;
+    }
+    iris.style.marginLeft = -(eyeCenterX - x_pos) / 12 + "px";
+    iris.style.marginTop = -(eyeCenterY - y_pos) / 12 + "px";
+    
+    eye.style.marginLeft = -(eyeCenterX - x_pos) / 80 + "px";
+    eye.style.marginTop = -(eyeCenterY - y_pos) / 80 + "px";
+
+}
+
+document.getElementById("body").onmousemove = set_eye;
 
 const toastLiveExample = document.getElementById("liveToast");
 const toastBody = document.getElementById("toast-body");
@@ -63,6 +78,7 @@ let questions = [
 const finalQuestion = "And finally, dear human, what is your Cat's name?";
 let submittedAnswers = [];
 let order = [];
+
 
 butt.onclick = (e) => {
     tc.style.opacity = "0";
@@ -205,6 +221,7 @@ function checkAnswer(answers, p) {
 
 
 function goToFinalFinalFinalAnswer(e){
+    
 
     const answerDiv = document.getElementById("answer-check");
 
@@ -248,13 +265,13 @@ function goToFinalFinalFinalAnswer(e){
 
 function submitFinalFinalFinalAnswer(e){
     e.preventDefault();
-
     const answerInput = document.getElementById("answer");
     if (!answerInput.checkValidity()) return;
 
     const answerDiv = document.getElementById("answer-check");
 
     const p = answerDiv.querySelector("p");
+
 
 
     //  check answer
@@ -274,8 +291,7 @@ function submitFinalFinalFinalAnswer(e){
         try {
             response.json().then((obj) => {
                 if (obj.result == "correct") {
-                    p.innerText = "Final Correct!!";
-                    document.getElementById("start-button").style.display = "none";
+                    playEnd();
                 } else if (obj.result == "incorrect") {
                     p.innerText = "Wrong LOL!";
                     butt = document.getElementById("start-button");
@@ -310,6 +326,44 @@ function submitFinalFinalFinalAnswer(e){
     }, 500);
 }
 
+
+
+function playEnd() {
+    const answerInput = document.getElementById("answer");
+    if (!answerInput.checkValidity()) return;
+
+    const answerDiv = document.getElementById("answer-check");
+
+    const p = answerDiv.querySelector("p");
+
+    p.innerText = "Final Correct!!";
+    document.getElementById("start-button").style.display = "none";
+    document.getElementById("text-container").remove();
+
+    attention = false;
+    set_eye(null);
+    const final_items = document.getElementById("end-container");
+
+
+    setTimeout(function() {
+
+        final_items.innerHTML = 
+        `<video id="intro-video" src="./assets/cat-show.webm" autoplay></video>`;
+        // code to be executed after 1.5 seconds
+
+        setTimeout(function() {
+            // code to be executed after 2.5 seconds
+
+            window.location.assign("../../outro/index.html");
+
+        
+        }, 2500)
+      
+      }, 1500)
+    return;
+    
+        // code to be executed after 1.5 seconds
+}
 
 
 function removeItemOnce(arr, value) {

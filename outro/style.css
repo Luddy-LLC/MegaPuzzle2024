@@ -1,0 +1,195 @@
+body {
+    background-color: black;
+    overflow: hidden;
+}
+
+#ontro-video {
+    position: fixed;
+    transform: scale(0.75) translate(0px, -70%);
+    left: 0;
+    top: 50%;
+    overflow: hidden;
+
+
+    width: 100vw;
+}
+
+.final::after {
+    background-image: linear-gradient(rgba(1,1,1,0), 
+    rgba(250, 167, 66, 0.842))
+
+}
+
+.gone {
+    opacity: 0% !important;
+}
+
+.dark{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-family: 'Macondo Swash Caps', serif;
+
+    width: 60%;
+
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 5%;
+
+    padding-top: 10px;
+
+    background-position: center center;
+    mix-blend-mode: luminosity;
+    background-color: var(--text-container-bg);
+    bottom: 0px;
+
+    color: white;
+    border: solid 5px var(--button-focus);
+
+
+    transition: all .5s ease-in-out;
+
+    animation: fadeIn 1s;
+    text-align: center;
+}
+
+.next {
+    margin-top: 20px;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+@keyframes scrolling {
+    0% { transform: translate(0px, 100vh); }
+    100% { transform: translate(0px, -4354px); }
+}
+
+@keyframes fire {
+    0% { transform: translate(0px, 100vh); }
+    60% { transform: translate(0px, 0px); }
+    100% { transform: translate(0px, 100vh); }
+}
+  
+
+.smaller {
+    position: absolute;
+    right: 10vw;
+    bottom: 10vh;
+    transform: scale(2);
+    margin-left:50vw;
+    margin-top: 50vw;
+    width: fit-content;
+    mix-blend-mode: screen;
+    box-shadow: rgba(233, 91, 40, 0.473) 0px 0px 100vh 50px;
+    align-items: center;
+    background-color: rgba(250, 167, 66, 0.842);
+    animation: fadeIn 1.5s;
+}
+
+
+
+.credits-container {
+    position: absolute;
+    height: 100vh;
+    overflow: hidden;
+    width:400px;
+    margin-left: 10vw;
+
+}
+
+
+.scroller {
+    position: fixed;
+
+}
+
+
+.container{
+    position: relative;
+    justify-content:left; 
+
+    margin-top: 30px;
+}
+
+.card.credit-person{
+
+    position: relative;
+    margin: 20px;
+    width: 375px !important;
+
+    background-color: rgba(112, 39, 17, 0.459);
+
+    color: aliceblue;
+
+    box-shadow: rgba(0,0,0,.1) 0px 0px 10px 10px;
+
+    animation: scrolling 70s linear infinite;
+}
+
+.credit-person .card-subtitle {
+    position: relative;
+    color: aliceblue !important;
+}
+
+.credit-person .card-title{
+    position: relative;
+    font-family: "Macondo Swash Caps", serif;
+    font-size: 2rem;
+}
+
+.credit-person .card-img-top{
+    position: relative;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    width: 50%;
+    border: solid var(--bs-border-color-translucent) 5px;
+    border-radius: 100%;
+    margin: 10px;
+}
+
+.credit-person .links{
+    position: relative;
+    margin-top: -30px;
+}
+
+.credit-person .card-actions{
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.credit-person .bi{
+    position: relative;
+    transition: color .1s;
+
+    color: rgb(210, 210, 210);
+    width: 30px;
+    height: 30px;
+}
+
+.credit-person .bi:hover, .bi:active, .bi:focus{
+    position: relative;
+    color: rgb(171, 171, 171);
+}
+
+.credit-person p.card-text::first-letter{
+    position: relative;
+    font-family: Inter, sans-serif !important;
+    font-size: 16px !important;
+    margin-right: 0 !important;
+}
+
+#first {
+    position: relative;
+    display: none;
+}
+
+.an {
+
+    animation: scrolling 20s linear;
+}
